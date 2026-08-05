@@ -69,7 +69,7 @@ Raw books are parsed into scenes (~700–900 words) and analyzed for speaker tur
 2. **State DB & Fiction RAG:** Queries active character goals, inventories, and trust scores for the scene.
 3. **Drafting & Multi-Agent Polish:** Expands the blueprint into prose and applies specialized revision passes (voice contrast, comedy timing).
 4. **Best-of-N Selection:** Samples candidate scene variations and selects the candidate with the highest Composite Story Reward score.
-5. **Token Substitution:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) and exports `.docx` and `.pdf` files.
+5. **Token Substitution & Export:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) via `text_sanitizer.py` and exports `.docx` and `.pdf` files via `manuscript_exporter.py`.
 
 ---
 
@@ -128,49 +128,3 @@ python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir output
 ├── setup_project.py    # Automated book downloader & workspace setup
 └── requirements.txt    # Python dependencies
 ```
-ter.py`)**  
-   Replaces abstract tokens (`[COMPANION]` -> `Barnaby`), strips prompt leakage tags, and exports formatted `.md`, `.docx`, and `.pdf` manuscripts.
-
----
-
-## 🚀 Quick Start (Replicate in 1 Command)
-
-### 1. Installation & Environment Setup
-
-```bash
-# Clone Repository
-git clone https://github.com/your-username/AI_Author.git
-cd AI_Author
-
-# Install Required Python Libraries
-pip install -r requirements.txt
-
-# 1-Click Automated Book & Base Model Downloader Setup
-python setup_project.py
-```
-
-*Note: `setup_project.py` automatically downloads public domain books from Project Gutenberg and base model weights (`Qwen2.5-1.5B-Instruct`) from HuggingFace directly to `models/` (which is ignored by Git).*
-
-### 2. DPO Training & Novel Generation
-
-```powershell
-# Run DPO Comedic Preference Alignment Trainer
-python trainer/dpo_trainer.py
-
-# Generate 5-Chapter Novel with Best-of-N Candidate Selector
-python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"
-
-# Export Formatted Word & PDF Manuscripts
-python utils/manuscript_exporter.py outputs/generated_novel
-
-# Run Literary Evaluation Suite
-python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir outputs/right_ho
-```
-
----
-
-## 📊 Evaluation & Metrics
-
-- **Dialogue Match Ratio:** **48.27%** (Achieves a **75.1% match to P. G. Wodehouse** dialogue frequency).
-- **Style Consistency Score:** **0.3177 – 0.565** (Weighted stylometric similarity across sentence length, dialogue %, and vocabulary richness).
-- **Standardized Chapter Length:** **650 – 800 words** per chapter.
