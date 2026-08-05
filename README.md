@@ -1,23 +1,23 @@
-# 🎭 AI Author Studio v3
+# AI-Author-Pipeline
 
-> **An End-to-End Literary Fine-Tuning Framework & Reader-Centric Narrative Orchestration Engine**
-
-AI Author Studio is a modular Python framework designed to investigate dataset synthesis, 4-bit QLoRA fine-tuning, Direct Preference Optimization (DPO), fiction RAG memory retrieval, and multi-agent editing crews for long-form creative fiction generation.
+An end-to-end framework for fine-tuning LLMs on creative fiction and orchestrating multi-chapter story generation with pre-prose blueprints, story state databases, and preference-aligned editing crews.
 
 ---
 
-## 🌟 Key Features
+## Overview
 
-- **20-Book Curated Literary Corpus:** Ingests public domain comedy masterpieces (Wodehouse, Jerome, Grossmith) into 11,799 anonymized SFT instruction pairs.
-- **Character Role Anonymizer:** Replaces character names (`Bertie` -> `[PROTAGONIST]`, `Jeeves` -> `[COMPANION]`) to mitigate direct memorization risks during SFT.
-- **4-Bit QLoRA & DPO Training:** Fine-tunes `Qwen2.5-1.5B-Instruct` using 4-bit NormalFloat (`NF4`) quantization and DPO comedic preference alignment.
-- **Pre-Prose Blueprint Planner:** Generates structured chapter blueprints (Goal, Conflict, Emotional Arc, Reversal, Objects) *before* prose generation.
-- **Fiction RAG Selective Memory Engine:** Retrieves *only* scene-relevant character states, inventories, and trust scores.
-- **Composite Story Quality Reward Model:** Multi-signal reward model scoring story coherence, voice consistency, comedic timing, and reader curiosity.
-- **Best-of-N Candidate Selector:** Samples $N$ candidate scene variations on the fly and selects the highest-reward variation.
-- **Manuscript Exporter:** Exports publication-ready `.docx` and `.pdf` manuscripts.
+Generating long-form creative fiction with small language models (e.g., 1.5B parameters) often leads to semantic drift, character name confusion, and ungrounded scene transitions. 
 
-## 🏗️ Architecture Overview
+This repository implements a modular pipeline that combines:
+1. **Dataset Synthesis & Anonymization:** Ingests public domain comedy books (Wodehouse, Jerome, Grossmith) into 11,799 SFT instruction pairs and anonymizes character names (`Bertie` -> `[PROTAGONIST]`, `Jeeves` -> `[COMPANION]`) to mitigate direct memorization risks.
+2. **4-Bit QLoRA & DPO Alignment:** Fine-tunes `Qwen2.5-1.5B-Instruct` on GPU with 4-bit NormalFloat (`NF4`) quantization and Direct Preference Optimization (DPO) to enforce comedic timing and dialogue brevity.
+3. **Structured Orchestration:** Plans pre-prose chapter blueprints (Goal, Conflict, Emotional Arc, Reversal) before generating prose.
+4. **Selective Memory (Fiction RAG):** Tracks character states, inventories, and trust scores scene-by-scene.
+5. **Reward-Guided Selection:** Evaluates candidate scenes against a multi-signal reward model scoring story coherence, character voice, comedic timing, and reader curiosity.
+
+---
+
+## System Architecture
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -26,70 +26,109 @@ AI Author Studio is a modular Python framework designed to investigate dataset s
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 1: NLP INGESTION & 7-COMPONENT EXTRACTOR                        │
-│  • Chapter/Scene Splitter & Dialogue Turn Parser                       │
+│  STAGE 1: NLP INGESTION & ANONYMIZER                                   │
+│  • Scene/Chapter Splitter & Dialogue Turn Parser                       │
 │  • Character Role Anonymizer (Bertie -> [PROTAGONIST])                │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 2: 4-BIT QLoRA & DPO PREFERENCE ALIGNMENT TRAINER              │
+│  STAGE 2: 4-BIT QLoRA & DPO ALIGNMENT                                  │
 │  • Qwen2.5-1.5B-Instruct in 4-bit NormalFloat (NF4)                    │
 │  • DPO Comedic Timing Alignment (1,000 preference pairs)               │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 3: READER-CENTRIC NARRATIVE INFERENCE ENGINE                    │
+│  STAGE 3: INFERENCE ORCHESTRATION ENGINE                               │
 │  • Pre-Prose Blueprint Planner + Story Bible DB + Fiction RAG Memory   │
 │  • Multi-Agent Revision Crew + Best-of-N Composite Reward Selector     │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│  MANUSCRIPT EXPORTER & EVALUATION SUITE                                │
-│  • Publication-ready .docx, .pdf, and .md manuscripts                  │
+│  EXPORTER & EVALUATION SUITE                                           │
+│  • Formatted .docx, .pdf, and .md manuscripts                          │
 │  • Stylometric Cosine Similarity & Reader Experience Metrics           │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🔬 Training Architecture & 6-Step Generation Process
+## Technical Pipeline Breakdown
 
-### Part 1: How Training Works (Why 7 Extracted NLP Components?)
+### 1. Ingestion & Feature Extraction
+Raw books are parsed into scenes (~700–900 words) and analyzed for speaker turn frequency, character role relationships, and 8-point narrative arcs. Character names are anonymized during SFT to prevent memorization of copyrighted names while learning general genre voice.
 
-Raw 60,000-word novels cannot be fed into an LLM all at once without context loss. The Ingestion Pipeline (`analyzer/`, `parser/`) extracts **7 structured NLP components** from each book to transform raw literature into high-signal training data:
+### 2. 2-Stage Training
+- **Supervised Fine-Tuning (SFT):** Fine-tunes LoRA adapters ($r=32, \alpha=64$) over 11,799 anonymized instruction pairs.
+- **Direct Preference Optimization (DPO):** Aligns the model on preference pairs (`chosen`: sharp deadpan punchlines vs `rejected`: long monologues).
 
-1. **Scene Boundaries & Chapter Breaks:** Isolates self-contained narrative scenes (~700–900 words).
-2. **Dialogue Turns & Speaker Attribution:** Teaches speaker voice contrast (e.g. *Barnaby's 10-word deadpan turns* vs. *Reginald's excited slang*).
-3. **Character Profiles & Traits:** Maps protagonist, valet, antagonist, and aunt roles.
-4. **Pairwise Relationship Networks:** Teaches trust scores and social hierarchies.
-5. **8-Point Narrative Arc:** Teaches Goal -> Conflict -> Reversal -> Resolution progression.
-6. **Emotion Timelines:** Maps character mood transitions scene-by-scene.
-7. **Character Role Anonymization:** Replaces names (`Bertie` -> `[PROTAGONIST]`, `Jeeves` -> `[COMPANION]`) to mitigate memorization risk of copyrighted named characters during SFT.
-
-#### 2-Stage GPU Fine-Tuning:
-- **Stage 1 (QLoRA SFT):** Base model (`Qwen2.5-1.5B-Instruct`) is frozen in 4-bit NormalFloat (`NF4`) quantization. Trainable LoRA adapter matrices ($r=32$) learn 1920s diction over 2,656 GPU steps across 11,799 instruction pairs.
-- **Stage 2 (DPO Comedic Alignment):** Fine-tunes adapter weights using DPO Loss over 1,000 preference pairs (`chosen`: sharp deadpan punchlines vs. `rejected`: 40-word monologues).
+### 3. Generation & Revision Workflow
+1. **Pre-Prose Blueprint:** Outlines scene goals, conflicts, character presence, and physical objects before prose generation.
+2. **State DB & Fiction RAG:** Queries active character goals, inventories, and trust scores for the scene.
+3. **Drafting & Multi-Agent Polish:** Expands the blueprint into prose and applies specialized revision passes (voice contrast, comedy timing).
+4. **Best-of-N Selection:** Samples candidate scene variations and selects the candidate with the highest Composite Story Reward score.
+5. **Token Substitution:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) and exports `.docx` and `.pdf` files.
 
 ---
 
-### Part 2: Step-by-Step Novel Generation Pipeline
+## Quickstart
 
-When executing `python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"`, the system runs a **6-Step Generation Pipeline**:
+### Installation
 
-1. **Step 1: Pre-Prose Blueprint Planner (`blueprint_planner.py`)**  
-   Generates a 5-chapter structured blueprint containing Goal, Conflict, Reversal, and Objects.
-2. **Step 2: Story Bible DB Initialization (`story_bible_db.py`)**  
-   Initializes a queryable state database tracking goals, inventories, and trust scores.
-3. **Step 3: Fiction RAG Selective Memory (`fiction_rag.py`)**  
-   Retrieves *only* character states relevant to the active scene.
-4. **Step 4: Raw Draft Expansion (`multi_agent_crew.py` Pass 1)**  
-   Writer Agent expands the blueprint into a raw ~800-word scene.
-5. **Step 5: Multi-Agent Revision & Best-of-N Candidate Selection**  
-   Voice Reviewer evaluates dialogue contrast, Comedy Editor evaluates punchline timing, and Best-of-N Selector picks the variation with the highest reward score.
-6. **Step 6: Token Sanitization & Manuscript Export (`text_sanitizer.py` & `manuscript_exporter.py`)**  
+```bash
+git clone https://github.com/Snaehath/AI-Author-Pipeline.git
+cd AI-Author-Pipeline
+pip install -r requirements.txt
+```
+
+### Automated Workspace Setup
+
+Download Project Gutenberg reference books and base model weights (`Qwen2.5-1.5B-Instruct`):
+
+```powershell
+python setup_project.py
+```
+
+### Run Alignment & Novel Generation
+
+```powershell
+# 1. Run DPO Preference Alignment Trainer
+python trainer/dpo_trainer.py
+
+# 2. Generate Novel (5 Chapters)
+python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"
+
+# 3. Export Word & PDF Manuscripts
+python utils/manuscript_exporter.py outputs/generated_novel
+
+# 4. Evaluate Stylometric Consistency
+python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir outputs/right_ho
+```
+
+---
+
+## Evaluation Metrics
+
+- **Dialogue Match Ratio:** **48.27%** (75.1% match against reference P. G. Wodehouse dialogue frequency).
+- **Style Consistency Score:** **0.3177 – 0.565** (Weighted stylometric cosine similarity across sentence length, dialogue ratio, and vocabulary richness).
+- **Standardized Scene Depth:** **650 – 800 words** per chapter.
+
+---
+
+## Repository Structure
+
+```
+├── dataset_generator/  # SFT & DPO preference dataset synthesis
+├── trainer/            # QLoRA fine-tuning & DPO alignment scripts
+├── inference/          # Blueprint planner, Story Bible DB, Fiction RAG, Best-of-N selector
+├── evaluator/          # Stylometric evaluation suite & composite reward model
+├── utils/              # Token sanitizer & manuscript exporter (.docx, .pdf)
+├── setup_project.py    # Automated book downloader & workspace setup
+└── requirements.txt    # Python dependencies
+```
+ter.py`)**  
    Replaces abstract tokens (`[COMPANION]` -> `Barnaby`), strips prompt leakage tags, and exports formatted `.md`, `.docx`, and `.pdf` manuscripts.
 
 ---
