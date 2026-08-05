@@ -1,0 +1,15 @@
+{
+  "appearance_keywords": [
+    "cloak", "robe", "staff", "sword", "lantern", "eyes", "hair", "tall", "short",
+    "beard", "armor", "ring", "crown", "boots", "shadow", "mask", "face", "scars"
+  ],
+  "personality_keywords": {
+    "Determined": ["resolved", "must", "won't stop", "insisted", "refused", "persevered"],
+    "Cautious": ["careful", "warning", "hesitated", "watch out", "camp before nightfall", "slowly"],
+    "Brave": ["stepped forward", "fearless", "bold", "drew", "front", "threshold"],
+    "Curious": ["wondered", "examined", "looked closer", "map", "search", "investigate"]
+  },
+  "goal_verbs": ["find", "reach", "search", "protect", "defeat", "escape", "claim", "seek", "make camp"],
+  "strength_keywords": ["experienced", "skilled", "leader", "wise", "perceptive", "strong", "fast", "resourceful"],
+  "weakness_keywords": ["stubborn", "reckless", "fearful", "vulnerable", "blind", "tired", "impulsive"]
+}

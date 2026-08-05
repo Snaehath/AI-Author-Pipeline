@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Author Studio — Local Editor Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="brand">
+      <span class="brand-icon">✨</span>
+      <span class="brand-title">AI Author Studio</span>
+      <span class="brand-badge">Local Workspace</span>
+    </div>
+
+    <div class="nav-controls">
+      <label for="book-selector" class="selector-label">Book Project:</label>
+      <select id="book-selector" class="glass-select">
+        <option value="">Loading books...</option>
+      </select>
+
+      <button id="btn-export" class="btn btn-secondary">
+        <span>📥</span> Export Manuscript
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="app-layout">
+
+    <!-- LEFT SIDEBAR: CHAPTERS & KNOWLEDGE -->
+    <aside class="sidebar-left glass-card">
+      <div class="tab-header">
+        <button class="tab-btn active" data-tab="tab-chapters">Chapters</button>
+        <button class="tab-btn" data-tab="tab-story">Story</button>
+        <button class="tab-btn" data-tab="tab-chars">Characters</button>
+        <button class="tab-btn" data-tab="tab-plot">Plot</button>
+      </div>
+
+      <div class="tab-content">
+        <!-- CHAPTERS TAB -->
+        <div id="tab-chapters" class="tab-pane active">
+          <h3 class="pane-title">Chapter Navigator</h3>
+          <ul id="chapter-list" class="item-list">
+            <li class="empty-state">Select a book project to view chapters.</li>
+          </ul>
+        </div>
+
+        <!-- STORY ANALYSIS TAB -->
+        <div id="tab-story" class="tab-pane">
+          <h3 class="pane-title">Story & Tone Knowledge</h3>
+          <div id="story-info" class="info-card-container">
+            <div class="empty-state">No story analysis loaded.</div>
+          </div>
+        </div>
+
+        <!-- CHARACTERS TAB -->
+        <div id="tab-chars" class="tab-pane">
+          <h3 class="pane-title">Character Profiles</h3>
+          <div id="character-info" class="info-card-container">
+            <div class="empty-state">No character analysis loaded.</div>
+          </div>
+        </div>
+
+        <!-- PLOT TAB -->
+        <div id="tab-plot" class="tab-pane">
+          <h3 class="pane-title">8-Point Plot Structure</h3>
+          <div id="plot-info" class="info-card-container">
+            <div class="empty-state">No plot analysis loaded.</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER EDITOR PANE -->
+    <section class="editor-pane glass-card">
+      <div class="editor-header">
+        <div>
+          <h2 id="chapter-heading">No Chapter Selected</h2>
+          <span id="word-count-badge" class="badge">0 Words</span>
+        </div>
+
+        <button id="btn-save-chapter" class="btn btn-primary">
+          <span>💾</span> Save Edits
+        </button>
+      </div>
+
+      <textarea id="chapter-textarea" class="manuscript-editor" placeholder="Select a chapter to start editing, or write a new scene..."></textarea>
+    </section>
+
+    <!-- RIGHT SIDEBAR: AI ASSISTANT -->
+    <aside class="sidebar-right glass-card">
+      <h3 class="pane-title">🤖 AI Author Assistant</h3>
+
+      <div class="ai-controls">
+        <label for="ai-task" class="selector-label">Select AI Command:</label>
+        <select id="ai-task" class="glass-select">
+          <option value="continue_story">⏩ Continue Story</option>
+          <option value="rewrite_scene">🔄 Rewrite Scene</option>
+          <option value="improve_dialogue">💬 Improve Dialogue</option>
+          <option value="increase_suspense">⚡ Increase Suspense</option>
+          <option value="improve_pacing">🏃 Improve Pacing</option>
+          <option value="emotional_impact">💖 Emotional Impact</option>
+        </select>
+
+        <div class="input-group">
+          <label for="ai-instruction" class="input-label">Custom Instruction / Direction:</label>
+          <input type="text" id="ai-instruction" class="glass-input" placeholder="e.g., Make the scene darker and intense...">
+        </div>
+
+        <button id="btn-run-ai" class="btn btn-accent full-width">
+          <span>✨</span> Execute AI Command
+        </button>
+      </div>
+
+      <div class="ai-output-container">
+        <h4 class="output-title">AI Suggestion Result</h4>
+        <div id="ai-output" class="ai-output-box">
+          <span class="empty-state">Select an AI command above and click Execute.</span>
+        </div>
+
+        <button id="btn-insert-ai" class="btn btn-secondary full-width margin-top">
+          <span>📌</span> Append Suggestion to Chapter
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

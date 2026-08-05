@@ -1,0 +1,6 @@
+{
+  "host": "127.0.0.1",
+  "port": 8000,
+  "outputs_dir": "outputs",
+  "default_export_format": "markdown"
+}

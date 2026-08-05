@@ -1,0 +1,34 @@
+{
+  "pov_detector": {
+    "first_person_pronouns": ["i", "me", "my", "mine", "we", "us", "our", "ours"],
+    "second_person_pronouns": ["you", "your", "yours"],
+    "third_person_pronouns": ["he", "him", "his", "she", "her", "hers", "they", "them", "their", "theirs"]
+  },
+  "tone_mood_analyzer": {
+    "tone_keywords": {
+      "Suspenseful": ["dark", "shadow", "cold", "whisper", "creak", "footstep", "silence", "danger", "stalk", "hidden"],
+      "Somber": ["grief", "loss", "mourn", "grave", "sorrow", "tear", "despair", "empty", "lonely"],
+      "Adventurous": ["journey", "mountain", "canyon", "explore", "path", "map", "artifact", "quest", "horizon"],
+      "Humorous": ["laugh", "chuckle", "smile", "joke", "grin", "amused", "witty", "ironic"],
+      "Dramatic": ["conflict", "confront", "truth", "climax", "fate", "destiny", "desperate", "betrayal"]
+    },
+    "mood_keywords": {
+      "Tense": ["howl", "sharp", "warning", "frost", "obsidian", "threshold", "echo", "nightfall"],
+      "Mysterious": ["legend", "ancient", "runes", "hidden", "star", "pedestal", "secret", "shadows"],
+      "Hopeful": ["sun", "glowing", "safe", "light", "dawn", "promise", "warmth", "bright"]
+    }
+  },
+  "conflict_scene_analyzer": {
+    "conflict_keywords": {
+      "Person vs Nature": ["wind", "storm", "canyon", "mountain", "cold", "desert", "weather", "river", "beast", "wolves"],
+      "Person vs Person": ["confront", "enemy", "sword", "fight", "argued", "shouted", "attacked", "rival", "villain"],
+      "Internal Conflict": ["wondered", "feared", "doubted", "hesitated", "guilt", "thought to herself", "thought to himself"],
+      "Person vs Society": ["law", "king", "guard", "rules", "rebellion", "outlaw", "crown", "empire"]
+    }
+  },
+  "foreshadow_twist_analyzer": {
+    "foreshadow_keywords": ["little did he know", "little did she know", "was yet to come", "premonition", "warning", "ominous", "began to stir"],
+    "twist_keywords": ["suddenly", "unexpectedly", "to her surprise", "to his shock", "revealed that", "traitor"],
+    "cliffhanger_keywords": ["began to stir", "watched from the dark", "it was too late", "shadows", "silence fell"]
+  }
+}

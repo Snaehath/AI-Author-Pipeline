@@ -1,0 +1,13 @@
+# AI Author Studio v3 Core Dependencies
+torch>=2.0.0
+transformers>=4.38.0
+peft>=0.8.0
+bitsandbytes>=0.42.0
+accelerate>=0.27.0
+huggingface-hub>=0.20.0
+datasets>=2.16.0
+python-docx>=1.1.0
+fpdf2>=2.7.8
+nltk>=3.8.1
+rouge-score>=0.1.2
+pyarrow>=14.0.0

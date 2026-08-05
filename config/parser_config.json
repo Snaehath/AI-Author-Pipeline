@@ -1,0 +1,20 @@
+{
+  "scene_parser": {
+    "divider_patterns": [
+      "^\\s*[*\\-_=#]{3,}\\s*$",
+      "^\\s*\\*\\s+\\*\\s+\\*\\s*$"
+    ],
+    "blank_line_gap_threshold": 2
+  },
+  "dialogue_extractor": {
+    "quote_pairs": [
+      ["\"", "\""],
+      ["'", "'"]
+    ],
+    "speech_verbs": [
+      "said", "asked", "replied", "whispered", "shouted", "yelled",
+      "muttered", "murmured", "exclaimed", "bellowed", "added", "continued",
+      "responded", "called", "spoke", "snapped", "grunted", "nodded"
+    ]
+  }
+}

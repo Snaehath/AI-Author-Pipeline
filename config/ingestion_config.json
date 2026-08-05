@@ -1,0 +1,27 @@
+{
+  "normalizer": {
+    "normalize_unicode": true,
+    "unicode_form": "NFKC",
+    "normalize_quotes": true,
+    "quote_style": "standard",
+    "fix_ocr_hyphenation": true,
+    "fix_ocr_misreads": true,
+    "max_consecutive_blank_lines": 2
+  },
+  "header_cleaner": {
+    "remove_page_numbers": true,
+    "remove_headers_footers": true,
+    "header_footer_similarity_threshold": 0.8
+  },
+  "chapter_splitter": {
+    "heading_patterns": [
+      "^\\s*(?:CHAPTER|Chapter|CH|Ch\\.)\\s+(?:[0-9]+|[IVXLCDM]+|[A-Z][a-z]+)",
+      "^\\s*(?:PROLOGUE|Prologue|EPILOGUE|Epilogue|BOOK|Book|PART|Part)\\s*(?:[0-9]+|[IVXLCDM]+)?",
+      "^\\s*\\b(?:One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty)\\b\\s*$"
+    ],
+    "divider_patterns": [
+      "^\\s*[*\\-_=#]{3,}\\s*$"
+    ],
+    "fallback_chunk_words": 3000
+  }
+}

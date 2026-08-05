@@ -1,0 +1,18 @@
+{
+  "emotion_keywords": {
+    "Urgent / Cautious": ["must", "should", "quickly", "careful", "nightfall", "hurry", "danger", "wolves", "watch out", "run"],
+    "Fearful": ["scared", "terrified", "afraid", "no", "please", "hide", "dark", "monsters", "trap"],
+    "Hopeful / Reassuring": ["safe", "light", "found", "good", "hope", "will make it", "trust me", "look"],
+    "Angry / Hostile": ["fool", "liar", "never", "stop", "curse", "die", "shut up", "get out", "back off"],
+    "Sarcastic / Witty": ["oh great", "wonderful", "brilliant", "surely", "of course", "obviously", "as if"],
+    "Calm / Analytical": ["according to", "marks", "indicates", "entrance", "pillars", "pedestal", "study"]
+  },
+  "conflict_keywords": {
+    "Warning / Friction": ["should", "cannot", "don't", "must not", "careful", "danger", "wolves", "stop"],
+    "Direct Disagreement": ["no", "never", "wrong", "false", "disagree", "refuse", "impossible"],
+    "Cooperative / Harmonious": ["yes", "agreed", "together", "let's", "all right", "understand"],
+    "Inquiry / Questioning": ["what", "where", "why", "who", "how", "when", "?"]
+  },
+  "humor_keywords": ["haha", "laugh", "funny", "joke", "brilliant", "great idea", "oh wonderful", "ironic"],
+  "high_fantasy_vocab": ["pedestal", "threshold", " runes", "artifact", "obsidian", "chamber", "colossal", "shadows"]
+}

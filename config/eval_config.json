@@ -1,0 +1,9 @@
+{
+  "target_output_dir": "outputs/generated_novel",
+  "default_reference_dir": "outputs/sample_novel",
+  "metrics": {
+    "bleu_weight_ngram_max": 4,
+    "target_style_pov": "Third-Person Limited",
+    "target_dialogue_ratio": 0.30
+  }
+}

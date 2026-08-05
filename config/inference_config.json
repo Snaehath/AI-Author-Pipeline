@@ -1,0 +1,11 @@
+{
+  "base_model_path": "models/Qwen2.5-1.5B-Instruct",
+  "lora_adapter_path": "models/story_lora_adapter",
+  "generation": {
+    "temperature": 0.35,
+    "top_p": 0.85,
+    "repetition_penalty": 1.25,
+    "max_new_tokens": 1024,
+    "do_sample": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "milestone_positions": {
+    "hook": [0.0, 0.15],
+    "inciting_incident": [0.10, 0.25],
+    "first_plot_point": [0.20, 0.35],
+    "midpoint": [0.40, 0.60],
+    "reversal": [0.55, 0.75],
+    "darkest_moment": [0.70, 0.85],
+    "climax": [0.80, 0.95],
+    "resolution": [0.90, 1.0]
+  },
+  "plot_keywords": {
+    "hook": ["beginning", "canyon", "wind", "shadow", "cold", "legend"],
+    "inciting_incident": ["map", "entrance", "pillars", "decision", "nightfall"],
+    "first_plot_point": ["threshold", "cavern", "entered", "arches"],
+    "midpoint": ["chamber", "pedestal", "obsidian", "artifact", "shone"],
+    "reversal": ["breath-taking", "torch", "suddenly", "revealed"],
+    "darkest_moment": ["shadows", "wolves", "dark", "danger"],
+    "climax": ["secured", "kingdom", "safe", "victory", "confronted"],
+    "resolution": ["safe once more", "restored", "peace"],
+    "epilogue": ["epilogue", "deep in the shadows", "new shadow"]
+  }
+}

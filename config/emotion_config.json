@@ -1,0 +1,17 @@
+{
+  "positive_words": [
+    "safe", "shone", "glowing", "breath-taking", "light", "dawn", "triumph", "hope",
+    "warm", "beautiful", "joy", "secured", "rescued", "peace", "victorious", "smiled"
+  ],
+  "negative_words": [
+    "cold", "dark", "stormy", "shadows", "wolves", "danger", "howled", "fear",
+    "grief", "loss", "die", "grave", "threat", "obsidian", "nightfall", "canyon"
+  ],
+  "high_intensity_words": [
+    "howled", "shimmered", "shone", "breath-taking", "colossal", "suddenly",
+    "attacked", "screamed", "explosive", "shouted", "storm", "blizzard", "climax"
+  ],
+  "low_intensity_words": [
+    "whispered", "adjusted", "leaning", "resting", "quiet", "softly", "calm", "slowly"
+  ]
+}

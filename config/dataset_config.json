@@ -1,0 +1,14 @@
+{
+  "train_val_split_ratio": 0.90,
+  "system_prompt": "You are a professional AI novel author specializing in immersive fiction, rich character development, engaging dialogue, and balanced pacing.",
+  "task_templates": {
+    "story_planning": "Create a 3-Act story outline with Hook, Midpoint, and Climax given the following requirements:",
+    "character_writing": "Write a character introduction and profile scene for the following character attributes:",
+    "dialogue_generation": "Write a dialogue exchange between the specified characters adhering to the target emotion and speech style:",
+    "scene_writing": "Write an immersive scene using the specified POV, tone, and scene purpose:",
+    "pacing_control": "Write a narrative sequence matching the target pacing speed and sentence structure:",
+    "prose_editing": "Edit and polish the following prose draft to enhance sensory details and narrative flow:",
+    "emotional_writing": "Write a scene evoking the target emotional valence and intensity:",
+    "revision_conflict": "Revise and rewrite the following scene draft to escalate narrative conflict and tension:"
+  }
+}
