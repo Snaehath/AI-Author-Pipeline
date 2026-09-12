@@ -21,7 +21,9 @@ from experiments.reporter import ExperimentReporter
 
 @pytest.fixture
 def exp_paths():
-    base_dir = Path(__file__).resolve().parent.parent / "experiments" / "experiment_001"
+    base_dir = Path(__file__).resolve().parent.parent / "pipeline" / "experiments" / "experiment_001"
+    if not base_dir.exists():
+        base_dir = Path(__file__).resolve().parent.parent / "experiments" / "experiment_001"
     config_path = base_dir / "config.json"
     dataset_path = base_dir / "dataset.json"
     return config_path, dataset_path

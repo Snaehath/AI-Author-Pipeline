@@ -17,8 +17,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.trainer.dataset_loader import format_chatml_prompt, load_sft_jsonl_raw
-from AI_Author.trainer.train_pipeline import TrainingPipeline
+from AI_Author.pipeline.trainer.dataset_loader import format_chatml_prompt, load_sft_jsonl_raw
+from AI_Author.pipeline.trainer.train_pipeline import TrainingPipeline
 
 
 class TestDatasetLoader(unittest.TestCase):

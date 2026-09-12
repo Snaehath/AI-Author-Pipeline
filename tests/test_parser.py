@@ -17,11 +17,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.parser.dialogue_extractor import DialogueExtractor
-from AI_Author.parser.paragraph_parser import ParagraphParser
-from AI_Author.parser.scene_parser import SceneParser
-from AI_Author.parser.chapter_parser import ChapterParser, ParsedChapter
-from AI_Author.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.parser.dialogue_extractor import DialogueExtractor
+from AI_Author.pipeline.parser.paragraph_parser import ParagraphParser
+from AI_Author.pipeline.parser.scene_parser import SceneParser
+from AI_Author.pipeline.parser.chapter_parser import ChapterParser, ParsedChapter
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
 
 
 class TestDialogueExtractor(unittest.TestCase):

@@ -16,9 +16,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.evaluator.bleu_rouge_evaluator import calculate_bleu_rouge
-from AI_Author.evaluator.style_consistency import calculate_style_consistency
-from AI_Author.evaluator.eval_pipeline import EvaluationPipeline
+from AI_Author.pipeline.evaluator.bleu_rouge_evaluator import calculate_bleu_rouge
+from AI_Author.pipeline.evaluator.style_consistency import calculate_style_consistency
+from AI_Author.pipeline.evaluator.eval_pipeline import EvaluationPipeline
 
 
 class TestBLEUROUGEEvaluator(unittest.TestCase):

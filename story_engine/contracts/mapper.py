@@ -8,9 +8,15 @@ Keeps forbidden facts and prohibitions explicit to preserve epistemic boundaries
 from typing import Optional, List, Dict, Any
 from story_engine.contracts.scene import SceneContract
 try:
-    from AI_Author.inference.blueprint_planner import ChapterBlueprint
+    from pipeline.inference.blueprint_planner import ChapterBlueprint
 except ImportError:
-    from inference.blueprint_planner import ChapterBlueprint
+    try:
+        from AI_Author.pipeline.inference.blueprint_planner import ChapterBlueprint
+    except ImportError:
+        try:
+            from AI_Author.inference.blueprint_planner import ChapterBlueprint
+        except ImportError:
+            from inference.blueprint_planner import ChapterBlueprint
 
 
 class BlueprintContractMapper:

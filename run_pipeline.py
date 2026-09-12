@@ -23,21 +23,22 @@ from pathlib import Path
 # Ensure project root and AI_Author directory are in sys.path
 AI_AUTHOR_DIR = Path(__file__).resolve().parent
 ML_DIR = AI_AUTHOR_DIR.parent
+PIPELINE_DIR = AI_AUTHOR_DIR / "pipeline"
 
-for p in (AI_AUTHOR_DIR, ML_DIR):
+for p in (AI_AUTHOR_DIR, ML_DIR, PIPELINE_DIR):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
-from AI_Author.ingestion.pipeline import IngestionPipeline
-from AI_Author.parser.chapter_parser import ChapterParser
-from AI_Author.analyzer.story_analyzer import StoryAnalyzer
-from AI_Author.analyzer.character_analyzer import CharacterAnalyzer
-from AI_Author.analyzer.dialogue_analyzer import DialogueAnalyzer
-from AI_Author.analyzer.emotion_analyzer import EmotionAnalyzer
-from AI_Author.analyzer.plot_analyzer import PlotAnalyzer
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.parser.chapter_parser import ChapterParser
+from AI_Author.pipeline.analyzer.story_analyzer import StoryAnalyzer
+from AI_Author.pipeline.analyzer.character_analyzer import CharacterAnalyzer
+from AI_Author.pipeline.analyzer.dialogue_analyzer import DialogueAnalyzer
+from AI_Author.pipeline.analyzer.emotion_analyzer import EmotionAnalyzer
+from AI_Author.pipeline.analyzer.plot_analyzer import PlotAnalyzer
 from AI_Author.dataset_generator.dataset_pipeline import DatasetPipeline
-from AI_Author.inference.novel_builder import NovelBuilder
-from AI_Author.evaluator.eval_pipeline import EvaluationPipeline
+from AI_Author.pipeline.inference.novel_builder import NovelBuilder
+from AI_Author.pipeline.evaluator.eval_pipeline import EvaluationPipeline
 from AI_Author.utils.manuscript_exporter import export_book_workspace
 from AI_Author.utils.logger import setup_logger
 
@@ -126,7 +127,7 @@ def run_master_pipeline(
     # STEP 9: Training (Optional)
     if train:
         print("\n[9/11] Executing Local QLoRA Fine-Tuning on GPU...")
-        from AI_Author.trainer.train_pipeline import TrainingPipeline
+        from AI_Author.pipeline.trainer.train_pipeline import TrainingPipeline
         train_res = TrainingPipeline().run_training()
         print(f"✓ Training complete! Adapter saved to: '{train_res.adapter_output_dir.name}'")
     else:

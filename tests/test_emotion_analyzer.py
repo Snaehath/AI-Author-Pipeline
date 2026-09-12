@@ -17,11 +17,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.analyzer.valence_intensity_calculator import ValenceIntensityCalculator
-from AI_Author.analyzer.emotion_timeline_tracker import EmotionTimelineTracker
-from AI_Author.analyzer.emotion_analyzer import EmotionAnalyzer
-from AI_Author.ingestion.pipeline import IngestionPipeline
-from AI_Author.parser.chapter_parser import ChapterParser
+from AI_Author.pipeline.analyzer.valence_intensity_calculator import ValenceIntensityCalculator
+from AI_Author.pipeline.analyzer.emotion_timeline_tracker import EmotionTimelineTracker
+from AI_Author.pipeline.analyzer.emotion_analyzer import EmotionAnalyzer
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.parser.chapter_parser import ChapterParser
 
 
 class TestValenceIntensityCalculator(unittest.TestCase):

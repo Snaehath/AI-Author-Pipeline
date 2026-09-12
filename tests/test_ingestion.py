@@ -17,11 +17,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.ingestion.extractors import extract_text_from_file, extract_from_txt
-from AI_Author.ingestion.normalizer import TextNormalizer
-from AI_Author.ingestion.header_cleaner import HeaderCleaner
-from AI_Author.ingestion.chapter_splitter import ChapterSplitter, Chapter
-from AI_Author.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.ingestion.extractors import extract_text_from_file, extract_from_txt
+from AI_Author.pipeline.ingestion.normalizer import TextNormalizer
+from AI_Author.pipeline.ingestion.header_cleaner import HeaderCleaner
+from AI_Author.pipeline.ingestion.chapter_splitter import ChapterSplitter, Chapter
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
 
 
 class TestTextNormalizer(unittest.TestCase):

@@ -23,9 +23,9 @@ from story_engine.contracts.mapper import BlueprintContractMapper
 from story_engine.scene_compiler import StatefulSceneCompiler
 from story_engine.events.event import StoryEvent, EventType
 try:
-    from AI_Author.inference.blueprint_planner import ChapterBlueprint
+    from AI_Author.pipeline.inference.blueprint_planner import ChapterBlueprint
 except ImportError:
-    from inference.blueprint_planner import ChapterBlueprint
+    from pipeline.inference.blueprint_planner import ChapterBlueprint
 
 
 @pytest.fixture

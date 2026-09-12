@@ -2,6 +2,16 @@
 Story Engine: Stateful Narrative Generation Operating System.
 """
 
+import sys
+from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parent.parent
+_ML = _ROOT.parent
+_PIPELINE = _ROOT / "pipeline"
+for _p in (_ROOT, _ML, _PIPELINE):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
 from story_engine.state.world import WorldState
 from story_engine.state.characters import Character
 from story_engine.state.objects import StoryObject

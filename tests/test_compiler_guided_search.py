@@ -23,7 +23,7 @@ from story_engine.epistemic.character_knowledge import EpistemicTracker
 from story_engine.contracts.scene import SceneContract
 from story_engine.events.event import StoryEvent, EventType
 from story_engine.events.diff import StateDelta
-from inference.best_of_n_selector import CompilerGuidedSearch, CandidateEvaluation
+from pipeline.inference.best_of_n_selector import CompilerGuidedSearch, CandidateEvaluation
 
 
 @pytest.fixture

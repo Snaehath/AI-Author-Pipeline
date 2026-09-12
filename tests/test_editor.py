@@ -17,8 +17,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.editor.workspace_manager import WorkspaceManager
-from AI_Author.editor.editor_server import AuthorStudioHTTPHandler
+from AI_Author.pipeline.editor.workspace_manager import WorkspaceManager
+from AI_Author.pipeline.editor.editor_server import AuthorStudioHTTPHandler
 
 
 class TestWorkspaceManager(unittest.TestCase):

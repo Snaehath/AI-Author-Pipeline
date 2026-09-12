@@ -17,13 +17,13 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from AI_Author.analyzer.character_extractor import CharacterExtractor
-from AI_Author.analyzer.trait_extractor import TraitExtractor
-from AI_Author.analyzer.goal_relationship_mapper import GoalRelationshipMapper
-from AI_Author.analyzer.arc_tracker import ArcTracker
-from AI_Author.analyzer.character_analyzer import CharacterAnalyzer
-from AI_Author.ingestion.pipeline import IngestionPipeline
-from AI_Author.parser.chapter_parser import ChapterParser
+from AI_Author.pipeline.analyzer.character_extractor import CharacterExtractor
+from AI_Author.pipeline.analyzer.trait_extractor import TraitExtractor
+from AI_Author.pipeline.analyzer.goal_relationship_mapper import GoalRelationshipMapper
+from AI_Author.pipeline.analyzer.arc_tracker import ArcTracker
+from AI_Author.pipeline.analyzer.character_analyzer import CharacterAnalyzer
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.parser.chapter_parser import ChapterParser
 
 
 class TestCharacterExtractor(unittest.TestCase):

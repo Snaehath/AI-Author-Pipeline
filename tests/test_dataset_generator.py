@@ -20,13 +20,13 @@ if str(PROJECT_ROOT) not in sys.path:
 from AI_Author.dataset_generator.prompt_templates import PromptTemplates
 from AI_Author.dataset_generator.sft_synthesizer import SFTSynthesizer, SFTExample
 from AI_Author.dataset_generator.dataset_pipeline import DatasetPipeline
-from AI_Author.ingestion.pipeline import IngestionPipeline
-from AI_Author.parser.chapter_parser import ChapterParser
-from AI_Author.analyzer.story_analyzer import StoryAnalyzer
-from AI_Author.analyzer.character_analyzer import CharacterAnalyzer
-from AI_Author.analyzer.dialogue_analyzer import DialogueAnalyzer
-from AI_Author.analyzer.emotion_analyzer import EmotionAnalyzer
-from AI_Author.analyzer.plot_analyzer import PlotAnalyzer
+from AI_Author.pipeline.ingestion.pipeline import IngestionPipeline
+from AI_Author.pipeline.parser.chapter_parser import ChapterParser
+from AI_Author.pipeline.analyzer.story_analyzer import StoryAnalyzer
+from AI_Author.pipeline.analyzer.character_analyzer import CharacterAnalyzer
+from AI_Author.pipeline.analyzer.dialogue_analyzer import DialogueAnalyzer
+from AI_Author.pipeline.analyzer.emotion_analyzer import EmotionAnalyzer
+from AI_Author.pipeline.analyzer.plot_analyzer import PlotAnalyzer
 
 
 class TestPromptTemplates(unittest.TestCase):

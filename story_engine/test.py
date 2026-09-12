@@ -175,9 +175,9 @@ def run_story_compiler_suite(novel_path: str = ""):
     # Print Report
     print("\nSTATE & NARRATIVE INTEGRITY RESULTS:")
     for check in passed_checks:
-        print(f"  \u2713 {check}")
+        print(f"  [PASS] {check}")
     for check in failed_checks:
-        print(f"  \u2717 {check}")
+        print(f"  [FAIL] {check}")
 
     print("\nSUMMARY:")
     print(f"  Passed Invariants: {len(passed_checks)}/{len(passed_checks) + len(failed_checks)}")
