@@ -4876,21 +4876,23 @@
       "payoff": "\"Grenecobbe,\" (638) In a list, containing nearly 200 names of divers persons of\nbad character, who had left the city by reason of the insurrection,(639)\nthere appear the names of two servants of Henry The name is\nfar from common, and we shall not perhaps be far wrong in conjecturing\nthat the owner of it was a relation of William \"Gryndecobbe,\" who led the\ninsurgents against the abbey of St."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Literal misunderstanding creates the central comic situation."
     }
   },
   {
@@ -4915,21 +4917,24 @@
       "payoff": "All claims for overcharge should be addressed to the Claims Department,\" \"Subject--Rate on guinea-pigs,\" it said, Mr."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Repeated consequences intensify an already absurd premise."
     }
   },
   {
@@ -4954,21 +4959,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You will be well in a week,\" \"Thank God!\" came in a murmur from a dusk corner ne...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "DIALOGUE_SUBTEXT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Possible subtext, but the fragment does not provide enough evidence."
     }
   },
   {
@@ -4993,21 +4998,21 @@
       "payoff": "\"incredible grossness,\" Of the obstinate effort to bring about an armed intervention,\non the lines marked out by Russell's letter to Palmerston from Gotha,\n17 September, 1862, nothing could be said beyond Gladstone's plea in\nexcuse for his speech in pursuance of the same effort, that it was \"the\nmost singular and palpable error,\" \"the least excusable,\" \"a mistake of\nincredible grossness,\" which passed defence; but while Gladstone threw\nhimself on the mercy of the public for his speech, he attempted no\nexcuse for Lord Russell who led him into the of\nannouncing the Foreign Secretary's intent."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Serious/expository material rather than comedy."
     }
   },
   {
@@ -5032,21 +5037,23 @@
       "payoff": "Speaker: Emily | Target Emotion: Calm / Conversational\n\"Go back, Emily, and see what it is they want,\" says one; and Emily\ncomes back, and asks what it is."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The line-level wording and ironic register carry the joke."
     }
   },
   {
@@ -5071,21 +5078,24 @@
       "payoff": "\"If, in the course of fourteen days,\" I said, \"they eat half of what is\non this yacht, they will want a fairly long time for every meal."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "SOCIAL_EMBARRASSMENT",
+      "secondary_mechanisms": [
+        "STATUS_REVERSAL",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "A socially awkward encounter develops through status and verbal pressure."
     }
   },
   {
@@ -5110,21 +5120,24 @@
       "payoff": "Speaker: Character | Target Emotion: Calm / Conversational\n\"Wait a mom'nt,\" replied that clear-headed maiden, picking her\nteeth thoughtfully with the muzzle of her revolver."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Physical farce is unmistakable and layered with restrained narration."
     }
   },
   {
@@ -5149,21 +5162,21 @@
       "payoff": "Speaker: Character | Target Emotion: Fearful\n\"Now perhaps you will listen to me,\" he went on smoothly, \"and hear\nwhat I am going to do."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 6,
+      "craft_clarity": 4,
+      "training_value": 3,
+      "keep_verdict": "REJECT",
+      "detector_correct": true,
+      "notes": "Comic premise is plausible but too fragmentary."
     }
   },
   {
@@ -5188,21 +5201,23 @@
       "payoff": "This way!,\" and\nhe began to sing, with a bold and daring swing."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "DEADPAN_REACTION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The character's underreaction to an absurd event is the cleanest mechanism."
     }
   },
   {
@@ -5227,21 +5242,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'For my clubs?\" Motty, who was sucking the knob of his stick, uncorked himself....'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "STATUS_REVERSAL",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Hierarchy is inverted through a dry verbal exchange."
     }
   },
   {
@@ -5266,21 +5284,21 @@
       "payoff": "\"Do you come to reward God for making you the attractive person that you are, by mortally transgressing His laws every day of your life?,\" I hear that question, and I am unspeakably overwhelmed by it."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "ESCALATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Narrative progression without comic escalation."
     }
   },
   {
@@ -5305,21 +5323,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'What?\" I said....'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "SOCIAL_EMBARRASSMENT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Mistaken assumptions create both escalating complications and social discomfort."
     }
   },
   {
@@ -5344,21 +5365,23 @@
       "payoff": "Marson?,\" whispered Miss\nWilloughby, gazing with adoring eyes at the speaker."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Excellent staged escalation with a clear comic payoff."
     }
   },
   {
@@ -5383,21 +5406,21 @@
       "payoff": "Speaker: Rescued | Target Emotion: Calm / Conversational\n\"saved from drink,\" \"Rescued from a workhouse life\"\nmight be written on many a bright little brow, and on many more."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Incidental wit is present, but the passage is not a robust craft demonstration."
     }
   },
   {
@@ -5422,21 +5445,24 @@
       "payoff": "And Adam lived an hundred and thirty years and begat _a son_ in his own likeness, after his image; and called his name Seth,\" I find it impossible to read this passage without being convinced that, when the writer says Adam was made in the likeness of Elohim, he means the same sort of likeness as when he says that Seth was begotten in the likeness of Adam."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "DIALOGUE_SUBTEXT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Meaning is carried by implication, avoidance, and social restraint."
     }
   },
   {
@@ -5461,21 +5487,24 @@
       "payoff": "\"to which the earl replied, with equal determination,\" \"By God, earl,\" cried the\nking, fairly roused by the obstinacy of his vassal, \"you shall either go\nor hang; By the\nsame token, O king, I will neither go nor hang."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "SOCIAL_EMBARRASSMENT",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "ESCALATION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Public/social discomfort compounds through misunderstanding."
     }
   },
   {
@@ -5500,21 +5529,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You have therefore no claim against this company, and your letter regarding the ...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 4,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Physical action is serious rather than comic."
     }
   },
   {
@@ -5539,21 +5568,23 @@
       "payoff": "See if he is dead - I dare not look,\" \"He is there,\" said the girl; I made my way as well as I could through the numberless dilapidated chemical instruments with which the room was littered."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Strong conversational wit delivered with dry restraint."
     }
   },
   {
@@ -5578,21 +5609,24 @@
       "payoff": "\"Appleton's Cyclopedia,\" John Fiske went so far in his notice of\nthe family in as to say that Henry had left a\ngreat reputation at Harvard College; which was a proof of John Fiske's\npersonal regard that Adams heartily returned; and set the kind\nexpression down to camaraderie."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "PHYSICAL_COMPLICATION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Classic farce structure: each attempted solution creates another complication."
     }
   },
   {
@@ -5617,21 +5651,21 @@
       "payoff": "\"Presents from Ramsgate,\" The\nblue-and-white mugs of the present-day roadside inn will be hunted up,\nall cracked and chipped, and sold for their weight in gold, and rich\npeople will use them for claret cups; and travellers from Japan will\nbuy up all the and \"Souvenirs of Margate,\"\nthat may have escaped destruction, and take them back to Jedo as\nancient English curios."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "CALLBACK",
       "secondary_mechanisms": [],
-      "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "mechanism_horizon": "LONG_HORIZON",
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 3,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Possible long-horizon callback cannot be validated from the excerpt."
     }
   },
   {
@@ -5656,21 +5690,23 @@
       "payoff": "\"alone ladies,\" There are special paths for \"wheel-riders\"\nand special paths for \"foot-goers,\" avenues for \"horse-riders,\" roads for\npeople in light vehicles, and roads for people in heavy vehicles; ways\nfor children and for That no particular route has yet\nbeen set aside for bald-headed men or \"new women\" has always struck me as\nan omission."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 8,
+      "craft_clarity": 8,
+      "training_value": 8,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "A semantic misunderstanding is clean and transferable."
     }
   },
   {
@@ -5695,21 +5731,21 @@
       "payoff": "Oughtn't I to give him some sort of warning?\"."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "No sufficiently clear comic engine."
     }
   },
   {
@@ -5734,21 +5770,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I say it!\"....'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "DEADPAN_REACTION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Excellent deadpan handling of an increasingly absurd circumstance."
     }
   },
   {
@@ -5773,21 +5812,24 @@
       "payoff": "\"Yes,\" answered Werner, almost laughing with unexpected jollity, and he\nwaved his hand easily and freely, as though he were speaking of some\nabsurd and trifling joke which kind but terribly comical people wanted\nto play on him."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "STATUS_REVERSAL",
+      "secondary_mechanisms": [
+        "SOCIAL_EMBARRASSMENT",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Social hierarchy and confidence are overturned for comic effect."
     }
   },
   {
@@ -5812,21 +5854,21 @@
       "payoff": "You would not tell Clarence?\" I was feeling most frightfully sorry for the poor old chap by this time, don't you know, but I thought it would be kindest to give it him straight instead of breaking it by degrees."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "ESCALATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Some intensification but insufficient comic structure."
     }
   },
   {
@@ -5851,21 +5893,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Father Deveaux, give me back my cat-o'-nine-tails....'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Physical complication is clearly comic and progressively worsens."
     }
   },
   {
@@ -5890,21 +5935,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Todd to induce some second party to gather the actual experiences which Miss [FR...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 6,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Serious or informational material."
     }
   },
   {
@@ -5929,21 +5974,23 @@
       "payoff": "What I mean is, will you\nmarry me--what?\"."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Compact verbal joke with controlled delivery."
     }
   },
   {
@@ -5968,21 +6015,24 @@
       "payoff": "\"Strength is small;,\" \"Without me ye can do nothing;\" \"Is there not an\nappointed warfare (margin) to man upon earth?\" He, who has appointed\nthe warfare will not send any at their own charges."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "SOCIAL_EMBARRASSMENT",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Misunderstanding drives an increasingly awkward social exchange."
     }
   },
   {
@@ -6007,21 +6057,24 @@
       "payoff": "\"that is pleasant to the sight and good for food,\" The creation of living beings begins with that of a solitary man; the next thing that happens is the laying out of the Garden of Eden, and the causing the growth from its soil of every tree ; the third act is the formation out of the ground of \"every beast of the field, and every fowl of the air\"; the fourth and last, the manufacture of the first woman from a rib, extracted from Adam, while in a state of anaesthesia."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "A comic premise expands through increasingly extreme examples."
     }
   },
   {
@@ -6046,21 +6099,21 @@
       "payoff": "\"Muns,\" \" They were the\nprecursors of the the \"Tityre Tus,\" the \"Hectors,\" and the\n\"Scourers,\"--dynasties of tyrants, as Macaulay styles them, which\ndomineered over the streets of London, soon after the Restoration, and at\na later period were superseded by the \"Nickers,\" the \"Hawcubites,\" and the\nstill more dreaded \"Mohawks,\" of Queen Anne's reign."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "DRAMATIC_IRONY",
       "secondary_mechanisms": [],
-      "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "mechanism_horizon": "LONG_HORIZON",
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Irony is not functioning as a transferable comic dramatic-irony mechanism."
     }
   },
   {
@@ -6085,21 +6138,24 @@
       "payoff": "Add this to that letter: 'Give condition of consignment at present.',\" He tossed the papers on to the stenographer's desk, took his feet from his own desk and went out to lunch."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "SOCIAL_EMBARRASSMENT",
+      "secondary_mechanisms": [
+        "STATUS_REVERSAL",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Public embarrassment is created by a reversal in expected social control."
     }
   },
   {
@@ -6124,21 +6180,21 @@
       "payoff": "Speaker: Elizabeth | Target Emotion: Fearful\n\"But what if the world will not believe that it is the type of an innocent sorrow?,\" \" urged Elizabeth."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": true,
+      "notes": "Possible misunderstanding but insufficient setup/payoff."
     }
   },
   {
@@ -6163,21 +6219,23 @@
       "payoff": "\"The best way to treat a bad law is to execute it,\" Simple-minded beyond the experience of Wall Street or State Street, he\nresorted, like most men of the same intellectual calibre, to\ncommonplaces when at a loss for expression: \"Let us have peace!\" or, ; or a score of such\nreversible sentences generally to be gauged by their sententiousness;\nbut sometimes he made one doubt his good faith; as when he seriously\nremarked to a particularly bright young woman that Venice would be a\nfine city if it were drained."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "DEADPAN_REACTION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "High-stakes absurdity receives a restrained response."
     }
   },
   {
@@ -6202,21 +6260,24 @@
       "payoff": "that's where it is, is it?,\" replied the man; \"well, you take my\nadvice and go there quietly, and take that watch of yours with you; and\ndon't let's have any more of it."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Repeated misunderstandings make the original problem progressively more absurd."
     }
   },
   {
@@ -6241,21 +6302,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "No clear comedy craft."
     }
   },
   {
@@ -6280,21 +6341,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "STATUS_REVERSAL",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Expected authority is quietly displaced, creating a strong status joke."
     }
   },
   {
@@ -6319,21 +6383,23 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 8,
+      "craft_clarity": 8,
+      "training_value": 8,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Semantic ambiguity/literalism creates the joke."
     }
   },
   {
@@ -6358,21 +6424,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "SOCIAL_EMBARRASSMENT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Embarrassment is plausible but incomplete."
     }
   },
   {
@@ -6397,21 +6463,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "MISUNDERSTANDING"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Strong physical farce with multiple interacting complications."
     }
   },
   {
@@ -6436,21 +6505,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": true,
+      "notes": "Serious passage without a comic engine."
     }
   },
   {
@@ -6475,21 +6544,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The comic problem keeps growing while narration remains restrained."
     }
   },
   {
@@ -6514,21 +6586,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Witty fragment but weak as a standalone training example."
     }
   },
   {
@@ -6553,21 +6625,23 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "DIALOGUE_SUBTEXT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The comic meaning is carried by what the speakers avoid saying."
     }
   },
   {
@@ -6592,21 +6666,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "SOCIAL_EMBARRASSMENT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "A mistaken interpretation causes both verbal and social comic consequences."
     }
   },
   {
@@ -6631,21 +6708,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 4,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Physical action is not comic craft."
     }
   },
   {
@@ -6670,21 +6747,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "STATUS_REVERSAL",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Sharp dialogue overturns the expected interpersonal position."
     }
   },
   {
@@ -6709,21 +6789,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "PHYSICAL_COMPLICATION",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Excellent farcical escalation."
     }
   },
   {
@@ -6748,21 +6831,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "CALLBACK",
       "secondary_mechanisms": [],
-      "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "mechanism_horizon": "LONG_HORIZON",
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 3,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Callback depends on context beyond the excerpt."
     }
   },
   {
@@ -6787,21 +6870,23 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The misunderstanding is clean and pedagogically useful."
     }
   },
   {
@@ -6826,21 +6911,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "DEADPAN_REACTION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "ESCALATION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Underreaction makes a worsening absurdity funnier."
     }
   },
   {
@@ -6865,21 +6953,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Expository/historical material."
     }
   },
   {
@@ -6904,21 +6992,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "SOCIAL_EMBARRASSMENT",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Social embarrassment emerges from a misunderstanding and is reinforced by dry dialogue."
     }
   },
   {
@@ -6943,21 +7034,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "STATUS_REVERSAL",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Clear hierarchy reversal with an understated payoff."
     }
   },
   {
@@ -6982,21 +7076,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "ESCALATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Some progression, but not a sufficiently clear comic escalation."
     }
   },
   {
@@ -7021,21 +7115,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "VERBAL_WIT"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Physical mishap is deliberately escalated and verbally framed."
     }
   },
   {
@@ -7060,21 +7157,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": true,
+      "notes": "No clear comic craft."
     }
   },
   {
@@ -7099,21 +7196,23 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Strong compact verbal comedy."
     }
   },
   {
@@ -7138,21 +7237,24 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Repeated complications and restrained reaction form the comic engine."
     }
   },
   {
@@ -7177,21 +7279,21 @@
       "payoff": ""
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "No self-contained comic mechanism."
     }
   }
 ]
