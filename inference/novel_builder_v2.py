@@ -25,6 +25,7 @@ for p in (AI_AUTHOR_DIR, ML_DIR):
 from AI_Author.inference.generator import StoryGenerator
 from AI_Author.inference.blueprint_planner import BlueprintPlanner
 from AI_Author.inference.multi_agent_crew import MultiAgentEditingCrew
+from AI_Author.inference.best_of_n_selector import CompilerGuidedSearch
 from story_engine.state.world import WorldState
 from story_engine.state.characters import Character
 from story_engine.state.objects import StoryObject
@@ -41,10 +42,11 @@ logger = setup_logger("AI_Author.Inference.NovelBuilderV2")
 class NovelBuilderV2:
     """Master orchestrator for AI Author Studio v2 stateful novel generation."""
 
-    def __init__(self, generator: StoryGenerator = None):
+    def __init__(self, generator: StoryGenerator = None, lambda_efficiency: float = 0.25):
         self.generator = generator or StoryGenerator()
         self.planner = BlueprintPlanner()
         self.crew = MultiAgentEditingCrew(self.generator)
+        self.search_engine = CompilerGuidedSearch(lambda_efficiency=lambda_efficiency)
 
         # Initialize Canonical World & Invariant Graph
         self.world = WorldState()
@@ -90,8 +92,9 @@ class NovelBuilderV2:
         title: str = "The Mischief at Blackwood Manor",
         num_chapters: int = 5,
         output_dir: str = "outputs/generated_novel",
+        num_candidates: int = 3,
     ) -> Path:
-        """Generates a multi-chapter novel using the Stateful Scene Compiler & Checkpoints."""
+        """Generates a multi-chapter novel using Compiler-Guided Search & Stateful Scene Compiler."""
         out_path = Path(output_dir).resolve()
         out_path.mkdir(parents=True, exist_ok=True)
         chap_dir = out_path / "chapters"
@@ -103,7 +106,7 @@ class NovelBuilderV2:
 
         logger.info("==================================================")
         logger.info(f"Starting AI Author Studio v2 Master Orchestration: '{title}'")
-        logger.info(f"Generating Pre-Prose Blueprints, Stateful Checkpoints & {num_chapters} Chapters...")
+        logger.info(f"Generating Pre-Prose Blueprints, Stateful Checkpoints, Best-of-{num_candidates} Search & {num_chapters} Chapters...")
 
         # 1. Generate Pre-Prose Blueprints
         blueprints = self.planner.create_novel_blueprints(title, num_chapters)
@@ -130,6 +133,12 @@ class NovelBuilderV2:
         prev_context = ""
         parent_ckpt_id: str = "root"
 
+        variation_hints = [
+            "Standard crisp narrative, witty banter, atmospheric 1920s manor setting.",
+            "Dramatic tension and escalating suspicion, highlighting character secrets.",
+            "Rapid dialogue-driven pacing and sharp comedic irony between Reginald and Barnaby.",
+        ]
+
         for idx, blueprint in enumerate(blueprints, 1):
             logger.info(f"--- Generating Chapter {idx}/{num_chapters}: '{blueprint.title}' ---")
 
@@ -148,17 +157,49 @@ class NovelBuilderV2:
                 world_truth=self.truth,
             )
 
-            # 4. Multi-Agent Revision Crew Pass
-            chap_prose = self.crew.generate_masterpiece_chapter(
-                book_title=title,
-                blueprint=blueprint,
-                previous_context=prev_context,
-                rag_prompt=context_pack["prompt_context"],
+            # 4. Generate Candidate Variations
+            candidate_prose_list = []
+            candidate_tokens = []
+            for c_idx in range(max(1, num_candidates)):
+                hint = variation_hints[c_idx % len(variation_hints)]
+                logger.info(f"Generating Candidate {c_idx + 1}/{num_candidates} (Variation: '{hint[:40]}...')")
+                cand_prose = self.crew.generate_masterpiece_chapter(
+                    book_title=title,
+                    blueprint=blueprint,
+                    previous_context=prev_context,
+                    rag_prompt=context_pack["prompt_context"],
+                    variation_hint=hint,
+                )
+                candidate_prose_list.append(cand_prose)
+                candidate_tokens.append(getattr(self.crew, "last_crew_stats", {}))
+
+            # 5. Compiler-Guided Search & Best-of-N Evaluation (3-Stage Gating, Canonical State Untouched)
+            scene_audit_dir = checkpoints_dir / f"chapter_{idx:02d}" / "scene_001"
+            search_result = self.search_engine.search_best_candidate(
+                candidate_prose_list=candidate_prose_list,
+                contract=contract,
+                canonical_world=self.world,
+                epistemic=self.epistemic,
+                world_truth=self.truth,
+                generator_fn=lambda prompt: self.generator._generate_response(
+                    "You are an expert fiction continuity editor repairing scenes.",
+                    "Repair and rewrite the following scene:",
+                    prompt,
+                ),
+                candidate_tokens=candidate_tokens,
+                output_audit_dir=scene_audit_dir,
+                story_id=title.lower().replace(" ", "_"),
             )
 
-            # 5. Stateful Scene Compiler (Prose Proposal -> Candidate Delta -> Invariants -> Commit)
+            winning_prose = search_result.selected_prose
+            logger.info(
+                f"✓ Selected winning candidate '{search_result.selected_candidate_id}' for Chapter {idx} "
+                f"(Survivors: {search_result.gate_summary['survivors']}/{search_result.gate_summary['total_candidates']})"
+            )
+
+            # 6. Stateful Scene Compiler (Prose Proposal -> Candidate Delta -> Invariants -> Commit ONE winner)
             comp_result: SceneCompilationResult = compiler.compile_scene_candidate(
-                prose=chap_prose,
+                prose=winning_prose,
                 contract=contract,
                 canonical_world=self.world,
                 epistemic=self.epistemic,
@@ -168,7 +209,7 @@ class NovelBuilderV2:
             )
 
             if comp_result.is_committed:
-                # Update canonical state snapshot
+                # Atomically update canonical state snapshot
                 self.world = comp_result.resulting_world_state
                 parent_ckpt_id = f"chapter_{idx:02d}_scene_001"
                 logger.info(f"✓ Chapter {idx} committed to EventLedger (Hash: {comp_result.new_state_hash})")
@@ -179,12 +220,15 @@ class NovelBuilderV2:
             chap_data = {
                 "chapter_index": idx,
                 "title": blueprint.title,
-                "word_count": len(chap_prose.split()),
+                "word_count": len(winning_prose.split()),
                 "blueprint": blueprint.to_dict(),
                 "contract": contract.to_dict(),
                 "state_hash": self.world.state_hash(),
                 "is_committed": comp_result.is_committed,
-                "content": chap_prose,
+                "selected_candidate": search_result.selected_candidate_id,
+                "gate_summary": search_result.gate_summary,
+                "token_economics": search_result.token_economics,
+                "content": winning_prose,
             }
             with open(chap_dir / f"chapter_{idx:02d}.json", "w", encoding="utf-8") as f:
                 json.dump(chap_data, f, indent=2)
@@ -193,13 +237,13 @@ class NovelBuilderV2:
                 with open(chap_dir / f"chapter_{idx:02d}_diff.json", "w", encoding="utf-8") as f:
                     json.dump(comp_result.validated_delta.to_dict(), f, indent=2)
 
-            full_manuscript_lines.append(f"## Chapter {idx}: {blueprint.title}\n\n{chap_prose}\n\n")
+            full_manuscript_lines.append(f"## Chapter {idx}: {blueprint.title}\n\n{winning_prose}\n\n")
 
             # Context memory for next chapter
-            paras = [p.strip() for p in chap_prose.split("\n\n") if p.strip()]
-            prev_context = "\n\n".join(paras[-2:]) if len(paras) >= 2 else chap_prose
+            paras = [p.strip() for p in winning_prose.split("\n\n") if p.strip()]
+            prev_context = "\n\n".join(paras[-2:]) if len(paras) >= 2 else winning_prose
 
-        # 6. Save final event ledger and state dump
+        # 7. Save final event ledger and state dump
         with open(out_path / "event_ledger.json", "w", encoding="utf-8") as f:
             f.write(compiler.ledger.to_json())
 
@@ -217,6 +261,7 @@ class NovelBuilderV2:
 def main():
     parser = argparse.ArgumentParser(description="AI Author Studio v2 Stateful Novel Generator")
     parser.add_argument("--chapters", type=int, default=5, help="Number of chapters to generate (default: 5)")
+    parser.add_argument("--candidates", type=int, default=3, help="Number of candidate variations per scene (default: 3)")
     parser.add_argument("--title", type=str, default="The Mischief at Blackwood Manor", help="Novel title")
     parser.add_argument("--output_dir", type=str, default="outputs/generated_novel", help="Output directory")
 
@@ -227,6 +272,7 @@ def main():
         title=args.title,
         num_chapters=args.chapters,
         output_dir=args.output_dir,
+        num_candidates=args.candidates,
     )
 
 

@@ -90,7 +90,7 @@ class StatefulSceneCompiler:
         ledger_count_before = len(self.ledger)
 
         # 1. Extract Candidate Events & State Delta from prose proposal
-        candidate_diff = self.extractor.extract_from_prose(prose, contract, canonical_world)
+        candidate_diff = self.extractor.extract_from_prose(prose, contract, canonical_world, world_truth=world_truth)
 
         # 2. Evaluate Invariants over candidate proposal
         comp_res: CompilationResult = self.continuity_compiler.compile_scene(

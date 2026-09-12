@@ -1,20 +1,20 @@
 """
-Repair and Penalty Engine.
+Targeted AST Repair and Violation Feedback Engine.
 
-Calculates violation penalty scores, identifies dominant failure patterns across candidates,
-and synthesizes targeted AST-driven prompt instructions for model regeneration.
+Analyzes narrative compiler violations to identify dominant error patterns
+and generates precise, context-aware prompt directives for targeted model revision.
 """
 
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Optional
 from collections import Counter
-from compiler.violations import CompilerViolation, Severity, ViolationType
-from story_engine.contracts.scene import SceneContract
+from story_engine.contracts.violations import CompilerViolation, Severity, ViolationType
 
 
 class RepairEngine:
-    """Calculates reward penalties and generates AST-guided targeted repairs."""
+    """Calculates violation penalty scores and generates targeted AST repair directives."""
 
     def __init__(self):
+        # Penalty weights against composite story reward for soft warnings
         self.penalty_weights = {
             Severity.FATAL: -100.0,
             Severity.ERROR: -35.0,
@@ -22,96 +22,64 @@ class RepairEngine:
         }
 
     def calculate_penalty_score(self, violations: List[CompilerViolation]) -> float:
-        """Computes composite reward penalty from compiler violations."""
+        """Computes total reward penalty from compilation violations."""
         penalty = 0.0
         for v in violations:
             penalty += self.penalty_weights.get(v.severity, -10.0)
         return penalty
 
-    def find_dominant_violation(
-        self, candidates_violations: List[List[CompilerViolation]]
-    ) -> Tuple[Optional[ViolationType], List[CompilerViolation]]:
-        """Identifies the dominant failure pattern across multiple failed candidates."""
-        all_violations: List[CompilerViolation] = []
-        for viols in candidates_violations:
-            all_violations.extend(viols)
+    def find_dominant_violation_pattern(self, all_candidate_violations: List[List[CompilerViolation]]) -> Optional[ViolationType]:
+        """Identifies the most frequent fatal/error violation type across failed candidates."""
+        counter: Counter = Counter()
+        for v_list in all_candidate_violations:
+            for v in v_list:
+                if v.severity in (Severity.FATAL, Severity.ERROR):
+                    counter[v.violation_type] += 1
 
-        if not all_violations:
-            return None, []
+        if counter:
+            return counter.most_common(1)[0][0]
+        return None
 
-        # Tally violation types, prioritizing FATAL over ERROR over WARNING
-        weighted_counts: Counter = Counter()
-        for v in all_violations:
-            weight = 3 if v.severity == Severity.FATAL else (2 if v.severity == Severity.ERROR else 1)
-            weighted_counts[v.violation_type] += weight
+    def generate_targeted_repair_directive(self, violations: List[CompilerViolation]) -> str:
+        """Constructs an actionable, specific prompt instruction from violation AST."""
+        if not violations:
+            return ""
 
-        dominant_type, _ = weighted_counts.most_common(1)[0]
-        matching_violations = [v for v in all_violations if v.violation_type == dominant_type]
-        return dominant_type, matching_violations
-
-    def generate_targeted_repair_instruction(
-        self,
-        dominant_type: Optional[ViolationType],
-        violations: List[CompilerViolation],
-        contract: Optional[SceneContract] = None,
-    ) -> str:
-        """Synthesizes a precise semantic directive for targeted LLM regeneration."""
-        if not violations or not dominant_type:
-            return "Ensure all actions respect physical proximity and scene contract objectives."
-
-        # Extract offending entities
-        entities = set()
+        directives = []
+        # Group by violation type
         for v in violations:
-            entities.update(v.involved_entities)
-        entity_str = ", ".join(sorted(entities)) if entities else "the characters"
+            if v.violation_type == ViolationType.EPISTEMIC_LEAK:
+                fact_desc = v.message
+                directives.append(
+                    f"• EPISTEMIC CONSTRAINT: {fact_desc} The POV character CANNOT know or speak of this unrevealed secret. "
+                    f"Remove any direct assertions or deductive claims about this secret while preserving dialogue."
+                )
+            elif v.violation_type == ViolationType.LOCATION_TELEPORTATION:
+                directives.append(
+                    f"• SPATIAL CONSTRAINT: {v.message} Characters cannot instantly appear in disconnected rooms. "
+                    f"Include physical transit through connected hallways or maintain the scene strictly in the designated room."
+                )
+            elif v.violation_type == ViolationType.POSSESSION_CONFLICT:
+                directives.append(
+                    f"• POSSESSION CONSTRAINT: {v.message} An object already held or out of reach cannot be taken without "
+                    f"an explicit handoff or picking it up from its actual location."
+                )
+            elif v.violation_type == ViolationType.VITALITY_BREACH:
+                directives.append(
+                    f"• VITALITY CONSTRAINT: {v.message} Deceased or incapacitated characters cannot speak or act physically."
+                )
+            elif v.violation_type == ViolationType.CONTRACT_BREACH:
+                directives.append(
+                    f"• SCENE CONTRACT OBJECTIVE: {v.message} Ensure this required interaction is clearly depicted in the scene."
+                )
+            else:
+                if v.suggested_repair:
+                    directives.append(f"• CONTINUITY: {v.suggested_repair}")
 
-        if dominant_type == ViolationType.EPISTEMIC_LEAK:
-            return (
-                f"### TARGETED COMPILER REPAIR — EPISTEMIC LEAK:\n"
-                f"One or more characters asserted confidential facts ({entity_str}) they cannot legitimately know. "
-                f"Preserve the scene's emotional tone and dialogue rhythm, but REMOVE or REPLACE the forbidden knowledge assertion. "
-                f"The character must remain unaware of this secret."
-            )
-
-        elif dominant_type == ViolationType.LOCATION_TELEPORTATION:
-            loc = contract.primary_location if contract else "the designated room"
-            return (
-                f"### TARGETED COMPILER REPAIR — SPATIAL CONTINUITY:\n"
-                f"Characters ({entity_str}) moved between disconnected locations without a valid path. "
-                f"Confine all interactions strictly to '{loc}' or describe a plausible physical transit before interacting."
-            )
-
-        elif dominant_type == ViolationType.POSSESSION_CONFLICT:
-            return (
-                f"### TARGETED COMPILER REPAIR — OBJECT POSSESSION:\n"
-                f"Conflict over physical props ({entity_str}). An object cannot be picked up if it is already held by someone else "
-                f"or located in another room. Include a verbal request or physical handoff before possession changes."
-            )
-
-        elif dominant_type == ViolationType.CONTRACT_BREACH:
-            req_changes = contract.required_state_changes if contract else []
-            req_str = str(req_changes) if req_changes else "mandatory objectives"
-            return (
-                f"### TARGETED COMPILER REPAIR — CONTRACT OBJECTIVES:\n"
-                f"The scene failed to fulfill required objectives: {req_str}. "
-                f"Ensure this exact state transition takes place clearly in the prose."
-            )
-
-        elif dominant_type == ViolationType.VITALITY_BREACH:
-            return (
-                f"### TARGETED COMPILER REPAIR — VITALITY ERROR:\n"
-                f"An incapacitated or deceased character ({entity_str}) attempted physical actions or speech. "
-                f"Ensure they remain passive, unconscious, or absent."
-            )
-
-        return (
-            f"### TARGETED COMPILER REPAIR:\n"
-            f"Fix the following continuity errors:\n"
-            + "\n".join([f"- {v.message}" for v in violations[:3]])
-        )
+        return "\n".join(directives)
 
     def generate_repair_summary(self, violations: List[CompilerViolation]) -> str:
-        """Formats human-readable summary for inspection."""
+        """Formats human-readable suggestions for multi-agent revision passes."""
         if not violations:
             return "No continuity violations detected."
 

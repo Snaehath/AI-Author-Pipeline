@@ -7,6 +7,7 @@ and fine-tuned LoRA adapter.
 
 import json
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Any, Optional
 
@@ -84,6 +85,7 @@ class StoryGenerator:
         if torch.cuda.is_available():
             inputs = {k: v.to("cuda") for k, v in inputs.items()}
 
+        t0 = time.time()
         with torch.no_grad():
             outputs = self.model.generate(
                 **inputs,
@@ -94,6 +96,16 @@ class StoryGenerator:
                 do_sample=True,
                 pad_token_id=self.tokenizer.pad_token_id,
             )
+        gen_time_ms = int((time.time() - t0) * 1000)
+
+        prompt_len = int(inputs["input_ids"].shape[-1])
+        total_len = int(outputs[0].shape[-1])
+        self.last_generation_stats = {
+            "prompt_tokens": prompt_len,
+            "completion_tokens": max(0, total_len - prompt_len),
+            "total_tokens": total_len,
+            "generation_time_ms": gen_time_ms,
+        }
 
         full_decoded = self.tokenizer.decode(outputs[0], skip_special_tokens=False)
         assistant_part = full_decoded.split("<|im_start|>assistant\n")[-1]

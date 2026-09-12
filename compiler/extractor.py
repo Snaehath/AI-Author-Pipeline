@@ -32,6 +32,7 @@ class StateExtractor:
         prose: str,
         contract: SceneContract,
         world: WorldState,
+        world_truth: Optional[Any] = None,
     ) -> CandidateDiff:
         """Extracts candidate events and builds a proposed StateDelta from prose text."""
         events: List[StoryEvent] = []
@@ -42,39 +43,42 @@ class StateExtractor:
         obj_name_map = {o.name.lower(): o.id for o in world.objects.values()}
         loc_name_map = {l.name.lower(): l.id for l in world.location_graph.nodes.values()}
 
-        # 1. Extract Movement Events
-        for pat in self.move_patterns:
+        # 1. Extract Movement Events (anchored to known locations in world)
+        for loc_name, loc_id in loc_name_map.items():
+            pat = re.compile(
+                rf"\b([A-Za-z]+)\s+(?:entered|walked into|stepped into|hurried to|went to)\s+(?:the\s+)?{re.escape(loc_name)}\b",
+                re.IGNORECASE,
+            )
             for match in pat.finditer(prose):
-                raw_actor, raw_loc = match.group(1).strip().lower(), match.group(2).strip().lower()
+                raw_actor = match.group(1).strip().lower()
                 actor_id = char_name_map.get(raw_actor)
                 if not actor_id and raw_actor in ["he", "she", "they", "the valet", "the master"]:
                     actor_id = contract.pov_character
-                loc_id = loc_name_map.get(raw_loc)
-                if actor_id and loc_id:
+                if actor_id:
                     origin = delta.location_changes.get(actor_id, world.get_character_location(actor_id))
-                    evt = StoryEvent(
-                        event_type=EventType.MOVE,
-                        actor=actor_id,
-                        origin=origin,
-                        destination=loc_id,
-                        scene_id=contract.scene_id,
-                    )
-                    events.append(evt)
-                    delta.location_changes[actor_id] = loc_id
+                    if origin != loc_id:
+                        evt = StoryEvent(
+                            event_type=EventType.MOVE,
+                            actor=actor_id,
+                            origin=origin,
+                            destination=loc_id,
+                            scene_id=contract.scene_id,
+                        )
+                        events.append(evt)
+                        delta.location_changes[actor_id] = loc_id
 
-        # 2. Extract Pick Up / Possession Events
-        for pat in self.pickup_patterns:
+        # 2. Extract Pick Up / Possession Events (anchored to known objects in world)
+        for obj_name, obj_id in obj_name_map.items():
+            pat = re.compile(
+                rf"\b([A-Za-z]+)\s+(?:picked up|took|lifted|grabbed|retrieved|pocketed|slipped|held)\s+(?:the\s+)?{re.escape(obj_name)}\b",
+                re.IGNORECASE,
+            )
             for match in pat.finditer(prose):
-                raw_actor, raw_obj = match.group(1).strip().lower(), match.group(2).strip().lower()
+                raw_actor = match.group(1).strip().lower()
                 actor_id = char_name_map.get(raw_actor)
                 if not actor_id and raw_actor in ["he", "she", "they", "the valet", "the master"]:
                     actor_id = contract.pov_character
-                obj_id = None
-                for name, oid in obj_name_map.items():
-                    if name in raw_obj or raw_obj in name:
-                        obj_id = oid
-                        break
-                if actor_id and obj_id:
+                if actor_id and obj_id in world.objects:
                     obj = world.objects[obj_id]
                     origin = delta.possession_changes.get(obj_id, obj.holder_id)
                     evt = StoryEvent(
@@ -93,7 +97,6 @@ class StateExtractor:
             actor = req.get("actor")
             target_obj = req.get("object")
             if req_type == "PICK_UP" and target_obj and actor:
-                # If target object is explicitly mentioned in the prose
                 obj = world.objects.get(target_obj)
                 if obj and (obj.name.lower() in prose.lower() or obj.id.lower() in prose.lower()):
                     if target_obj not in delta.possession_changes:
@@ -107,6 +110,24 @@ class StateExtractor:
                                 scene_id=contract.scene_id,
                             )
                         )
+
+        # 4. Extract Epistemic Fact Revelations / Dialogue Leaks
+        if world_truth and hasattr(world_truth, "facts"):
+            for fact_id, fact in world_truth.facts.items():
+                if fact.proposition.lower() in prose.lower():
+                    speaker_id = contract.pov_character
+                    for char_name, c_id in char_name_map.items():
+                        if re.search(rf"\b{re.escape(char_name)}\b[^.!?\n]*(?:shouted|said|exclaimed|whispered|cried)", prose, re.IGNORECASE) or \
+                           re.search(rf"(?:shouted|said|exclaimed)\s+\b{re.escape(char_name)}\b", prose, re.IGNORECASE):
+                            speaker_id = c_id
+                            break
+                    evt = StoryEvent(
+                        event_type=EventType.SAY,
+                        actor=speaker_id,
+                        payload={"fact_id": fact_id, "proposition": fact.proposition},
+                        scene_id=contract.scene_id,
+                    )
+                    events.append(evt)
 
         return CandidateDiff(
             scene_id=contract.scene_id,

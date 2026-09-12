@@ -76,6 +76,7 @@ class TestNovelBuilderV2(unittest.TestCase):
             self.assertTrue((out_path / "canonical_world_state.json").exists())
             self.assertTrue((out_path / "chapters" / "chapter_01.json").exists())
             self.assertTrue((out_path / "checkpoints" / "chapter_01" / "scene_001" / "manifest.json").exists())
+            self.assertTrue((out_path / "checkpoints" / "chapter_01" / "scene_001" / "selection_audit.json").exists())
 
 
 if __name__ == "__main__":

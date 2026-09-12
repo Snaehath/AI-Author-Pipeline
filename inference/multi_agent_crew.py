@@ -11,7 +11,7 @@ Pass 6: Subplot & Foreshadowing Weaver
 Pass 7: Final Prose Rhythm Polish
 """
 
-from typing import Optional
+from typing import Optional, Any
 from AI_Author.inference.generator import StoryGenerator
 from AI_Author.inference.blueprint_planner import ChapterBlueprint
 from AI_Author.utils.logger import setup_logger
@@ -31,18 +31,35 @@ class MultiAgentEditingCrew:
         blueprint: ChapterBlueprint,
         previous_context: str = "",
         rag_prompt: str = "",
+        variation_hint: str = "",
     ) -> str:
         """Runs multi-agent revision crew passes to produce publication-grade chapter prose."""
+        total_p_tok = 0
+        total_c_tok = 0
+        total_time = 0
+
+        def _get_stat(stats: Any, key: str) -> int:
+            if isinstance(stats, dict):
+                try:
+                    return int(stats.get(key, 0))
+                except (ValueError, TypeError):
+                    return 0
+            return 0
 
         # PASS 1: Writer Agent (Raw Chapter Expansion)
-        logger.info(f"[Pass 1/7] Writer Agent expanding raw draft for Ch.{blueprint.chapter_num}...")
+        logger.info(f"[Pass 1/7] Writer Agent expanding raw draft for Ch.{blueprint.chapter_num} (hint: {variation_hint or 'standard'})...")
+        summary_with_hint = f"{blueprint.goal}\n\nStyle Direction: {variation_hint}" if variation_hint else blueprint.goal
         raw_draft = self.generator.create_chapter(
             book_title=book_title,
             chapter_num=blueprint.chapter_num,
-            summary=blueprint.goal,
+            summary=summary_with_hint,
             previous_chapter_context=previous_context,
             character_bible_prompt=f"{blueprint.to_prompt_context()}\n\n{rag_prompt}",
         )
+        s1 = getattr(self.generator, "last_generation_stats", None)
+        total_p_tok += _get_stat(s1, "prompt_tokens")
+        total_c_tok += _get_stat(s1, "completion_tokens")
+        total_time += _get_stat(s1, "generation_time_ms")
 
         # PASS 2 & 3: Character & Dialogue Reviewer Agent
         logger.info(f"[Pass 2-3/7] Character & Dialogue Reviewer evaluating voice contrast...")
@@ -55,6 +72,10 @@ class MultiAgentEditingCrew:
             "Output 2 concise revision instructions."
         )
         voice_critique = self.generator._generate_response(review_prompt, "Review draft voice:", raw_draft[:1000])
+        s2 = getattr(self.generator, "last_generation_stats", None)
+        total_p_tok += _get_stat(s2, "prompt_tokens")
+        total_c_tok += _get_stat(s2, "completion_tokens")
+        total_time += _get_stat(s2, "generation_time_ms")
 
         # PASS 4 & 5: Comedy & Pacing Editor Agent
         logger.info(f"[Pass 4-5/7] Comedy & Pacing Editor evaluating setup/punchline timing...")
@@ -65,6 +86,10 @@ class MultiAgentEditingCrew:
             "Output 2 concise comedy polish notes."
         )
         comedy_notes = self.generator._generate_response(comedy_prompt, "Review comedy timing:", raw_draft[:1000])
+        s3 = getattr(self.generator, "last_generation_stats", None)
+        total_p_tok += _get_stat(s3, "prompt_tokens")
+        total_c_tok += _get_stat(s3, "completion_tokens")
+        total_time += _get_stat(s3, "generation_time_ms")
 
         # PASS 6 & 7: Final Master Polish Editor Agent (Enforce 10-12 word sentence cadence & 45-50% dialogue)
         logger.info(f"[Pass 6-7/7] Master Editor applying final prose rhythm polish & blueprint adherence...")
@@ -92,6 +117,17 @@ class MultiAgentEditingCrew:
             f"Write the full revised publication prose for Chapter {blueprint.chapter_num} of '{book_title}' (Goal: {blueprint.goal}):",
             raw_draft,
         )
+        s4 = getattr(self.generator, "last_generation_stats", None)
+        total_p_tok += _get_stat(s4, "prompt_tokens")
+        total_c_tok += _get_stat(s4, "completion_tokens")
+        total_time += _get_stat(s4, "generation_time_ms")
 
-        logger.info(f"✓ Chapter {blueprint.chapter_num} Multi-Agent Crew Revision Complete!")
+        self.last_crew_stats = {
+            "prompt_tokens": total_p_tok,
+            "completion_tokens": total_c_tok,
+            "total_tokens": total_p_tok + total_c_tok,
+            "generation_time_ms": total_time,
+        }
+
+        logger.info(f"✓ Chapter {blueprint.chapter_num} Multi-Agent Crew Revision Complete! ({total_p_tok + total_c_tok} tokens in {total_time}ms)")
         return polished_prose
