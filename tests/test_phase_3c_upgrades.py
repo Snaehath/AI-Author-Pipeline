@@ -207,3 +207,21 @@ class TestCalibrationRegressionSuite:
         assert rec is not None
         assert rec.craft.craft_presence == CraftPresence.YES
         assert rec.craft.primary_mechanism == ComicMechanism.ESCALATION
+
+    def test_phase_3c_regression_benchmark_runner(self):
+        """Validates that Phase3CRegressionBenchmark computes the canonical benchmark report with 0 failure cases."""
+        from dataset_generator.phase_3c_benchmark import Phase3CRegressionBenchmark
+
+        benchmark = Phase3CRegressionBenchmark()
+        metrics = benchmark.run()
+        report = benchmark.generate_report(metrics)
+
+        assert metrics["total_items"] == 50
+        assert metrics["duplicate_detection"]["exact_duplicates"] == 6
+        assert metrics["comedic_presence"]["yes_precision"] == 100.0
+        assert metrics["comedic_presence"]["partial_routing_pct"] == 100.0
+        assert metrics["foundation_purity"]["false_positives"] == 0
+        assert metrics["known_failure_cases"]["drama_to_comedy"] == 0
+        assert metrics["known_failure_cases"]["action_to_physical"] == 0
+        assert metrics["known_failure_cases"]["progression_to_escalation"] == 0
+        assert "=== Phase 3C Regression ===" in report

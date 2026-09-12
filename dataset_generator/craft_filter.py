@@ -52,9 +52,9 @@ class ComedyCraftEligibilityGate:
         "landlady", "marriage", "engagement", "refusal", "polite society"
     ]
 
-    PASS_THRESHOLD = 0.52
-    REJECT_THRESHOLD = 0.32
-    MAX_SERIOUS_DRAMA_TOLERANCE = 0.50
+    PASS_THRESHOLD = 0.36
+    REJECT_THRESHOLD = 0.26
+    MAX_SERIOUS_DRAMA_TOLERANCE = 0.45
 
     def evaluate(self, text: str, facts: StoryFacts) -> Tuple[CraftPresence, Dict[str, float], str]:
         """
@@ -63,6 +63,8 @@ class ComedyCraftEligibilityGate:
             (CraftPresence, score_breakdown, rationale)
         """
         lower = text.lower()
+        words = lower.split()
+        word_count = max(1, len(words))
 
         # 1. Character Interaction Signal [0.0, 1.0]
         # Evaluates presence of active characters, dialogue, and conversational turn-taking
@@ -84,13 +86,18 @@ class ComedyCraftEligibilityGate:
         # 2. Comedic Signal [0.0, 1.0]
         # Evaluates explicit comedic markers, humor vernacular, and ironical framing
         comedic_matches = sum(1 for m in self.COMEDIC_LEXICON_MARKERS if m in lower)
+        # Normalize density for abnormally long non-fiction extracts
+        if word_count > 500:
+            comedic_matches = min(comedic_matches, int(comedic_matches * 500 / word_count))
         # Check conversational wit patterns (e.g. quote + observed/murmured/retorted)
-        has_witty_dialogue = bool(re.search(r'["\'].*?["\']\s*(?:observed|murmured|retorted|suggested|submitted|said)', lower))
+        has_witty_dialogue = bool(re.search(r'["\'].*?["\']\s*(?:observed|murmured|retorted|suggested|submitted|said|replied)', lower))
         comedic_score = min(1.0, (comedic_matches * 0.18) + (0.25 if has_witty_dialogue else 0.0))
 
         # 3. Comic Stakes Signal [0.0, 1.0]
         # Focus on domestic, social, bureaucratic, or etiquette friction rather than physical peril
         stakes_matches = sum(1 for m in self.COMIC_STAKES_MARKERS if m in lower)
+        if word_count > 500:
+            stakes_matches = min(stakes_matches, int(stakes_matches * 500 / word_count))
         stakes_score = min(1.0, stakes_matches * 0.25)
 
         # 4. Tonal Compatibility [0.0, 1.0]
@@ -108,13 +115,13 @@ class ComedyCraftEligibilityGate:
 
         # Structural check for non-fiction citations (e.g. "[1]", "(1895)", "pp. 12-14")
         has_citations = bool(re.search(r'\[\d+\]|\(\d{4}\)|pp\.\s*\d+|vol\.\s*[ivxlcdm]+', lower))
-        if has_citations:
+        if has_citations or history_matches >= 2:
             history_matches += 3
 
         drama_score = min(1.0, (horror_matches * 0.25) + (history_matches * 0.30))
 
         # Attenuation: if strong comedic cues accompany dramatic words (e.g. playful exaggeration)
-        if comedic_score >= 0.60 and horror_matches <= 2:
+        if comedic_score >= 0.60 and horror_matches <= 2 and history_matches == 0:
             drama_score = max(0.0, drama_score - 0.20)
 
         # Composite Eligibility Score
@@ -137,8 +144,11 @@ class ComedyCraftEligibilityGate:
         }
 
         # Gate Verdict
-        if drama_score >= self.MAX_SERIOUS_DRAMA_TOLERANCE and comedic_score < 0.45:
-            return CraftPresence.NO, scores, f"Rejected: High serious drama / historical signal ({drama_score})"
+        if history_matches >= 3:
+            return CraftPresence.NO, scores, f"Rejected: Historical/academic non-fiction apparatus ({history_matches})"
+
+        if drama_score >= 0.60 or (drama_score >= self.MAX_SERIOUS_DRAMA_TOLERANCE and horror_matches >= 2):
+            return CraftPresence.NO, scores, f"Rejected: High serious drama signal ({drama_score})"
 
         if composite_score >= self.PASS_THRESHOLD:
             return CraftPresence.YES, scores, f"Passed: High comedic craft signal ({composite_score})"

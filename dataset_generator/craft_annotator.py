@@ -147,16 +147,18 @@ class ComedyCraftAnnotator:
             # PARTIAL is a human-review state, excluded from automatic SFT
             stratum = CraftStratum.REJECT
             review_status = ReviewStatus.FLAGGED_LOW_CONFIDENCE
+        elif presence == CraftPresence.NO:
+            stratum = CraftStratum.REJECT
+            review_status = ReviewStatus.REJECTED
         else:
             # Check for Pure vs Composite
-            # Pure: single dominant mechanism (top >= 0.60 and gap to 2nd >= 0.15)
             second_conf = sorted_mechs[1][1] if len(sorted_mechs) > 1 else 0.0
-            if primary_conf >= 0.60 and (primary_conf - second_conf >= 0.15):
-                stratum = CraftStratum.PURE_MECHANISM
-            elif primary_conf >= 0.50 and second_conf >= 0.45:
+            if primary_conf >= 0.50 and second_conf >= 0.25:
                 stratum = CraftStratum.COMPOSITE_CRAFT
-            else:
+            elif primary_conf >= 0.50 and (primary_conf - second_conf >= 0.25):
                 stratum = CraftStratum.PURE_MECHANISM
+            else:
+                stratum = CraftStratum.COMPOSITE_CRAFT
 
             review_status = (
                 ReviewStatus.FLAGGED_LOW_CONFIDENCE
