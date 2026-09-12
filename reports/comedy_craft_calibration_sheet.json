@@ -17,18 +17,20 @@
       "payoff": "I made them as distinct as they are in the original insect, and I presume that is sufficient,\" But where are the antennae you spoke of?\" \"The antennae!\" said Legrand, who seemed to be getting unaccountably warm upon the subject; \"Well, well,\" I said, \"perhaps you have - still I don't see them;\" and I handed him the paper without additional remark, not wishing to ruffle his temper; but I was much surprised at the turn affairs had taken; his ill humor puzzled me - and, as for the drawing of the beetle, there were positively NO antennae visible, and the whole DID bear a very close resemblance to the ordinary cuts of a death's head."
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "MISUNDERSTANDING is present but DEADPAN_REACTION to disproportionate irritation is the stronger comedic mechanism."
     }
   },
   {
@@ -49,18 +51,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I want you to be the life and soul of brilliant supper parties,\" \" Above all, I ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "STATUS_REVERSAL",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 7,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 8,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Reversal of allowance relationship: recipient instructed to live benefactor fantasy life."
     }
   },
   {
@@ -81,18 +85,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Reggie, I'm going round to the Coliseum this minute, and I'm going to dig the da...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Disproportionate escalation of minor theatrical clue into serious investigation."
     }
   },
   {
@@ -113,18 +119,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'To me it was the turn of a die, for I had had no leisure to look at the ring, an...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "MISUNDERSTANDING",
+      "human_secondary_mechanisms": [
+        "DRAMATIC_IRONY"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 7,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 8,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "MISUNDERSTANDING is defensible, but DRAMATIC_IRONY (bluffing with uncomprehended ring) is a critical supporting feature."
     }
   },
   {
@@ -145,18 +153,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: '.\" At this moment, apparently from some upper region, there burst\nforth an uproa...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "DRAMATIC_IRONY",
+      "human_secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "STATUS_REVERSAL",
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": false,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Structurally dense composite scene dominated by DRAMATIC_IRONY rather than single-mechanism MISUNDERSTANDING."
     }
   },
   {
@@ -177,18 +189,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Well?\" \"Why should not the young lady write a small volume, to be entitled - let...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DRAMATIC_IRONY"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 8,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Overheard neighbor complaint converted into verbal wit book dedication; not STATUS_REVERSAL."
     }
   },
   {
@@ -209,18 +223,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Well?\" \"Why should not the young lady write a small volume, to be entitled - let...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DRAMATIC_IRONY"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Near-duplicate of Item 6 across different book editions. Must be rejected to avoid duplicate weighting."
     }
   },
   {
@@ -241,18 +257,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'aint dis here my lef eye for sartain?\" roared the terrified Jupiter, placing his...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "MISUNDERSTANDING",
+      "human_secondary_mechanisms": [
+        "PHYSICAL_COMPLICATION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Terrified character pointing to right eye when asked for left is MISUNDERSTANDING under stress, not STATUS_REVERSAL."
     }
   },
   {
@@ -276,18 +294,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: '42....'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 2,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Editorial/historical citation section. Complete false positive for comedic craft."
     }
   },
   {
@@ -308,18 +326,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'They worked with the haste of desperate men, making cages out of soap boxes, cra...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION",
+        "VERBAL_WIT",
+        "STATUS_REVERSAL"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Flawless Pigs Is Pigs bureaucratic escalation example. Misclassified by AI as STATUS_REVERSAL."
     }
   },
   {
@@ -340,18 +362,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I am not this villain....'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 5,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Dramatic/accusation scene; not comedic craft. False positive."
     }
   },
   {
@@ -372,18 +394,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I suppose it seems rummy to you,\" I said, \"but the fact is New York often bucks ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 8,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Strongest transferable feature is verbal wit and matter-of-fact characterization of Bicky incompetence."
     }
   },
   {
@@ -404,18 +428,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I suppose it seems rummy to you,\" I said, \"but the fact is New York often bucks ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Near-duplicate of Item 12. Must be rejected to avoid near-duplicate bias."
     }
   },
   {
@@ -436,18 +462,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Ann had gone....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT",
+        "STATUS_REVERSAL",
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Very rich multi-stage composite comic construction. Jimmy escalates argument, Ann reverses dynamic."
     }
   },
   {
@@ -468,18 +498,18 @@
       "payoff": "\"day,\" \" When he says that such and such things happened, I believe him to mean that they actually occurred and not that he imagined or dreamed them; when he says I believe he uses the word in the popular sense; when he says \"made\" or \"created,\" I believe he means that they came into being by a process analogous to that which the people whom he addressed called \"making\" or \"creating\"; and I think that, unless we forget our present knowledge of nature, and, putting ourselves back into the position of a Phoenician or a Chaldaean philosopher, start from his conception of the world, we shall fail to grasp the meaning of the Hebrew writer."
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 3,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Explanatory/philosophical passage. Narrative progression != comedic escalation. False positive."
     }
   },
   {
@@ -500,18 +530,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'With the rest of the adventure I believe you are as well acquainted as myself,\" ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Strong example of deadpan delivery: extraordinary circumstances narrated matter-of-factly."
     }
   },
   {
@@ -532,18 +564,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You'd hardly believe how difficult it was to interest the public and make them t...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Strong example of understated narration (market opened quietly applied to disaster) + semantic reframing."
     }
   },
   {
@@ -564,18 +598,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You'd hardly believe how difficult it was to interest the public and make them t...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Annotation itself is accurate, but record is a duplicate of Item 17. Reject duplicate."
     }
   },
   {
@@ -598,18 +634,23 @@
       "payoff": "Comedic resolution or deadpan beat lands: '\"I guess I'll beat 't,\" she observed caustically, \"before it\nturns out that I'm ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "ESCALATION",
+        "MISUNDERSTANDING",
+        "STATUS_REVERSAL",
+        "PHYSICAL_COMPLICATION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Deadpan reaction present (Miss Trimble), but scene is an escalating farce composite. Keep for composite training."
     }
   },
   {
@@ -633,18 +674,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'He is my husband.\"...'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 7,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Adventure/drama sequence (imprisonment, execution threat). Not a deadpan comedy example."
     }
   },
   {
@@ -665,18 +706,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Murderers lurked in my closet....'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 2,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Dramatic/horror misunderstanding (closet murderers). Dramatic absurdity != social embarrassment. False positive."
     }
   },
   {
@@ -697,18 +738,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Little by little, if you use your will - - \" I can't help thinking it must have ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "MISUNDERSTANDING"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 7,
+      "human_training_value": 7,
+      "human_mechanism_confidence": 8,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Exploitation of word will. Closer to verbal wit/linguistic misunderstanding than social embarrassment."
     }
   },
   {
@@ -729,18 +772,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You'll come along, won't you, [PROTAGONIST], and have a drink at the flat?\" I ha...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Wildly miserable party described with understated seriousness; deadpan framing."
     }
   },
   {
@@ -764,18 +809,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'They were\nraising the scaffold....'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 8,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Dramatic/historical material (imprisonment, scaffold, execution). High AI confidence (0.91) but completely wrong."
     }
   },
   {
@@ -799,18 +844,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: '\"Other people's misfortune, too!\" he said....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "STATUS_REVERSAL",
+      "human_secondary_mechanisms": [
+        "ESCALATION",
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Superb multi-mechanism comic sequence. Keep as COMPOSITE_CRAFT, not pure SOCIAL_EMBARRASSMENT."
     }
   },
   {
@@ -831,18 +880,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'You think to reconcile me with this wretched girl by trumping up this story that...'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 5,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Bitter dramatic confrontation/sarcasm, not comic verbal wit. Irony != verbal wit != comedy."
     }
   },
   {
@@ -865,18 +914,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'For once, he\nwas fifty years in advance of his time....'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 6,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Historical/political commentary. Literary wit in prose != usable bounded comedy craft scene."
     }
   },
   {
@@ -897,18 +946,18 @@
       "payoff": "\"[COMPANION_B] retorted on [COMPANION_A];,\" \"Well, I don't see how _you_ can know much about it, one way or the\nother, for I'm blest if you haven't been\nasleep half the time."
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 7,
+      "human_training_value": 6,
+      "human_mechanism_confidence": 8,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Conversational put-down (asleep half the time). Legitimate verbal wit, but short and context-dependent."
     }
   },
   {
@@ -929,18 +978,18 @@
       "payoff": "How dirty he has made it!\"  Tsiganok retorted quickly:  \"You've made the whole world dirty, you fat-face, and yet I haven't said anything to you"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 8,
+      "human_training_value": 8,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Compact retort-based verbal wit: dirt expanded to making whole world dirty. Pure mechanism."
     }
   },
   {
@@ -961,18 +1010,18 @@
       "payoff": "By the strange irony of fortune, it fell to the lot of Thomas Offley to perform the duties of sheriff at Dudley's execution, although he had himself been one of the supporters of the Lady Jane in her claim to the crown"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 3,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Historical irony (strange irony of fortune), not a comedic scene. Reversal/irony != comedy."
     }
   },
   {
@@ -993,18 +1042,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'First rehearsal for lines and business eleven sharp to-morrow,\" Poor old Freddie...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "DRAMATIC_IRONY",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Audience understands scheme while Freddie kept in dark. Matter-of-fact rehearsal language. Pure mechanism."
     }
   },
   {
@@ -1025,18 +1076,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'First rehearsal for lines and business eleven sharp to-morrow,\" Poor old Freddie...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "DRAMATIC_IRONY",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 5,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Source text identical to Item 31. Near-duplicate across book editions. Reject from independent craft pool."
     }
   },
   {
@@ -1057,18 +1110,18 @@
       "payoff": "\"that wolde a been qwene,\" In the meanwhile the aged Cranmer and the youthful Lady Jane Grey--she her husband and two of her husband's brothers\nhad been brought to trial at the Guildhall (13 Nov)."
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 2,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Historical narrative without comic setup/payoff. Historical contradiction != dramatic irony. False positive."
     }
   },
   {
@@ -1089,18 +1142,18 @@
       "payoff": "\"Capital,\" He could not\nafterwards remember to have heard the name of Karl Marx mentioned, or\nthe title of He was equally ignorant of Auguste Comte."
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 3,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Fragmentary historical/intellectual exposition. No coherent comedic scene structure. False positive."
     }
   },
   {
@@ -1121,18 +1174,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I can hear your heart beating with fear this moment....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "DIALOGUE_SUBTEXT",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Lady dialogue simultaneously discusses room and exposes awareness of fear. Surface politeness vs underlying teasing."
     }
   },
   {
@@ -1153,18 +1208,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'He stole\ndownstairs....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT",
+        "STATUS_REVERSAL"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Cookbook reading, digestive misery, physical culture obsession, snore. Excellent composite craft; DIALOGUE_SUBTEXT too narrow."
     }
   },
   {
@@ -1185,18 +1243,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Long before Professor Gordon received the president's letter Morgan received one...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "CALLBACK",
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Pigs Is Pigs continued: guinea pig population expands, inspector arrives, elephant comparison. Flagship escalation exemplar."
     }
   },
   {
@@ -1217,18 +1278,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'In private, however, he evidently relaxed to some extent, and to have that sort ...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "DIALOGUE_SUBTEXT",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Voules stiff official persona vs private situation (talking like a statue). Pure dialogue subtext mechanism."
     }
   },
   {
@@ -1249,18 +1312,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Short, crisp, and has the punch,\" \"But, Jimmy, old top,\" I said, \"the only objec...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT",
+        "STATUS_REVERSAL"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Elaborate theatrical manipulation designed while practical problem is afterthought; girl cannot be gotten to cottage. Superb craft."
     }
   },
   {
@@ -1281,18 +1347,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'It was a bit hard on a chap,\" This is a surprise, what?\" I said, after about fiv...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT",
+        "SOCIAL_EMBARRASSMENT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Restarting conversation after 5 minutes of silence; umbrella held like hammer-thrower. Deadpan social comedy."
     }
   },
   {
@@ -1313,18 +1382,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'It was a bit hard on a chap,\" This is a surprise, what?\" I said, after about fiv...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 5,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Same source passage as Item 40 across editions. Reject duplicate."
     }
   },
   {
@@ -1345,18 +1416,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I do want you so much, so much, Dick!\" The man shifted his right arm quickly, sl...'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 2,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Violent dramatic scene, no comedic payoff. Sudden reversal misclassified as callback. False positive."
     }
   },
   {
@@ -1377,18 +1448,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'What if thim dago pigs had been elephants!\"...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "ESCALATION",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Second guinea-pig passage. Flawless recursive escalation exemplar. Benchmark for GENERATE_FROM_STRUCTURE."
     }
   },
   {
@@ -1411,18 +1484,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Pett hung up the receiver....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "MISUNDERSTANDING",
+      "human_secondary_mechanisms": [
+        "STATUS_REVERSAL",
+        "VERBAL_WIT",
+        "ESCALATION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Driven by Mrs. Pett incorrect interpretation. Composite craft; callback is not central mechanism."
     }
   },
   {
@@ -1443,18 +1520,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'I do want you so much, so much, Dick!\" The man shifted his right arm quickly, sl...'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 1,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Continuation of 42: romantic dialogue followed by murder. Physical action/violence != farce/physical comedy. False positive."
     }
   },
   {
@@ -1475,18 +1552,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'And you call this thing pretty soft for me!,\" I felt rather like Lot's friends m...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 9,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "A_DETECTOR_FAILURE",
+      "notes": "Escalating description of NY (moral delirium tremens, biblical comparison). Verbal escalation, not physical complication."
     }
   },
   {
@@ -1507,18 +1586,20 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'And you call this thing pretty soft for me!,\" I felt rather like Lot's friends m...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "DISAGREE",
+      "human_primary_mechanism": "VERBAL_WIT",
+      "human_secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 9,
+      "human_training_value": 5,
+      "human_mechanism_confidence": 9,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Duplicate of Item 46 across books. Reject duplicate."
     }
   },
   {
@@ -1541,18 +1622,18 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'It is a foolish\nexercise, Müller, but it can't be helped, - we have to do it.\" H...'"
     },
     "human_audit": {
-      "verdict": null,
+      "verdict": "DISAGREE",
       "human_primary_mechanism": null,
       "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "human_literary_quality": 7,
+      "human_training_value": 1,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "F_REJECT_EXAMPLE",
+      "notes": "Serious psychological passage on fear of death. Physical exercises mapped erroneously to physical complication. False positive."
     }
   },
   {
@@ -1573,18 +1654,22 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'His heart was in the country and\nthe city held no fascinations for him....'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
-      "disagreement_category": null,
-      "notes": ""
+      "verdict": "PARTIAL",
+      "human_primary_mechanism": "DEADPAN_REACTION",
+      "human_secondary_mechanisms": [
+        "STATUS_REVERSAL",
+        "VERBAL_WIT",
+        "SOCIAL_EMBARRASSMENT"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
+      "disagreement_category": "E_COMPETING_MECHANISMS",
+      "notes": "Character-based deadpan: Freddie irresponsible behavior vs father restrained reactions. Composite craft."
     }
   },
   {
@@ -1605,18 +1690,21 @@
       "payoff": "Comedic resolution or deadpan beat lands: '\"You know!\" THE END...'"
     },
     "human_audit": {
-      "verdict": null,
-      "human_primary_mechanism": null,
-      "human_secondary_mechanisms": [],
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "human_literary_quality": null,
-      "human_training_value": null,
-      "human_mechanism_confidence": null,
+      "verdict": "AGREE",
+      "human_primary_mechanism": "STATUS_REVERSAL",
+      "human_secondary_mechanisms": [
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "human_literary_quality": 10,
+      "human_training_value": 10,
+      "human_mechanism_confidence": 10,
       "disagreement_category": null,
-      "notes": ""
+      "notes": "Subordinate Jeeves-like character demonstrating superior intellect while narrator becomes humble; tie recommendation payoff. Strong KEEP."
     }
   }
 ]
