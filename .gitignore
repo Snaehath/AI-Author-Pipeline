@@ -68,3 +68,10 @@ datasets/
 models/
 outputs/
 *.log
+
+# Experiment generated runs & checkpoints
+experiments/**/baseline/
+experiments/**/stateful/
+experiments/**/bon/
+experiments/**/checkpoints/
+

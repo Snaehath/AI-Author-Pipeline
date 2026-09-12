@@ -1,0 +1,132 @@
+{
+  "experiment_id": "experiment_001",
+  "total_evaluated_scenes": 20,
+  "mock_mode": true,
+  "systems": {
+    "baseline": {
+      "system_id": "baseline",
+      "system_name": "Baseline (1.5B)",
+      "total_scenes": 20,
+      "valid_scenes": 4,
+      "vsr_percent": 20.0,
+      "cav_score": 1.7873,
+      "violations": {
+        "total": 24,
+        "per_scene": 1.2,
+        "fatal": 20,
+        "error": 4,
+        "warning": 0,
+        "by_type": {
+          "EPISTEMIC_LEAK": 15,
+          "CONTRACT_BREACH": 9
+        }
+      },
+      "token_economics": {
+        "total_prompt_tokens": 1678,
+        "total_completion_tokens": 560,
+        "total_tokens": 2238,
+        "avg_tokens_per_scene": 111.9,
+        "total_latency_ms": 0,
+        "avg_latency_ms_per_scene": 0.0,
+        "total_repair_tokens": 0
+      },
+      "quality": {
+        "avg_quality_score": 0.35,
+        "avg_efficiency_score": 0.5
+      },
+      "search_dynamics": {
+        "candidates_generated": 20,
+        "candidates_rejected": 16,
+        "rejection_rate_percent": 80.0,
+        "repair_attempts": 0,
+        "repair_successes": 0,
+        "repair_rate_percent": 0.0,
+        "repair_success_rate_percent": 0.0
+      }
+    },
+    "stateful": {
+      "system_id": "stateful",
+      "system_name": "Stateful (1.5B)",
+      "total_scenes": 20,
+      "valid_scenes": 15,
+      "vsr_percent": 75.0,
+      "cav_score": 6.6875,
+      "violations": {
+        "total": 10,
+        "per_scene": 0.5,
+        "fatal": 4,
+        "error": 6,
+        "warning": 0,
+        "by_type": {
+          "LOCATION_TELEPORTATION": 4,
+          "POSSESSION_CONFLICT": 4,
+          "CONTRACT_BREACH": 2
+        }
+      },
+      "token_economics": {
+        "total_prompt_tokens": 1964,
+        "total_completion_tokens": 279,
+        "total_tokens": 2243,
+        "avg_tokens_per_scene": 112.2,
+        "total_latency_ms": 0,
+        "avg_latency_ms_per_scene": 0.0,
+        "total_repair_tokens": 0
+      },
+      "quality": {
+        "avg_quality_score": 0.35,
+        "avg_efficiency_score": 0.5
+      },
+      "search_dynamics": {
+        "candidates_generated": 20,
+        "candidates_rejected": 5,
+        "rejection_rate_percent": 25.0,
+        "repair_attempts": 0,
+        "repair_successes": 0,
+        "repair_rate_percent": 0.0,
+        "repair_success_rate_percent": 0.0
+      }
+    },
+    "bon": {
+      "system_id": "bon",
+      "system_name": "Compiler-Guided BoN (1.5B)",
+      "total_scenes": 20,
+      "valid_scenes": 16,
+      "vsr_percent": 80.0,
+      "cav_score": 2.0248,
+      "violations": {
+        "total": 5,
+        "per_scene": 0.25,
+        "fatal": 1,
+        "error": 4,
+        "warning": 0,
+        "by_type": {
+          "CONTRACT_BREACH": 3,
+          "LOCATION_TELEPORTATION": 1,
+          "POSSESSION_CONFLICT": 1
+        }
+      },
+      "token_economics": {
+        "total_prompt_tokens": 6985,
+        "total_completion_tokens": 917,
+        "total_tokens": 7902,
+        "avg_tokens_per_scene": 395.1,
+        "total_latency_ms": 0,
+        "avg_latency_ms_per_scene": 0.0,
+        "total_repair_tokens": 599
+      },
+      "quality": {
+        "avg_quality_score": 0.28,
+        "avg_efficiency_score": 0.19
+      },
+      "search_dynamics": {
+        "candidates_generated": 65,
+        "candidates_rejected": 38,
+        "rejection_rate_percent": 58.46,
+        "repair_attempts": 5,
+        "repair_successes": 1,
+        "repair_rate_percent": 25.0,
+        "repair_success_rate_percent": 20.0
+      }
+    }
+  }
+}

@@ -1,0 +1,407 @@
+[
+  {
+    "scene_id": "scene_001",
+    "category": "spatial",
+    "title": "Adjoining Transit to the Library",
+    "description": "Lord Reginald leaves the Drawing Room and walks directly into the connected Library.",
+    "stress_test_objective": "Test valid single-edge spatial transit along location graph.",
+    "contract": {
+      "scene_id": "scene_001",
+      "chapter_num": 1,
+      "scene_num": 1,
+      "pov_character": "lord_reginald",
+      "primary_location": "library",
+      "allowed_participants": ["lord_reginald", "barnaby"],
+      "allowed_props": ["urgent_blue_envelope"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "lord_reginald", "destination": "library"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Reflective & Curious"
+    }
+  },
+  {
+    "scene_id": "scene_002",
+    "category": "spatial",
+    "title": "Hallway Descent Toward Cellar",
+    "description": "Barnaby navigates from the Drawing Room through the Hallway to access the Cellar door.",
+    "stress_test_objective": "Test multi-hop connected spatial transit without skipping Hallway intermediary.",
+    "contract": {
+      "scene_id": "scene_002",
+      "chapter_num": 1,
+      "scene_num": 2,
+      "pov_character": "barnaby",
+      "primary_location": "hallway",
+      "allowed_participants": ["barnaby"],
+      "allowed_props": [],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "barnaby", "destination": "hallway"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Cautious & Quiet"
+    }
+  },
+  {
+    "scene_id": "scene_003",
+    "category": "spatial",
+    "title": "Traversing Library to the Study",
+    "description": "Inspector Higgins steps from the Library into the private Study to examine the ledgers.",
+    "stress_test_objective": "Test localized transition into a terminal room node (Study).",
+    "contract": {
+      "scene_id": "scene_003",
+      "chapter_num": 1,
+      "scene_num": 3,
+      "pov_character": "inspector_higgins",
+      "primary_location": "study",
+      "allowed_participants": ["inspector_higgins"],
+      "allowed_props": ["scotland_yard_badge"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "inspector_higgins", "destination": "study"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Analytical & Suspicious"
+    }
+  },
+  {
+    "scene_id": "scene_004",
+    "category": "spatial",
+    "title": "The Disconnected Room Barrier",
+    "description": "Lord Reginald in the Drawing Room must NOT teleport directly into the Cellar without entering Hallway.",
+    "stress_test_objective": "Teleportation trap: verify rejection of illegal non-adjacent transit.",
+    "contract": {
+      "scene_id": "scene_004",
+      "chapter_num": 1,
+      "scene_num": 4,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald"],
+      "allowed_props": [],
+      "required_state_changes": [],
+      "forbidden_revelations": [],
+      "target_mood": "Apprehensive"
+    }
+  },
+  {
+    "scene_id": "scene_005",
+    "category": "spatial",
+    "title": "Return to the Dining Room",
+    "description": "Lady Beatrice gracefully steps from the Drawing Room into the Dining Room for afternoon tea.",
+    "stress_test_objective": "Test adjacent node movement with secondary cast member.",
+    "contract": {
+      "scene_id": "scene_005",
+      "chapter_num": 1,
+      "scene_num": 5,
+      "pov_character": "lady_beatrice",
+      "primary_location": "dining_room",
+      "allowed_participants": ["lady_beatrice", "lord_reginald"],
+      "allowed_props": [],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "lady_beatrice", "destination": "dining_room"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Polite & Conversational"
+    }
+  },
+  {
+    "scene_id": "scene_006",
+    "category": "possession",
+    "title": "Retrieving the Silver Teapot",
+    "description": "Lord Reginald is in the Drawing Room and picks up the Prized Silver Teapot from the table.",
+    "stress_test_objective": "Test valid physical pick-up of an unheld co-located object.",
+    "contract": {
+      "scene_id": "scene_006",
+      "chapter_num": 2,
+      "scene_num": 1,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "barnaby"],
+      "allowed_props": ["silver_teapot"],
+      "required_state_changes": [
+        {"type": "PICK_UP", "actor": "lord_reginald", "object": "silver_teapot"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Triumphant"
+    }
+  },
+  {
+    "scene_id": "scene_007",
+    "category": "possession",
+    "title": "Exclusive Holder Conflict Trap",
+    "description": "Barnaby cannot directly pick up the Scotland Yard Badge held by Inspector Higgins without a transfer.",
+    "stress_test_objective": "Test INV_POSSESSION_EXCLUSIVE: verify rejection of dual-holder attempts.",
+    "contract": {
+      "scene_id": "scene_007",
+      "chapter_num": 2,
+      "scene_num": 2,
+      "pov_character": "barnaby",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["barnaby", "inspector_higgins"],
+      "allowed_props": ["scotland_yard_badge"],
+      "required_state_changes": [],
+      "forbidden_revelations": [],
+      "target_mood": "Tense Interrogation"
+    }
+  },
+  {
+    "scene_id": "scene_008",
+    "category": "possession",
+    "title": "Cooperative Envelope Transfer",
+    "description": "Lord Reginald hands the urgent blue envelope to Barnaby for safekeeping.",
+    "stress_test_objective": "Test transfer of possession between cooperating characters.",
+    "contract": {
+      "scene_id": "scene_008",
+      "chapter_num": 2,
+      "scene_num": 3,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "barnaby"],
+      "allowed_props": ["urgent_blue_envelope"],
+      "required_state_changes": [
+        {"type": "PICK_UP", "actor": "barnaby", "object": "urgent_blue_envelope"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Confidential & Conspiratorial"
+    }
+  },
+  {
+    "scene_id": "scene_009",
+    "category": "possession",
+    "title": "Remote Pickup Proximity Trap",
+    "description": "Character in Drawing Room attempts to take an object located far away in the Library.",
+    "stress_test_objective": "Test INV_POSSESSION_PROXIMITY: actor cannot pick up object without co-location.",
+    "contract": {
+      "scene_id": "scene_009",
+      "chapter_num": 2,
+      "scene_num": 4,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald"],
+      "allowed_props": [],
+      "required_state_changes": [],
+      "forbidden_revelations": [],
+      "target_mood": "Frustrated & Distracted"
+    }
+  },
+  {
+    "scene_id": "scene_010",
+    "category": "possession",
+    "title": "Sequential Object Reassignment",
+    "description": "Barnaby places the blue envelope upon the desk and inspects the silver teapot.",
+    "stress_test_objective": "Test multi-event state delta with possession and location tracking.",
+    "contract": {
+      "scene_id": "scene_010",
+      "chapter_num": 2,
+      "scene_num": 5,
+      "pov_character": "barnaby",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["barnaby"],
+      "allowed_props": ["urgent_blue_envelope", "silver_teapot"],
+      "required_state_changes": [
+        {"type": "PICK_UP", "actor": "barnaby", "object": "silver_teapot"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Meticulous & Dutiful"
+    }
+  },
+  {
+    "scene_id": "scene_011",
+    "category": "epistemic",
+    "title": "Private Knowledge Sanctuary",
+    "description": "Barnaby and Reginald converse while preserving the private secret that the teapot was mislaid.",
+    "stress_test_objective": "Test adherence to forbidden fact revelation under pressure.",
+    "contract": {
+      "scene_id": "scene_011",
+      "chapter_num": 3,
+      "scene_num": 1,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "barnaby"],
+      "allowed_props": ["urgent_blue_envelope"],
+      "required_state_changes": [],
+      "forbidden_revelations": ["fact_teapot_mislaid"],
+      "target_mood": "Whispered Discretion"
+    }
+  },
+  {
+    "scene_id": "scene_012",
+    "category": "epistemic",
+    "title": "Under the Inspector's Gaze",
+    "description": "Inspector Higgins aggressively questions Lord Reginald about missing estate valuables.",
+    "stress_test_objective": "Test resistance to epistemic leak under hostile interrogation prompt.",
+    "contract": {
+      "scene_id": "scene_012",
+      "chapter_num": 3,
+      "scene_num": 2,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "inspector_higgins"],
+      "allowed_props": ["scotland_yard_badge"],
+      "required_state_changes": [],
+      "forbidden_revelations": ["fact_teapot_mislaid"],
+      "target_mood": "Tense & Defensive"
+    }
+  },
+  {
+    "scene_id": "scene_013",
+    "category": "epistemic",
+    "title": "Innocent Witness in the Parlor",
+    "description": "Lady Beatrice remarks on the unusual quietness of the manor without knowing any secret crimes.",
+    "stress_test_objective": "Verify that unknowledgeable character does not leak hidden secrets.",
+    "contract": {
+      "scene_id": "scene_013",
+      "chapter_num": 3,
+      "scene_num": 3,
+      "pov_character": "lady_beatrice",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lady_beatrice", "barnaby"],
+      "allowed_props": [],
+      "required_state_changes": [],
+      "forbidden_revelations": ["fact_teapot_mislaid"],
+      "target_mood": "Innocent & Melancholic"
+    }
+  },
+  {
+    "scene_id": "scene_014",
+    "category": "epistemic",
+    "title": "The False Accusation Trap",
+    "description": "Ensure Lord Reginald does not assert knowledge of facts he was never granted.",
+    "stress_test_objective": "Test INV_EPISTEMIC_LEAK: verify rejection of ungrounded knowledge assertions.",
+    "contract": {
+      "scene_id": "scene_014",
+      "chapter_num": 3,
+      "scene_num": 4,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "inspector_higgins"],
+      "allowed_props": [],
+      "required_state_changes": [],
+      "forbidden_revelations": ["fact_teapot_mislaid"],
+      "target_mood": "High Drama & Suspicion"
+    }
+  },
+  {
+    "scene_id": "scene_015",
+    "category": "epistemic",
+    "title": "Dramatic Irony Clues",
+    "description": "Lord Reginald drops hints about a mysterious letter without blurt-revealing the full secret.",
+    "stress_test_objective": "Test subtle narrative foreshadowing without violating epistemic boundaries.",
+    "contract": {
+      "scene_id": "scene_015",
+      "chapter_num": 3,
+      "scene_num": 5,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "barnaby", "lady_beatrice"],
+      "allowed_props": ["urgent_blue_envelope"],
+      "required_state_changes": [],
+      "forbidden_revelations": ["fact_teapot_mislaid"],
+      "target_mood": "Witty & Mysterious"
+    }
+  },
+  {
+    "scene_id": "scene_016",
+    "category": "complex_action",
+    "title": "Library Investigation & Discovery",
+    "description": "Lord Reginald enters the Library and retrieves the Prized Silver Teapot from behind the shelf.",
+    "stress_test_objective": "Test compound action: MOVE into room + PICK_UP item in room.",
+    "contract": {
+      "scene_id": "scene_016",
+      "chapter_num": 4,
+      "scene_num": 1,
+      "pov_character": "lord_reginald",
+      "primary_location": "library",
+      "allowed_participants": ["lord_reginald", "barnaby"],
+      "allowed_props": ["silver_teapot"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "lord_reginald", "destination": "library"},
+        {"type": "PICK_UP", "actor": "lord_reginald", "object": "silver_teapot"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Adventurous & Focused"
+    }
+  },
+  {
+    "scene_id": "scene_017",
+    "category": "complex_action",
+    "title": "Hallway Confrontation",
+    "description": "Barnaby walks into the Hallway to intercept Inspector Higgins before he enters the study.",
+    "stress_test_objective": "Test multi-actor spatial co-location and dialogue confrontation.",
+    "contract": {
+      "scene_id": "scene_017",
+      "chapter_num": 4,
+      "scene_num": 2,
+      "pov_character": "barnaby",
+      "primary_location": "hallway",
+      "allowed_participants": ["barnaby", "inspector_higgins"],
+      "allowed_props": ["scotland_yard_badge"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "barnaby", "destination": "hallway"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Cold Confrontation"
+    }
+  },
+  {
+    "scene_id": "scene_018",
+    "category": "complex_action",
+    "title": "The Dining Room Conference",
+    "description": "Lord Reginald enters the Dining Room with the blue envelope to confer with Lady Beatrice.",
+    "stress_test_objective": "Test state efficiency E(c): rewarding supporting actions without noisy mutations.",
+    "contract": {
+      "scene_id": "scene_018",
+      "chapter_num": 4,
+      "scene_num": 3,
+      "pov_character": "lord_reginald",
+      "primary_location": "dining_room",
+      "allowed_participants": ["lord_reginald", "lady_beatrice"],
+      "allowed_props": ["urgent_blue_envelope"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "lord_reginald", "destination": "dining_room"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Solemn & Decisive"
+    }
+  },
+  {
+    "scene_id": "scene_019",
+    "category": "complex_action",
+    "title": "Midnight Cellar Expedition",
+    "description": "Barnaby moves to Hallway and descends to the Cellar to examine the estate vault.",
+    "stress_test_objective": "Test deep traversal and item security in remote node.",
+    "contract": {
+      "scene_id": "scene_019",
+      "chapter_num": 4,
+      "scene_num": 4,
+      "pov_character": "barnaby",
+      "primary_location": "cellar",
+      "allowed_participants": ["barnaby"],
+      "allowed_props": [],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "barnaby", "destination": "cellar"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Gothic & Eerie"
+    }
+  },
+  {
+    "scene_id": "scene_020",
+    "category": "complex_action",
+    "title": "Grand Drawing Room Resolution",
+    "description": "Lord Reginald gathers all characters in the Drawing Room to present the blue envelope.",
+    "stress_test_objective": "Test multi-participant climax scene with high narrative density and zero violations.",
+    "contract": {
+      "scene_id": "scene_020",
+      "chapter_num": 4,
+      "scene_num": 5,
+      "pov_character": "lord_reginald",
+      "primary_location": "drawing_room",
+      "allowed_participants": ["lord_reginald", "barnaby", "inspector_higgins", "lady_beatrice"],
+      "allowed_props": ["urgent_blue_envelope", "silver_teapot"],
+      "required_state_changes": [
+        {"type": "MOVE", "actor": "lord_reginald", "destination": "drawing_room"}
+      ],
+      "forbidden_revelations": [],
+      "target_mood": "Climactic & British Comedy"
+    }
+  }
+]

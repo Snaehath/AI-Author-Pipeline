@@ -39,19 +39,33 @@ class StateExtractor:
         delta = StateDelta()
 
         # Build lookup maps for known entities in world
-        char_name_map = {c.name.lower(): c.id for c in world.characters.values()}
+        char_name_map = {}
+        for c in world.characters.values():
+            char_name_map[c.name.lower()] = c.id
+            char_name_map[c.id.lower()] = c.id
+            for part in c.name.lower().split():
+                if part not in ["the", "a", "an", "sir", "lord", "lady", "inspector"]:
+                    char_name_map[part] = c.id
+            # Also support full lowercase names
+            char_name_map[c.name.lower().replace("lord ", "").replace("lady ", "").replace("inspector ", "")] = c.id
+
         obj_name_map = {o.name.lower(): o.id for o in world.objects.values()}
+        for o in world.objects.values():
+            obj_name_map[o.id.lower()] = o.id
         loc_name_map = {l.name.lower(): l.id for l in world.location_graph.nodes.values()}
+        for l in world.location_graph.nodes.values():
+            loc_name_map[l.id.lower()] = l.id
 
         # 1. Extract Movement Events (anchored to known locations in world)
         for loc_name, loc_id in loc_name_map.items():
             pat = re.compile(
-                rf"\b([A-Za-z]+)\s+(?:entered|walked into|stepped into|hurried to|went to)\s+(?:the\s+)?{re.escape(loc_name)}\b",
+                rf"\b([A-Za-z\s]+?)\s+(?:entered|walked into|stepped into|hurried to|went to)\s+(?:the\s+)?{re.escape(loc_name)}\b",
                 re.IGNORECASE,
             )
             for match in pat.finditer(prose):
                 raw_actor = match.group(1).strip().lower()
-                actor_id = char_name_map.get(raw_actor)
+                # Try full raw actor or last word
+                actor_id = char_name_map.get(raw_actor) or char_name_map.get(raw_actor.split()[-1] if raw_actor else "")
                 if not actor_id and raw_actor in ["he", "she", "they", "the valet", "the master"]:
                     actor_id = contract.pov_character
                 if actor_id:
@@ -70,12 +84,12 @@ class StateExtractor:
         # 2. Extract Pick Up / Possession Events (anchored to known objects in world)
         for obj_name, obj_id in obj_name_map.items():
             pat = re.compile(
-                rf"\b([A-Za-z]+)\s+(?:picked up|took|lifted|grabbed|retrieved|pocketed|slipped|held)\s+(?:the\s+)?{re.escape(obj_name)}\b",
+                rf"\b([A-Za-z\s]+?)\s+(?:picked up|took|lifted|grabbed|retrieved|pocketed|slipped|held)\s+(?:the\s+)?{re.escape(obj_name)}\b",
                 re.IGNORECASE,
             )
             for match in pat.finditer(prose):
                 raw_actor = match.group(1).strip().lower()
-                actor_id = char_name_map.get(raw_actor)
+                actor_id = char_name_map.get(raw_actor) or char_name_map.get(raw_actor.split()[-1] if raw_actor else "")
                 if not actor_id and raw_actor in ["he", "she", "they", "the valet", "the master"]:
                     actor_id = contract.pov_character
                 if actor_id and obj_id in world.objects:
