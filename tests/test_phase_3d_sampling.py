@@ -119,11 +119,24 @@ class TestPhase3DSamplingAndScopes:
         assert "source_text" in item
         assert "detector_prediction" in item
         assert "human_audit" in item
-        assert item["human_audit"]["craft_presence"] == "UNREVIEWED"
+        assert item["human_audit"]["craft_presence"] in ("YES", "NO", "PARTIAL", "UNREVIEWED")
 
-    def test_gold_audit_evaluator_unreviewed(self):
+    def test_gold_audit_evaluator_unreviewed(self, tmp_path):
         """Tests that unreviewed batch produces semantically correct N/A metrics without division errors."""
-        evaluator = GoldAuditEvaluator(audit_file=Path("reports/comedy_craft_audit_batch_180.json"))
+        unreviewed_file = tmp_path / "unreviewed_batch.json"
+        unreviewed_records = [
+            {
+                "audit_id": f"audit_{i:03d}",
+                "sample_pool": "FOUNDATION" if i < 15 else "COMPOSITE",
+                "detector_prediction": {"primary_mechanism": "ESCALATION"},
+                "human_audit": {"craft_presence": "UNREVIEWED"},
+            }
+            for i in range(1, 181)
+        ]
+        with open(unreviewed_file, "w", encoding="utf-8") as f:
+            json.dump(unreviewed_records, f)
+
+        evaluator = GoldAuditEvaluator(audit_file=unreviewed_file)
         metrics = evaluator.evaluate()
         assert metrics["total_records"] == 180
         assert metrics["audited_records"] == 0
@@ -131,6 +144,13 @@ class TestPhase3DSamplingAndScopes:
         assert metrics["gate_evaluation"]["yes_precision_pct"] is None
         assert metrics["gate_evaluation"]["false_negative_rate_pct"] is None
         assert metrics["stratum_purity"]["foundation_purity_pct"] is None
+
+    def test_gold_audit_evaluator_live_batch_runs(self):
+        """Tests that live audit batch evaluates cleanly with current progress."""
+        evaluator = GoldAuditEvaluator(audit_file=Path("reports/comedy_craft_audit_batch_180.json"))
+        metrics = evaluator.evaluate()
+        assert metrics["total_records"] == 180
+        assert metrics["audited_records"] >= 0
 
     def test_gold_audit_evaluator_with_mock_judgments(self, tmp_path):
         """Tests evaluation calculations and dataset partitioning against simulated human audit data."""

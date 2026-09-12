@@ -61,21 +61,21 @@ For each passage, independently assess:
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Clear guinea-pig classification premise expands into an absurd bureaucratic problem; the scientific explanation makes the situation more absurd rather than resolving it."
 }
 ```
 
@@ -168,21 +168,24 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT",
+    "STATUS_REVERSAL"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Extended romantic quarrel repeatedly raises the stakes through Jimmy's increasingly absurd arguments, then reverses the apparent rejection into the marriage 'punishment' payoff."
 }
 ```
 
@@ -197,21 +200,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The main engine is ironic verbal understatement: the Stock Exchange phrase 'opened quietly' is reapplied to an absurdly unsuccessful scheme in a deadpan voice."
 }
 ```
 
@@ -227,21 +232,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Literal classification of guinea-pigs as pigs drives the joke; the agreement is funny because it accepts the absurd premise."
 }
 ```
 
@@ -256,21 +263,21 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Excellent escalation: the guinea-pigs consume the office, multiply into thousands, and the bureaucratic error arrives after the physical absurdity has already become enormous."
 }
 ```
 
@@ -285,21 +292,21 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Flagship escalation example: continual shipments, warehouse overflow, frantic packing, inspector arrival, then Flannery's absurd extension of the pet-rate rule to larger animals."
 }
 ```
 
@@ -314,21 +321,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 8,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The comic turn is verbal: the narrator's distress over his wardrobe is answered by Rocky's cheerfully hostile 'I hope so.' The deadpan hostility supplies the finish."
 }
 ```
 
@@ -343,21 +352,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The pig/pet tariff distinction is treated with absurd literal seriousness; the dialogue turns a bureaucratic question into a comic semantic problem."
 }
 ```
 
@@ -373,21 +384,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 6,
+  "craft_clarity": 5,
+  "training_value": 5,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "There is a genuine comic beat in the jump from two guinea-pigs to eight, but the excerpt is too fragmentary to establish a reliable craft structure for training."
 }
 ```
 
@@ -402,21 +415,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "DEADPAN_REACTION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Comic engine is the narrator treating the loss of his attendant as a near-death bereavement, with increasingly solemn overstatement and a deadpan telephone payoff."
 }
 ```
 
@@ -432,21 +447,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 5,
+  "training_value": 5,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The elephant hypothetical is funny hyperbolic escalation, but the excerpt is only a punchline fragment and is not sufficient as a standalone craft example."
 }
 ```
 
@@ -461,21 +478,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "SOCIAL_EMBARRASSMENT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 8,
+  "craft_clarity": 4,
+  "training_value": 2,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Contains witty phrasing and self-mocking romantic exaggeration, but most of the passage is earnest romantic/dramatic material rather than a clean British comic engine."
 }
 ```
 
@@ -490,21 +509,21 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "The absurd administrative task grows into physically herding 160 guinea-pigs; the mismatch between bureaucracy and reality is the comic engine."
 }
 ```
 
@@ -519,21 +538,21 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Strong escalation: Flannery returns to find dozens and then hundreds more pigs, while the original consignee has disappeared, forcing an increasingly impossible administrative problem."
 }
 ```
 
@@ -548,21 +567,23 @@ door closed. Ann had gone.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "The forgotten guinea-pigs quietly multiply while officials forget the problem; Flannery's increasingly desperate letter supplies a strong comic escalation and verbal payoff."
 }
 ```
 
@@ -665,21 +686,25 @@ avenging hand was descending for the eleventh time.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "SOCIAL_EMBARRASSMENT",
+    "PHYSICAL_COMPLICATION",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Excellent farce: Ogden repeatedly attacks Jerry's vanity, the irritation escalates, restraint breaks, and the physical consequences explode into the arrival of Mrs. Pett."
 }
 ```
 
@@ -696,21 +721,21 @@ morning when he said that about the ten days?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "A request for clarification about an earlier statement; no self-contained comic mechanism is established."
 }
 ```
 
@@ -725,21 +750,23 @@ morning when he said that about the ten days?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "DEADPAN_REACTION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "There is dark absurdity in the repeated question and the soldier's blunt response, but the passage lacks enough structure to be a strong transferable British-comedy craft example."
 }
 ```
 
@@ -754,21 +781,23 @@ morning when he said that about the ten days?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 7,
+  "craft_clarity": 3,
+  "training_value": 3,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Suggests a comic misunderstanding involving Aunt Agatha and 'riotous living', but the excerpt is too short to establish the mechanism."
 }
 ```
 
@@ -783,21 +812,25 @@ morning when he said that about the ten days?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "STATUS_REVERSAL",
+    "ESCALATION",
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Long-form farce built around the invented twin identity, with repeated misunderstandings, escalating deception, status complications, and multiple reversals."
 }
 ```
 
@@ -916,21 +949,24 @@ downstairs.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION",
+    "ESCALATION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The passage mixes cookbook literalism, digestive misery, and escalating observations about the stomach controlling morality; the deadpan philosophical voice is central."
 }
 ```
 
@@ -1262,21 +1298,21 @@ here, or among the sorrowful widowed mothers in Spitalfields.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Serious missionary history, fire, death, grief, and religious reflection dominate; not comedy craft."
 }
 ```
 
@@ -1291,21 +1327,21 @@ here, or among the sorrowful widowed mothers in Spitalfields.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical/religious argument rather than a comic scene or transferable comic mechanism."
 }
 ```
 
@@ -1325,21 +1361,21 @@ man more than he shulld be well dysposyd to geve.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical exposition about a London bourse; no self-contained comic engine."
 }
 ```
 
@@ -1354,21 +1390,23 @@ man more than he shulld be well dysposyd to geve.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Flannery's attempt to satisfy bureaucratic reporting requirements becomes increasingly absurd through exaggerated descriptions of the pigs' appetites."
 }
 ```
 
@@ -1383,21 +1421,21 @@ man more than he shulld be well dysposyd to geve.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Loss of sheep and mangled carcasses are presented as a serious mystery; the excerpt does not establish comedy craft."
 }
 ```
 
@@ -1416,21 +1454,21 @@ thought I understood, above one or two.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 7,
+  "training_value": 6,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "A compact paradoxical joke: politicians are said to be difficult to comprehend, followed by the speaker admitting he has comprehended almost none of them."
 }
 ```
 
@@ -1446,21 +1484,21 @@ thought I understood, above one or two.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The line becomes comic in context because there are only two inns, but the supplied excerpt does not contain enough of the setup or payoff."
 }
 ```
 
@@ -1477,21 +1515,21 @@ the end?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "A plausible comic suggestion, but there is no developed reversal or payoff in the isolated sentence."
 }
 ```
 
@@ -1509,21 +1547,23 @@ into this!' How will you feel then?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "STATUS_REVERSAL"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 7,
+  "training_value": 7,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Jimmy invents a deliberately melodramatic future in which their social positions are reversed; the absurdly specific image is the comic device."
 }
 ```
 
@@ -1540,21 +1580,21 @@ We lived together, and now - ".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Mournful emotional dialogue with no clear comic mechanism in the supplied passage."
 }
 ```
 
@@ -1569,21 +1609,23 @@ We lived together, and now - ".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 5,
+  "training_value": 5,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The ghostwriting proposal has dry comic potential, but this excerpt is primarily setup and does not provide enough of the comic sequence."
 }
 ```
 
@@ -1598,21 +1640,21 @@ We lived together, and now - ".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Ordinary social conversation about a man's behavior and dinner; no sufficiently clear comic engine."
 }
 ```
 
@@ -1629,21 +1671,21 @@ peevishly,.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 3,
+  "training_value": 3,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The exchange may be comic in the larger scene, but the isolated lines do not establish the mechanism."
 }
 ```
 
@@ -1658,21 +1700,21 @@ peevishly,.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 4,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Technical/historical exposition with no comic craft."
 }
 ```
 
@@ -1692,21 +1734,21 @@ peevishly,.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical editorial exposition about civic precedence; no self-contained comedy."
 }
 ```
 
@@ -1721,21 +1763,23 @@ peevishly,.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "ESCALATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "The repeated list—pigs, cows, horses, then lions and tigers—extends the absurd rule through escalating examples; rhythm and dialect amplify the joke."
 }
 ```
 
@@ -1750,21 +1794,23 @@ peevishly,.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "DEADPAN_REACTION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 6,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The reply may be an understated comic line, but the fragment alone does not establish enough setup or payoff."
 }
 ```
 
@@ -1785,21 +1831,23 @@ on the horns of this jovial, slashing, devil-may-care British bull.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "STATUS_REVERSAL",
+  "secondary_mechanisms": [
+    "VERBAL_WIT"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 5,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The passage describes a public figure verbally defeating decorated foreigners and clearly has comic rhetoric, but it is not a clean local craft example."
 }
 ```
 
@@ -1816,21 +1864,24 @@ tea, and supper combined.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "MISUNDERSTANDING",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The apparent cancellation of tea is immediately contradicted by ordering dinner, tea, and supper as one meal; the comic force comes from deadpan literal phrasing."
 }
 ```
 
@@ -2111,21 +2162,25 @@ not tell [COMPANION_A]. If I remember rightly, he also has an aunt." [COMPANION_
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "SOCIAL_EMBARRASSMENT",
+    "VERBAL_WIT",
+    "ESCALATION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Very rich comic passage containing several complete mechanisms, especially the cushion/kiss misunderstanding and escalating social embarrassment; composite rather than pure."
 }
 ```
 
@@ -2275,21 +2330,25 @@ domination of the assembly, snapped out an order. "Shutatdoor!" Somebody shut th
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "PHYSICAL_COMPLICATION",
+  "secondary_mechanisms": [
+    "ESCALATION",
+    "MISUNDERSTANDING",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Strong farce: burglary, bluffing, multiple weapons, accidental gunfire, and a chaotic arrival create escalating physical complications with deadpan verbal turns."
 }
 ```
 
@@ -2304,21 +2363,24 @@ domination of the assembly, snapped out an order. "Shutatdoor!" Somebody shut th
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "SOCIAL_EMBARRASSMENT",
+  "secondary_mechanisms": [
+    "ESCALATION",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Rocky's ill-fitting use of the narrator's clothes and his aunt's disapproving stare create a socially awkward situation that is then extended through restrained narration."
 }
 ```
 
