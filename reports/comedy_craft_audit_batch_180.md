@@ -2395,21 +2395,24 @@ domination of the assembly, snapped out an order. "Shutatdoor!" Somebody shut th
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "STATUS_REVERSAL",
+  "secondary_mechanisms": [
+    "VERBAL_WIT",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Excellent status example: Jeeves has quietly solved the problem while the narrator celebrates him, then immediately restores the hierarchy by correcting the narrator's tie."
 }
 ```
 
@@ -2427,21 +2430,21 @@ amused expression.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "ESCALATION",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 7,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Romantic/social observation without a sufficiently clear comic mechanism in the supplied fragment."
 }
 ```
 
@@ -2459,21 +2462,21 @@ which the deputation had brought.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical/legal exposition; no comic craft."
 }
 ```
 
@@ -2488,21 +2491,23 @@ which the deputation had brought.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "ESCALATION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 7,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The quarrel has comic energy and absurd bureaucratic logic, but the excerpt cuts off before a reliable reversal/payoff."
 }
 ```
 
@@ -2517,21 +2522,23 @@ which the deputation had brought.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 6,
+  "craft_clarity": 4,
+  "training_value": 3,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "The exchange may be witty, but too little context is supplied to establish a transferable comic mechanism."
 }
 ```
 
@@ -2550,21 +2557,21 @@ nothing until some teacher should show how to apply it.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical/intellectual commentary; no self-contained comedy craft."
 }
 ```
 
@@ -2806,21 +2813,26 @@ good knight saw therein we may not speak nor tell.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "PHYSICAL_COMPLICATION",
+  "secondary_mechanisms": [
+    "ESCALATION",
+    "VERBAL_WIT",
+    "DEADPAN_REACTION",
+    "MISUNDERSTANDING"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 10,
+  "craft_clarity": 10,
+  "training_value": 10,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Flagship long-form farce: tent assembly, entanglement, kettle psychology, food mishaps, absurd philosophical digressions, and the repeated father's-bed anecdote create layered comic escalation."
 }
 ```
 
@@ -2835,21 +2847,24 @@ good knight saw therein we may not speak nor tell.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "PHYSICAL_COMPLICATION",
+  "secondary_mechanisms": [
+    "VERBAL_WIT",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 7,
+  "training_value": 7,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The comic turn depends on the sheep behaving like a sarcastic spectator after being shot at; the physical situation and the narrator's dry desire to have hit the other sheep form the payoff."
 }
 ```
 
@@ -2867,21 +2882,21 @@ retained the lower-case.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 1,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Editorial capitalization note, not narrative comedy."
 }
 ```
 
@@ -2896,21 +2911,24 @@ retained the lower-case.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "MISUNDERSTANDING",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "The 'will' wording creates a semantic joke around inheritance and personal determination; the character's reaction turns the wordplay into a comic misunderstanding."
 }
 ```
 
@@ -2925,21 +2943,24 @@ retained the lower-case.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "PURE_MECHANISM",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "MISUNDERSTANDING",
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 9,
+  "craft_clarity": 9,
+  "training_value": 9,
+  "keep_verdict": "KEEP",
+  "detector_correct": false,
+  "notes": "Excellent dry verbal joke: an earlier reference to an aunt's obsession with hansom cabs is repurposed as a treatment for another person's problem."
 }
 ```
 
@@ -2956,21 +2977,21 @@ once again why you have brought me in here.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 6,
+  "craft_clarity": 2,
+  "training_value": 2,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Only a setup question is present; no comic mechanism or payoff is recoverable from the supplied fragment."
 }
 ```
 
@@ -2993,21 +3014,21 @@ if they would be faithful to him.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Historical exposition about the Norman Conquest; no comedy craft."
 }
 ```
 
@@ -3022,21 +3043,24 @@ if they would be faithful to him.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "YES",
+  "craft_stratum": "COMPOSITE_CRAFT",
+  "primary_mechanism": "MISUNDERSTANDING",
+  "secondary_mechanisms": [
+    "VERBAL_WIT",
+    "ESCALATION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": true,
+  "reversal_accurate": true,
+  "payoff_accurate": true,
+  "literary_quality": 8,
+  "craft_clarity": 8,
+  "training_value": 8,
+  "keep_verdict": "KEEP",
+  "detector_correct": true,
+  "notes": "Flannery's literal interpretation of the pig classification is validated by Morgan in an absurdly bureaucratic way; the letter escalates the running semantic joke."
 }
 ```
 
@@ -3051,21 +3075,21 @@ if they would be faithful to him.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 2,
+  "training_value": 2,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Mystery/identity discussion is present, but the excerpt does not contain a clear comic payoff."
 }
 ```
 
@@ -3083,21 +3107,21 @@ result to Palgrave, who said that Reed knew nothing about it.
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
+  "craft_presence": "NO",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "MISUNDERSTANDING",
   "secondary_mechanisms": [],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": false,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": false,
+  "literary_quality": 5,
+  "craft_clarity": 1,
+  "training_value": 1,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Technical/art discussion and disagreement, without a self-contained comic engine."
 }
 ```
 
@@ -3114,21 +3138,23 @@ was caught?".
 
 ```json
 {
-  "craft_presence": "UNREVIEWED",
-  "craft_stratum": "UNREVIEWED",
-  "primary_mechanism": null,
-  "secondary_mechanisms": [],
+  "craft_presence": "PARTIAL",
+  "craft_stratum": "REJECT",
+  "primary_mechanism": "VERBAL_WIT",
+  "secondary_mechanisms": [
+    "DEADPAN_REACTION"
+  ],
   "mechanism_horizon": "LOCAL",
-  "setup_accurate": null,
-  "escalation_accurate": null,
-  "reversal_accurate": null,
-  "payoff_accurate": null,
-  "literary_quality": null,
-  "craft_clarity": null,
-  "training_value": null,
-  "keep_verdict": "UNREVIEWED",
-  "detector_correct": null,
-  "notes": ""
+  "setup_accurate": true,
+  "escalation_accurate": false,
+  "reversal_accurate": false,
+  "payoff_accurate": true,
+  "literary_quality": 7,
+  "craft_clarity": 4,
+  "training_value": 4,
+  "keep_verdict": "REJECT",
+  "detector_correct": false,
+  "notes": "Potentially comic fishing anecdote with an implied boast, but the excerpt is too short to establish the mechanism reliably."
 }
 ```
 

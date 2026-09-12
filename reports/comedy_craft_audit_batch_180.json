@@ -1765,21 +1765,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: '\"You know!\" THE END...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "STATUS_REVERSAL",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Excellent status example: Jeeves has quietly solved the problem while the narrator celebrates him, then immediately restores the hierarchy by correcting the narrator's tie."
     }
   },
   {
@@ -1804,21 +1807,21 @@
       "payoff": "Marson?,\" said a voice\nfrom the other side of the table; and Ashe, looking up\ngratefully, found Joan's eyes looking into his with a curiously\namused expression."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "ESCALATION",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Romantic/social observation without a sufficiently clear comic mechanism in the supplied fragment."
     }
   },
   {
@@ -1843,21 +1846,21 @@
       "payoff": "\"and the city's common seal was set to the so-called,\" The mayor, aldermen, and citizens, after a hasty consultation, gave their\nassent, but with the reservation \"saving unto them all their liberties and\ncustoms, charter\"\nwhich the deputation had brought."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Historical/legal exposition; no comic craft."
     }
   },
   {
@@ -1882,21 +1885,23 @@
       "payoff": "Rules is rules, Misther Morehouse, an' Mike Flannery's not goin' to be called down fer breakin' of thim,\" \"Do as you loike, then!\" shouted Flannery, \"But, you everlastingly stupid idiot!\" shouted Mr."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "ESCALATION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "The quarrel has comic energy and absurd bureaucratic logic, but the excerpt cuts off before a reliable reversal/payoff."
     }
   },
   {
@@ -1921,21 +1926,23 @@
       "payoff": "Why do you act so, Rebecca?\" \"I should think you WOULD ask her that,\" said Mrs."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "literary_quality": 6,
+      "craft_clarity": 4,
+      "training_value": 3,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "The exchange may be witty, but too little context is supplied to establish a transferable comic mechanism."
     }
   },
   {
@@ -1960,21 +1967,21 @@
       "payoff": "\"Advancement of Science,\" Yet Langley said nothing new, and taught nothing that one\nmight not have learned from Lord Bacon, three hundred years before; but\nthough one should have known the as well as\none knew the \"Comedy of Errors,\" the literary knowledge counted for\nnothing until some teacher should show how to apply it."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Historical/intellectual commentary; no self-contained comedy craft."
     }
   },
   {
@@ -1999,21 +2006,26 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'And the name of the dark forest was Sorrow; but of the vision that the\ngood knig...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "ESCALATION",
+        "VERBAL_WIT",
+        "DEADPAN_REACTION",
+        "MISUNDERSTANDING"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 10,
+      "craft_clarity": 10,
+      "training_value": 10,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Flagship long-form farce: tent assembly, entanglement, kettle psychology, food mishaps, absurd philosophical digressions, and the repeated father's-bed anecdote create layered comic escalation."
     }
   },
   {
@@ -2038,21 +2050,24 @@
       "payoff": "Be-e-e-est sho-o-o-ot he-e-e's ma-a-a-de!\"  I would have given half-a-crown if it had been she I had hit instead of the other one"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "PHYSICAL_COMPLICATION",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 8,
+      "craft_clarity": 7,
+      "training_value": 7,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The comic turn depends on the sheep behaving like a sarcastic spectator after being shot at; the physical situation and the narrator's dry desire to have hit the other sheep form the payoff."
     }
   },
   {
@@ -2077,21 +2092,21 @@
       "payoff": "\"Uncle Peter,\" The words \"Uncle\" and \"Aunt\", where used with a name\n( \"Aunt Nesta\"), were capitalized in the original\nserialized and UK editions, but lower-cased in the US edition, so I have\nretained the lower-case."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 1,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Editorial capitalization note, not narrative comedy."
     }
   },
   {
@@ -2116,21 +2131,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'Little by little, if you use your will - - \" I can't help thinking it must have ...'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 8,
+      "craft_clarity": 8,
+      "training_value": 8,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "The 'will' wording creates a semantic joke around inheritance and personal determination; the character's reaction turns the wordplay into a comic misunderstanding."
     }
   },
   {
@@ -2155,21 +2173,24 @@
       "payoff": "Comedic resolution or deadpan beat lands: 'The hansom cab one?\" I was stunned by the man's resource....'"
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "PURE_MECHANISM",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "MISUNDERSTANDING",
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 9,
+      "craft_clarity": 9,
+      "training_value": 9,
+      "keep_verdict": "KEEP",
+      "detector_correct": false,
+      "notes": "Excellent dry verbal joke: an earlier reference to an aunt's obsession with hansom cabs is repurposed as a treatment for another person's problem."
     }
   },
   {
@@ -2194,21 +2215,21 @@
       "payoff": "Speaker: Character | Target Emotion: Fearful\n\"Now, my dear Baxter,\" said the earl impatiently, \"please tell me\nonce again why you have brought me in here."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 6,
+      "craft_clarity": 2,
+      "training_value": 2,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Only a setup question is present; no comic mechanism or payoff is recoverable from the supplied fragment."
     }
   },
   {
@@ -2233,21 +2254,21 @@
       "payoff": "\"from necessity,\" London submitted, the citizens accepting the rule of the Norman Conqueror\nas they had formerly accepted that of Cnut the Dane, An\nembassy was despatched to Berkhampstead, comprising the Archbishop of\nYork, the young Atheling, the earls Edwine and Morkere, and \"all the best\nmen of London,\" to render homage and give hostages,(80) and thus it was,\nthat within three months of his landing, William was acknowledged as the\nlawfully elected King of England, and, as such, he crowned himself at\nWestminster, promising to govern the nation as well as any king before him\nif they would be faithful to him."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Historical exposition about the Norman Conquest; no comedy craft."
     }
   },
   {
@@ -2272,21 +2293,24 @@
       "payoff": "By [COMPANION_B]!\" he said, \"Flannery is right, 'pigs is pigs."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "YES",
+      "craft_stratum": "COMPOSITE_CRAFT",
+      "primary_mechanism": "MISUNDERSTANDING",
+      "secondary_mechanisms": [
+        "VERBAL_WIT",
+        "ESCALATION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": true,
+      "reversal_accurate": true,
+      "payoff_accurate": true,
+      "literary_quality": 8,
+      "craft_clarity": 8,
+      "training_value": 8,
+      "keep_verdict": "KEEP",
+      "detector_correct": true,
+      "notes": "Flannery's literal interpretation of the pig classification is validated by Morgan in an absurdly bureaucratic way; the letter escalates the running semantic joke."
     }
   },
   {
@@ -2311,21 +2335,21 @@
       "payoff": "But what are the proofs?,\" \"That,\" said I, He replied, \"Pleyel informed me that, in going to your house, his attention was attracted by two voices."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 2,
+      "training_value": 2,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Mystery/identity discussion is present, but the excerpt does not contain a clear comic payoff."
     }
   },
   {
@@ -2350,21 +2374,21 @@
       "payoff": "\"Yes!,\" said\nMr Reed; \"I noticed this at the sale; but it's not Rafael!\" Adams,\nfeeling himself incompetent to discuss this subject, reported the\nresult to Palgrave, who said that Reed knew nothing about it."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
+      "craft_presence": "NO",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "MISUNDERSTANDING",
       "secondary_mechanisms": [],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": false,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": false,
+      "literary_quality": 5,
+      "craft_clarity": 1,
+      "training_value": 1,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Technical/art discussion and disagreement, without a self-contained comic engine."
     }
   },
   {
@@ -2389,21 +2413,23 @@
       "payoff": "you may well say that, sir,\" replied the man; and then, after a\npull at his beer, he added, \"Maybe you wasn't here, sir, when that fish\nwas caught?\"."
     },
     "human_audit": {
-      "craft_presence": "UNREVIEWED",
-      "craft_stratum": "UNREVIEWED",
-      "primary_mechanism": null,
-      "secondary_mechanisms": [],
+      "craft_presence": "PARTIAL",
+      "craft_stratum": "REJECT",
+      "primary_mechanism": "VERBAL_WIT",
+      "secondary_mechanisms": [
+        "DEADPAN_REACTION"
+      ],
       "mechanism_horizon": "LOCAL",
-      "setup_accurate": null,
-      "escalation_accurate": null,
-      "reversal_accurate": null,
-      "payoff_accurate": null,
-      "literary_quality": null,
-      "craft_clarity": null,
-      "training_value": null,
-      "keep_verdict": "UNREVIEWED",
-      "detector_correct": null,
-      "notes": ""
+      "setup_accurate": true,
+      "escalation_accurate": false,
+      "reversal_accurate": false,
+      "payoff_accurate": true,
+      "literary_quality": 7,
+      "craft_clarity": 4,
+      "training_value": 4,
+      "keep_verdict": "REJECT",
+      "detector_correct": false,
+      "notes": "Potentially comic fishing anecdote with an implied boast, but the excerpt is too short to establish the mechanism reliably."
     }
   },
   {
