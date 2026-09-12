@@ -73,6 +73,7 @@ class MultiAgentEditingCrew:
             "STRICT SENTENCE CADENCE: Keep sentences short, crisp, and energetic (average 10-12 words per sentence). Avoid run-on sentences.\n"
             "STRICT DIALOGUE RATIO: Enforce 45-50% spoken dialogue across the chapter.\n"
             "STRICT LENGTH MANDATE: DO NOT condense or summarize. Write a full, detailed, expansive multi-paragraph scene (700-800 words).\n"
+            "STRICT NEGATIVE CONSTRAINT: DO NOT output historical court-martial text, legal letters, footnotes, or hyphenated dictionary lists.\n"
             "STRICT BLUEPRINT COMPLIANCE MANDATE:\n"
             f"• GOAL: You MUST advance the goal: {blueprint.goal}\n"
             f"• CONFLICT: You MUST include the conflict: {blueprint.conflict}\n"

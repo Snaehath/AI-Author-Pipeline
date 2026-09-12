@@ -45,9 +45,11 @@ class CharacterExtractor:
             if word not in self.stop_words and len(word) > 2:
                 counts[word] = counts.get(word, 0) + 1
 
-        # Keep primary characters mentioned at least 5 times, sorted by frequency (top 25)
+        # Keep primary characters mentioned frequently (top 25)
+        # Adapt threshold for short test excerpts vs full books
+        min_threshold = 5 if len(combined.split()) > 500 else 2
         sorted_candidates = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-        top_candidates = [name for name, count in sorted_candidates if count >= 5][:25]
+        top_candidates = [name for name, count in sorted_candidates if count >= min_threshold][:25]
 
         main_characters = {name: [name] for name in top_candidates}
 

@@ -30,6 +30,14 @@ def sanitize_generated_prose(text: str) -> str:
     cleaned = re.sub(r"(?i)Write a character introduction.*?\n", "", cleaned)
     cleaned = re.sub(r"(?i)THE PROCEEDINGS AGAINST THE ROYAL CHARTER.*?\n", "", cleaned)
 
+    # 1B. Remove historical pre-training memory leaks, footnotes, and hyphenated adjective chains
+    cleaned = re.sub(r"\[Footnote:[^\]]*\]", "", cleaned)
+    cleaned = re.sub(r"(?i)court-martial proceedings.*?\n", "", cleaned)
+    cleaned = re.sub(r"(?i)Earl Spencer.*?\n", "", cleaned)
+    cleaned = re.sub(r"(?i)H\.M\.S\..*?\n", "", cleaned)
+    cleaned = re.sub(r"(?i)letter dated.*?\n", "", cleaned)
+    cleaned = re.sub(r"\b\w+-\w+-\w+-\w+-\w+[\w-]*\b", "", cleaned)  # Strips 5+ hyphenated adjective chains
+
     # 2. Remove Gutenberg header/footer disclaimers
     cleaned = re.sub(r"(?i)The Project Gutenberg eBook of.*?\n", "", cleaned)
     cleaned = re.sub(r"(?i)Project Gutenberg.*?\n", "", cleaned)

@@ -20,10 +20,13 @@ import json
 import sys
 from pathlib import Path
 
-# Ensure project root is in sys.path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+# Ensure project root and AI_Author directory are in sys.path
+AI_AUTHOR_DIR = Path(__file__).resolve().parent
+ML_DIR = AI_AUTHOR_DIR.parent
+
+for p in (AI_AUTHOR_DIR, ML_DIR):
+    if str(p) not in sys.path:
+        sys.path.insert(0, str(p))
 
 from AI_Author.ingestion.pipeline import IngestionPipeline
 from AI_Author.parser.chapter_parser import ChapterParser

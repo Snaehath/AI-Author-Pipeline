@@ -88,7 +88,6 @@ class StoryGenerator:
             outputs = self.model.generate(
                 **inputs,
                 max_new_tokens=self.max_new_tokens,
-                min_new_tokens=550,
                 temperature=self.temperature,
                 top_p=self.top_p,
                 repetition_penalty=self.repetition_penalty,
@@ -98,7 +97,13 @@ class StoryGenerator:
 
         full_decoded = self.tokenizer.decode(outputs[0], skip_special_tokens=False)
         assistant_part = full_decoded.split("<|im_start|>assistant\n")[-1]
-        clean_response = assistant_part.replace("<|im_end|>", "").strip()
+
+        # Stop strictly at the first EOS / ChatML end token to prevent post-generation hallucination
+        for stop_tok in ["<|im_end|>", "<|endoftext|>", "</s>"]:
+            if stop_tok in assistant_part:
+                assistant_part = assistant_part.split(stop_tok)[0]
+
+        clean_response = assistant_part.strip()
 
         # Clean Gutenberg illustration, stage direction tags, and legal disclaimers
         from AI_Author.utils.text_sanitizer import sanitize_generated_prose

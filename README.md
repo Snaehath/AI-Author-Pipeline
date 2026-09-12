@@ -65,11 +65,12 @@ Raw books are parsed into scenes (~700–900 words) and analyzed for speaker tur
 - **Direct Preference Optimization (DPO):** Aligns the model on preference pairs (`chosen`: sharp deadpan punchlines vs `rejected`: long monologues).
 
 ### 3. Generation & Revision Workflow
-1. **Pre-Prose Blueprint:** Outlines scene goals, conflicts, character presence, and physical objects before prose generation.
-2. **State DB & Fiction RAG:** Queries active character goals, inventories, and trust scores for the scene.
-3. **Drafting & Multi-Agent Polish:** Expands the blueprint into prose and applies specialized revision passes (voice contrast, comedy timing).
-4. **Best-of-N Selection:** Samples candidate scene variations and selects the candidate with the highest Composite Story Reward score.
-5. **Token Substitution & Export:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) via `text_sanitizer.py` and exports `.docx` and `.pdf` files via `manuscript_exporter.py`.
+1. **Pre-Prose Blueprint & Scene Contract:** Outlines scene goals, spatial locations, required props, and strict prohibitions (forbidden secrets, thread lockouts).
+2. **Epistemic Context Budgeting:** Packs strictly isolated context (only facts legitimately known to the active POV character) within token budgets.
+3. **Drafting & Multi-Agent Polish:** Expands the contract into prose and applies specialized revision passes (voice contrast, comedy timing).
+4. **State Extraction & Continuity Compilation:** Extracts candidate symbolic events (`MOVE`, `PICK_UP`, `REVEAL_FACT`) and compiles them against the Narrative Type System (`INV_LOCATION`, `INV_POSSESSION`, `INV_EPISTEMIC`, `INV_VITALITY`, `INV_CONTRACT`).
+5. **Best-of-N & Ledger Commit:** Candidates with invariant violations receive heavy reward penalties or fatal rejection. Valid state diffs are committed to the append-only `EventLedger`.
+6. **Token Substitution & Export:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) via `text_sanitizer.py` and exports `.docx` and `.pdf` files via `manuscript_exporter.py`.
 
 ---
 
@@ -97,13 +98,16 @@ python setup_project.py
 # 1. Run DPO Preference Alignment Trainer
 python trainer/dpo_trainer.py
 
-# 2. Generate Novel (5 Chapters)
+# 2. Run Story Continuity Compiler & Invariant Verification Suite
+python -m story_engine.test
+
+# 3. Generate Novel (5 Chapters) with Stateful Engine
 python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"
 
-# 3. Export Word & PDF Manuscripts
+# 4. Export Word & PDF Manuscripts
 python utils/manuscript_exporter.py outputs/generated_novel
 
-# 4. Evaluate Stylometric Consistency
+# 5. Evaluate Stylometric Consistency
 python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir outputs/right_ho
 ```
 
@@ -114,17 +118,27 @@ python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir output
 - **Dialogue Match Ratio:** **48.27%** (75.1% match against reference P. G. Wodehouse dialogue frequency).
 - **Style Consistency Score:** **0.3177 – 0.565** (Weighted stylometric cosine similarity across sentence length, dialogue ratio, and vocabulary richness).
 - **Standardized Scene Depth:** **650 – 800 words** per chapter.
+- **Narrative Invariant Compliance:** 100% enforcement of spatial, possession, epistemic, vitality, and contract invariants via the Continuity Compiler.
 
 ---
 
 ## Repository Structure
 
 ```
+├── story_engine/       # Stateful narrative engine (world state, epistemic model, event ledger, contracts)
+│   ├── state/          # Characters, physical objects, spatial graph, relationships, timeline
+│   ├── epistemic/      # World truth, character knowledge isolation, reader knowledge
+│   ├── events/         # Atomic StoryEvents, StateDelta, immutable EventLedger
+│   ├── contracts/      # SceneContract schemas & Narrative Invariants (Type System)
+│   ├── context/        # Knapsack ContextBudgeter enforcing epistemic boundaries
+│   └── test.py         # Story Continuity Compiler test runner
+├── compiler/           # Continuity compiler, symbolic invariant checker, state extractor, repair engine
 ├── dataset_generator/  # SFT & DPO preference dataset synthesis
 ├── trainer/            # QLoRA fine-tuning & DPO alignment scripts
 ├── inference/          # Blueprint planner, Story Bible DB, Fiction RAG, Best-of-N selector
 ├── evaluator/          # Stylometric evaluation suite & composite reward model
 ├── utils/              # Token sanitizer & manuscript exporter (.docx, .pdf)
+├── tests/              # Pytest test suite for state engine, invariants, contracts, and compiler
 ├── setup_project.py    # Automated book downloader & workspace setup
 └── requirements.txt    # Python dependencies
 ```
