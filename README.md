@@ -81,8 +81,6 @@ $$\text{SOURCE} \longrightarrow \text{FACTS} \longrightarrow \text{CRAFT} \longr
   - `IDENTIFY_MECHANISM`: Identifies dominant comic mechanism and supporting dynamics.
   - `EXTRACT_STRUCTURE`: Deconstructs 4-beat comedic structure.
   - `REWRITE_RESTRAINT`: Rewrites scene with deadpan restraint, stripping over-explanation.
-  - `CONTINUE_TENSION`: Continues scene while preserving unresolved comedic tension.
-  - `GENERATE_FROM_STRUCTURE`: **Transferable comedy generator** — takes an abstract structure and produces a brand new original scene with new characters and setting.
   - **Controlled Contrast DPO Pairs:** Audited by `ContrastPurityValidator` (requiring $\ge 0.85$ purity and verified preference strength).
 
 ### 2. Comedic Mechanism Taxonomy
@@ -99,14 +97,77 @@ $$\text{SOURCE} \longrightarrow \text{FACTS} \longrightarrow \text{CRAFT} \longr
 
 ---
 
-## Phase 3B Freeze & Development Roadmap
+## Phase 3C Completed Architecture & Stratification
 
-The architecture is currently frozen at **Phase 3B** to validate the data layer with human calibration before any model training:
+Following the 50-record human calibration audit (which revealed a 26% primary agreement baseline, 40% non-comic rejection rate, and 6 cross-edition duplicates), the dataset pipeline has been upgraded with four hard architectural stages:
+
+```text
+                    RAW CORPUS
+                        │
+                        ▼
+              ┌──────────────────┐
+              │ TEXT NORMALIZER  │
+              └────────┬─────────┘
+                       ▼
+              ┌──────────────────┐
+              │ DEDUPLICATOR     │
+              │ exact + near     │
+              └────────┬─────────┘
+                       │
+                 duplicate?
+                  ┌────┴────┐
+                 YES        NO
+                  │          │
+               REJECT        ▼
+                     ┌─────────────────┐
+                     │ COMEDY GATE     │
+                     └───────┬─────────┘
+                             │
+                   ┌─────────┼─────────┐
+                   ▼         ▼         ▼
+                  NO      PARTIAL     YES
+                   │         │         │
+                REJECT     REVIEW      ▼
+                                      │
+                            ┌─────────▼─────────┐
+                            │ MECHANISM DETECTOR│
+                            └─────────┬─────────┘
+                                      ▼
+                            ┌───────────────────┐
+                            │ STRATIFICATION    │
+                            └─────────┬─────────┘
+                                      │
+                         ┌────────────┴────────────┐
+                         ▼                         ▼
+                  PURE_MECHANISM             COMPOSITE_CRAFT
+                         │                         │
+                         ▼                         ▼
+                  FOUNDATION SFT              ADVANCED SFT
+                                                   │
+                                                   │
+                         ┌─────────────────────────┘
+                         ▼
+                GENERATE_FROM_STRUCTURE
+                         │
+                         ▼
+                  HELD-OUT EVAL
+```
+
+### Key Architectural Rules in Phase 3C
+1. **Deduplication Precedes Classification:** Normalized SHA-256 and near-duplicate Jaccard indexing run directly on text (not source IDs) to eliminate cross-edition identical or near-identical passages.
+2. **Hard Multi-Signal Comedy Gate:** Calculates $\text{COMEDIC\_SIGNAL} + \text{CHARACTER\_INTERACTION} + \text{COMIC\_STAKES} + \text{TONAL\_COMPATIBILITY} - \text{SERIOUS\_DRAMA\_SIGNAL}$. Excludes dramatic tension, murder/horror accusations, and academic citations.
+3. **Strict `PARTIAL` Routing:** Ambiguous records evaluate to `PARTIAL` and route strictly to a human-review queue. They **never** enter automated SFT.
+4. **Deliberately Unambiguous Foundation SFT:** Only pure, single-mechanism scenes with high confidence and distinct structural beats qualify for `FOUNDATION SFT`. Richer multi-mechanism dynamics are isolated into `ADVANCED SFT`.
+5. **Permanent Regression Fixture:** The 50 calibrated examples are frozen into `tests/fixtures/comedy_craft_calibration_v1.json`, establishing a permanent regression benchmark against detector drift.
+
+---
+
+## Phase 3 Development Roadmap
 
 ```text
                          COMPLETE
-                            │
-                            ▼
+                             │
+                             ▼
 ┌──────────────────────────────────────────────┐
 │ Phase 3A — Comedy Craft Dataset Generation   │
 │ ✓ taxonomy & schemas                         │
@@ -119,28 +180,29 @@ The architecture is currently frozen at **Phase 3B** to validate the data layer 
                        │
                        ▼
 ┌──────────────────────────────────────────────┐
-│ Phase 3B — Human Calibration                 │
+│ Phase 3B — Human Calibration Infrastructure  │
 │ ✓ multidimensional rubric                    │
 │ ✓ literary quality vs training value         │
 │ ✓ mechanism confidence scoring               │
 │ ✓ disagreement taxonomy                      │
-│ ✓ secondary mechanisms                       │
 │ ✓ calibration sheet & audit tooling          │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│ Phase 3C — Empirical Pipeline Upgrades       │
+│ ✓ normalized text deduplication              │
+│ ✓ hard multi-signal eligibility gate         │
+│ ✓ refined detector disambiguation            │
+│ ✓ 3-tier stratification (Foundation/Adv/Eval)│
+│ ✓ permanent calibration regression fixture   │
 │                                              │
 │             ← CURRENT STATE                  │
 └──────────────────────┬───────────────────────┘
                        │
-                 HUMAN AUDIT
-                       │
                        ▼
 ┌──────────────────────────────────────────────┐
-│ Phase 3C — Calibration Analysis              │
-│ detector fixes / taxonomy fixes / rejection  │
-└──────────────────────┬───────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────┐
-│ Phase 3D — Dataset Expansion                 │
+│ Phase 3D — Full Corpus Expansion             │
 │ ~1,000–2,000 high-quality craft records      │
 └──────────────────────┬───────────────────────┘
                        │
@@ -151,7 +213,7 @@ The architecture is currently frozen at **Phase 3B** to validate the data layer 
 └──────────────────────────────────────────────┘
 ```
 
-> **Important Constraint:** Do **NOT** start SFT or DPO training yet. The 50 passages are a calibration experiment, not training data yet. The resulting audit data provides the empirical foundation for designing the Phase 4 mixture, weighting, SFT curriculum, LoRA hyperparameters, DPO pairs, and held-out benchmark.
+> **Important Constraint:** Do **NOT** start SFT or DPO training yet. The dataset pipeline upgrades ensure high purity in `FOUNDATION SFT` and `ADVANCED SFT`. The next phase (3D) expands the corpus with these gates before initiating model training.
 
 ---
 
@@ -290,17 +352,22 @@ python setup_project.py
 
 ### Run Tests
 
-Run the full automated test suite (106 tests covering state engine, invariants, compiler, search, and comedy craft pipeline):
+Run the full automated test suite (119 tests covering state engine, invariants, compiler, search, deduplication, comedy craft gate, and calibration regression benchmark):
 
 ```powershell
 python -m pytest tests/
 ```
 
-### Build Stratified Comedy Craft Sample
+### Build & Stratify Comedy Craft Dataset
 
 ```powershell
-# Extract 50 stratified inspection examples across all 10 mechanisms
-python -m dataset_generator.build_comedy_dataset --sample-size 50
+# Extract stratified dataset and export Foundation SFT, Advanced SFT, and Eval Benchmark
+python -m dataset_generator.build_comedy_dataset --sample-size 50 --export-dir datasets/
+
+# Generated artifact files:
+# - datasets/comedy_craft_foundation_sft.jsonl  (PURE_MECHANISM only)
+# - datasets/comedy_craft_advanced_sft.jsonl    (COMPOSITE_CRAFT)
+# - datasets/comedy_craft_eval_benchmark.jsonl  (GENERATE_FROM_STRUCTURE)
 
 # Generate human calibration review sheet and JSON audit template
 python -m dataset_generator.annotation_calibration_report
@@ -342,7 +409,7 @@ python -m experiments.run_experiment_001
 ├── utils/              # Token sanitizer & manuscript exporter (.docx, .pdf)
 ├── docs/               # Technical documentation (comedy_craft_taxonomy.md)
 ├── reports/            # Audit reports & human calibration sheets
-├── tests/              # Pytest test suite (106 passing tests)
+├── tests/              # Pytest test suite (119 passing tests)
 ├── setup_project.py    # Automated book downloader & workspace setup
 └── requirements.txt    # Python dependencies
 ```

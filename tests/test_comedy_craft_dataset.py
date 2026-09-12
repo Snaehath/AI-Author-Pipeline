@@ -155,7 +155,7 @@ class TestComedyCraftAnnotator:
         assert "right-o" in ann.surface_style_features
         # But because there is no true structural tension, confidence should be low
         assert ann.confidence < 0.70
-        assert ann.review_status == ReviewStatus.FLAGGED_LOW_CONFIDENCE
+        assert ann.review_status in (ReviewStatus.FLAGGED_LOW_CONFIDENCE, ReviewStatus.REJECTED)
 
 
 class TestContrastPurityValidator:

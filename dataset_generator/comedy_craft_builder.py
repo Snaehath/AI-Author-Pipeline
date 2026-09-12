@@ -18,10 +18,13 @@ from dataset_generator.taxonomy import (
     OriginalityMetrics,
     ReviewStatus,
     SourcePassage,
+    CraftPresence,
+    CraftStratum,
 )
 from dataset_generator.factual_analyzer import FactualSceneAnalyzer
 from dataset_generator.craft_annotator import ComedyCraftAnnotator
 from dataset_generator.operation_builder import CraftOperationBuilder
+from dataset_generator.deduplicator import NormalizedTextDeduplicator
 
 
 class ComedyCraftPipeline:
@@ -32,6 +35,7 @@ class ComedyCraftPipeline:
 
     def __init__(self, random_seed: int = 42):
         self.seed = random_seed
+        self.deduplicator = NormalizedTextDeduplicator()
         self.factual_analyzer = FactualSceneAnalyzer()
         self.craft_annotator = ComedyCraftAnnotator()
         self.operation_builder = CraftOperationBuilder()
@@ -58,6 +62,9 @@ class ComedyCraftPipeline:
         chapter_index = raw_item.get("chapter_index", 1)
         source_id = f"{source_book.lower().replace(' ', '_')}_ch{chapter_index}_{index:05d}"
 
+        # 1. Deduplication Check (Exact and Near-duplicate on normalized text)
+        is_dup, canonical_id = self.deduplicator.check_and_register(source_text, source_id)
+
         source_passage = SourcePassage(
             source_id=source_id,
             source_book=source_book,
@@ -65,21 +72,30 @@ class ComedyCraftPipeline:
             source_text=source_text,
         )
 
-        # 1. Level 1: Objective Factual Analysis
+        # 2. Level 1: Objective Factual Analysis
         facts = self.factual_analyzer.analyze(source_text)
 
-        # 2. Level 2: Semantic Craft Annotation
+        # 3. Level 2: Semantic Craft Annotation & Eligibility Gate
         craft = self.craft_annotator.annotate(source_text, facts)
 
-        # 3. Level 3: Interactive Craft Operations
-        operations = self.operation_builder.build_operations(source_text, facts, craft)
+        # If duplicate, mark and reject from training strata
+        if is_dup:
+            craft.is_duplicate = True
+            craft.duplicate_of_id = canonical_id
+            craft.craft_stratum = CraftStratum.REJECT
+            craft.review_status = ReviewStatus.REJECTED
 
-        # 4. Level 4: Audited Contrast DPO Pair
-        dpo_pair = self.operation_builder.build_contrast_dpo_pair(source_text, facts, craft)
+        # 4. Level 3 & 4: Operations and DPO Pairs (only generated for eligible non-rejected records)
+        if craft.craft_stratum == CraftStratum.REJECT:
+            operations = []
+            dpo_pair = None
+        else:
+            operations = self.operation_builder.build_operations(source_text, facts, craft)
+            dpo_pair = self.operation_builder.build_contrast_dpo_pair(source_text, facts, craft)
 
         # Originality baseline metrics
         originality = OriginalityMetrics(
-            genre_fit=0.92,
+            genre_fit=0.92 if craft.craft_presence == CraftPresence.YES else 0.30,
             craft_quality=craft.quality_score,
             character_originality=0.75,
             situation_originality=0.80,
@@ -94,6 +110,7 @@ class ComedyCraftPipeline:
             dpo_pair=dpo_pair,
             originality=originality,
         )
+
 
     def build_from_jsonl(
         self,
@@ -233,20 +250,50 @@ class ComedyCraftPipeline:
 
         return train, val, test
 
+    def partition_strata(
+        self, records: List[ComedyCraftRecord]
+    ) -> Tuple[List[ComedyCraftRecord], List[ComedyCraftRecord], List[ComedyCraftRecord], List[ComedyCraftRecord]]:
+        """
+        Partitions records into the three architectural layers:
+        - foundation_sft: PURE_MECHANISM (clean single-mechanism exemplars)
+        - advanced_sft: COMPOSITE_CRAFT (multi-mechanism farces)
+        - evaluation_benchmark: GENERATE_FROM_STRUCTURE transfer operations
+        - rejected: duplicates, non-comedic false positives, or review queue
+        """
+        foundation = [r for r in records if r.craft.craft_stratum == CraftStratum.PURE_MECHANISM]
+        advanced = [r for r in records if r.craft.craft_stratum == CraftStratum.COMPOSITE_CRAFT]
+        rejected = [r for r in records if r.craft.craft_stratum == CraftStratum.REJECT]
+        
+        eval_benchmark = [
+            r for r in (foundation + advanced)
+            if any(op.task_type.value == "GENERATE_FROM_STRUCTURE" for op in r.operations)
+        ]
+        return foundation, advanced, eval_benchmark, rejected
+
     def _compute_build_stats(
         self, total_source: int, rejected_length: int, records: List[ComedyCraftRecord]
     ) -> Dict[str, Any]:
-        """Calculates audit metrics for the build report."""
+        """Calculates audit metrics for the build report including stratum and deduplication metrics."""
         total_selected = len(records)
         mech_counts: Dict[str, int] = defaultdict(int)
         book_counts: Dict[str, int] = defaultdict(int)
+        stratum_counts: Dict[str, int] = defaultdict(int)
         low_confidence_count = 0
         dpo_pair_count = 0
+        duplicate_count = 0
+        rejected_gate_count = 0
         dialogue_bins = {"low (<0.3)": 0, "medium (0.3-0.6)": 0, "high (>0.6)": 0}
 
         for r in records:
             mech_counts[r.craft.primary_mechanism.value] += 1
             book_counts[r.source.source_book] += 1
+            stratum_counts[r.craft.craft_stratum.value] += 1
+
+            if r.craft.is_duplicate:
+                duplicate_count += 1
+            if r.craft.craft_presence != CraftPresence.YES:
+                rejected_gate_count += 1
+
             if r.craft.review_status == ReviewStatus.FLAGGED_LOW_CONFIDENCE:
                 low_confidence_count += 1
             if r.dpo_pair is not None:
@@ -269,6 +316,9 @@ class ComedyCraftPipeline:
             "source_examples_scanned": total_source,
             "rejected_short_fragments": rejected_length,
             "total_selected": total_selected,
+            "stratum_distribution": dict(stratum_counts),
+            "duplicate_passages_rejected": duplicate_count,
+            "non_comedic_passages_rejected": rejected_gate_count,
             "mechanism_distribution": mech_counts,
             "mechanism_distribution_pct": mech_pcts,
             "source_book_distribution": dict(book_counts),
@@ -277,3 +327,4 @@ class ComedyCraftPipeline:
             "requires_review_count": low_confidence_count,
             "valid_dpo_pairs_generated": dpo_pair_count,
         }
+

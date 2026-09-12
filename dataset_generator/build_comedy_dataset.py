@@ -105,8 +105,29 @@ def main():
     print(f"[OK] Saved build report to: {report_path}")
 
     if args.full_build:
-        print("\nBuilding full train/val/test splits (80/10/10)...")
-        train, val, test = pipeline.split_dataset(records)
+        print("\nPartitioning into Three Architectural Strata...")
+        foundation, advanced, eval_benchmark, rejected = pipeline.partition_strata(records)
+        
+        foundation_path = output_sample_path.parent / "comedy_craft_foundation_sft.jsonl"
+        advanced_path = output_sample_path.parent / "comedy_craft_advanced_sft.jsonl"
+        eval_path = output_sample_path.parent / "comedy_craft_eval_benchmark.jsonl"
+
+        for p, subset in [
+            (foundation_path, foundation),
+            (advanced_path, advanced),
+            (eval_path, eval_benchmark),
+        ]:
+            with open(p, "w", encoding="utf-8") as f:
+                for item in subset:
+                    f.write(json.dumps(item.to_dict(), ensure_ascii=False) + "\n")
+        print(
+            f"[OK] Three-tier dataset written: "
+            f"foundation={len(foundation)}, advanced={len(advanced)}, "
+            f"eval_benchmark={len(eval_benchmark)}, rejected={len(rejected)}"
+        )
+
+        print("\nBuilding traditional train/val/test splits (80/10/10)...")
+        train, val, test = pipeline.split_dataset(foundation + advanced)
         train_path = output_sample_path.parent / "comedy_craft_train.jsonl"
         val_path = output_sample_path.parent / "comedy_craft_val.jsonl"
         test_path = output_sample_path.parent / "comedy_craft_test.jsonl"
@@ -115,9 +136,10 @@ def main():
             with open(p, "w", encoding="utf-8") as f:
                 for item in subset:
                     f.write(json.dumps(item.to_dict(), ensure_ascii=False) + "\n")
-        print(f"[OK] Full dataset written: train={len(train)}, val={len(val)}, test={len(test)}")
+        print(f"[OK] Full splits written: train={len(train)}, val={len(val)}, test={len(test)}")
 
-    print("\n=== Phase 3A Dataset Build Completed Successfully ===")
+    print("\n=== Comedy Craft Dataset Build Completed Successfully ===")
+
 
 
 if __name__ == "__main__":

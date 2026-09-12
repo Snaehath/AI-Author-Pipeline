@@ -120,6 +120,21 @@ class DisagreementCategory(str, Enum):
     F_REJECT_EXAMPLE = "F_REJECT_EXAMPLE"
 
 
+class CraftPresence(str, Enum):
+    """Eligibility gate verdict for presence of comedic craft in text."""
+    YES = "YES"
+    NO = "NO"
+    PARTIAL = "PARTIAL"  # Enters human-review queue, barred from automatic SFT
+
+
+class CraftStratum(str, Enum):
+    """Target architectural layer for training and evaluation."""
+    PURE_MECHANISM = "PURE_MECHANISM"      # Foundation SFT (isolated dominant mechanism)
+    COMPOSITE_CRAFT = "COMPOSITE_CRAFT"    # Advanced SFT (multi-mechanism interactions)
+    EVALUATION = "EVALUATION"              # Held-out benchmark (GENERATE_FROM_STRUCTURE)
+    REJECT = "REJECT"                      # Fails gate, duplicate, or non-comic
+
+
 @dataclass
 class CraftAnnotation:
     """Level 2 Craft Annotation: Why does the scene work structurally and comedically."""
@@ -132,6 +147,10 @@ class CraftAnnotation:
     human_literary_quality: Optional[float] = None  # Literary execution quality [1 - 10]
     human_training_value: Optional[float] = None  # Transferable comedic training value [1 - 10]
     human_disagreement_category: Optional[DisagreementCategory] = None
+    craft_presence: CraftPresence = CraftPresence.YES
+    craft_stratum: CraftStratum = CraftStratum.PURE_MECHANISM
+    is_duplicate: bool = False
+    duplicate_of_id: Optional[str] = None
     scene_function: SceneFunction = SceneFunction.SOCIAL_CONFLICT
     tone: ComedicTone = ComedicTone.DRY_WIT
     setup_summary: str = ""
@@ -159,6 +178,8 @@ class CraftAnnotation:
         d = asdict(self)
         d["primary_mechanism"] = self.primary_mechanism.value
         d["secondary_mechanisms"] = [m.value for m in self.secondary_mechanisms]
+        d["craft_presence"] = self.craft_presence.value
+        d["craft_stratum"] = self.craft_stratum.value
         d["scene_function"] = self.scene_function.value
         d["tone"] = self.tone.value
         d["source"] = self.source.value
@@ -173,6 +194,8 @@ class CraftAnnotation:
         data_copy = dict(data)
         data_copy["primary_mechanism"] = ComicMechanism(data_copy["primary_mechanism"])
         data_copy["secondary_mechanisms"] = [ComicMechanism(m) for m in data_copy.get("secondary_mechanisms", [])]
+        data_copy["craft_presence"] = CraftPresence(data_copy.get("craft_presence", CraftPresence.YES.value))
+        data_copy["craft_stratum"] = CraftStratum(data_copy.get("craft_stratum", CraftStratum.PURE_MECHANISM.value))
         data_copy["scene_function"] = SceneFunction(data_copy.get("scene_function", SceneFunction.SOCIAL_CONFLICT.value))
         data_copy["tone"] = ComedicTone(data_copy.get("tone", ComedicTone.DRY_WIT.value))
         data_copy["source"] = AnnotationSource(data_copy.get("source", AnnotationSource.HEURISTIC.value))
@@ -188,6 +211,7 @@ class CraftAnnotation:
         data_copy.pop("confidence", None)
         data_copy.pop("quality_score", None)
         return cls(**data_copy)
+
 
 
 @dataclass
