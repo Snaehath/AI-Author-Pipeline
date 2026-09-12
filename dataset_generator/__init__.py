@@ -40,7 +40,13 @@ from .craft_annotator import ComedyCraftAnnotator
 from .contrast_purity import ContrastPurityValidator
 from .operation_builder import CraftOperationBuilder
 from .comedy_craft_builder import ComedyCraftPipeline
-from .annotation_calibration_report import AnnotationCalibrationReport
+
+
+def __getattr__(name: str):
+    if name == "AnnotationCalibrationReport":
+        from .annotation_calibration_report import AnnotationCalibrationReport
+        return AnnotationCalibrationReport
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 __all__ = [
     "PromptTemplates",

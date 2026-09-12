@@ -18,7 +18,10 @@ for p in [str(AI_AUTHOR_DIR), str(ML_DIR)]:
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from dataset_generator.taxonomy import ComicMechanism
+try:
+    from .taxonomy import ComicMechanism
+except ImportError:
+    from dataset_generator.taxonomy import ComicMechanism
 
 
 class AnnotationCalibrationReport:
@@ -224,19 +227,42 @@ class AnnotationCalibrationReport:
         avg_quality = round(sum(quality_scores) / len(quality_scores), 2) if quality_scores else None
         avg_conf = round(sum(confidence_scores) / len(confidence_scores), 2) if confidence_scores else None
 
-        base_denom = reviewed_count if reviewed_count > 0 else total
-        sec_pct = round((secondary_agreed / secondary_evaluated) * 100, 1) if secondary_evaluated else 0.0
+        if reviewed_count == 0:
+            status = "UNREVIEWED"
+            primary_pct = None
+            sec_pct = None
+            setup_pct = None
+            escalation_pct = None
+            reversal_pct = None
+            payoff_pct = None
+        elif reviewed_count < total:
+            status = "IN_PROGRESS"
+            primary_pct = round((mech_agreed / reviewed_count) * 100, 1)
+            sec_pct = round((secondary_agreed / secondary_evaluated) * 100, 1) if secondary_evaluated else 0.0
+            setup_pct = round((setup_agreed / reviewed_count) * 100, 1)
+            escalation_pct = round((escalation_agreed / reviewed_count) * 100, 1)
+            reversal_pct = round((reversal_agreed / reviewed_count) * 100, 1)
+            payoff_pct = round((payoff_agreed / reviewed_count) * 100, 1)
+        else:
+            status = "COMPLETE"
+            primary_pct = round((mech_agreed / total) * 100, 1)
+            sec_pct = round((secondary_agreed / secondary_evaluated) * 100, 1) if secondary_evaluated else 0.0
+            setup_pct = round((setup_agreed / total) * 100, 1)
+            escalation_pct = round((escalation_agreed / total) * 100, 1)
+            reversal_pct = round((reversal_agreed / total) * 100, 1)
+            payoff_pct = round((payoff_agreed / total) * 100, 1)
 
         return {
             "total_records": total,
             "total_audited": reviewed_count,
-            "primary_mechanism_agreement_pct": round((mech_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
-            "mechanism_agreement_pct": round((mech_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
-            "secondary_mechanism_agreement_pct": sec_pct if reviewed_count else 0.0,
-            "setup_agreement_pct": round((setup_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
-            "escalation_agreement_pct": round((escalation_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
-            "reversal_agreement_pct": round((reversal_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
-            "payoff_agreement_pct": round((payoff_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "calibration_status": status,
+            "primary_mechanism_agreement_pct": primary_pct,
+            "mechanism_agreement_pct": primary_pct,
+            "secondary_mechanism_agreement_pct": sec_pct,
+            "setup_agreement_pct": setup_pct,
+            "escalation_agreement_pct": escalation_pct,
+            "reversal_agreement_pct": reversal_pct,
+            "payoff_agreement_pct": payoff_pct,
             "mean_literary_quality": avg_quality,
             "average_human_literary_quality": avg_quality,
             "mean_training_value": avg_training_val,
@@ -288,18 +314,45 @@ def main():
         with open(audit_path, "r", encoding="utf-8") as f:
             audited_records = json.load(f)
 
-        print(f"=== Calculating Human Calibration Agreement ({len(audited_records)} records) ===")
         metrics = AnnotationCalibrationReport.calculate_agreement_metrics(audited_records)
-        print(f"1. Primary Mechanism Agreement:   {metrics['primary_mechanism_agreement_pct']}%")
-        print(f"2. Secondary Mechanism Agreement: {metrics['secondary_mechanism_agreement_pct']}%")
-        print(f"3. Setup Agreement:              {metrics['setup_agreement_pct']}%")
-        print(f"4. Escalation Agreement:         {metrics['escalation_agreement_pct']}%")
-        print(f"5. Reversal Agreement:           {metrics['reversal_agreement_pct']}%")
-        print(f"6. Payoff Agreement:             {metrics['payoff_agreement_pct']}%")
-        print(f"7. Mean Literary Quality:        {metrics['mean_literary_quality']}")
-        print(f"8. Mean Training Value:          {metrics['mean_training_value']}")
-        print(f"9. Mean Mechanism Confidence:    {metrics['mean_mechanism_confidence']}")
-        print(f"10. Disagreement Distribution:   {json.dumps(metrics['disagreement_category_distribution'], indent=2)}")
+        audited_count = metrics["total_audited"]
+        total_records = metrics["total_records"]
+        status = metrics["calibration_status"]
+
+        print(f"\n=== Human Calibration Agreement ({total_records} records) ===\n")
+        print(f"Audited: {audited_count} / {total_records}")
+
+        if status == "UNREVIEWED":
+            print("\nStatus: CALIBRATION INCOMPLETE")
+            print("No human annotations are currently available.")
+            print("Agreement percentages are therefore not meaningful (N/A).\n")
+        elif status == "IN_PROGRESS":
+            print(f"\nStatus: CALIBRATION IN PROGRESS ({audited_count}/{total_records} complete)\n")
+        else:
+            print("\nStatus: CALIBRATION COMPLETE\n")
+
+        def _fmt_pct(val):
+            return f"{val}%" if val is not None else "N/A"
+
+        def _fmt_val(val):
+            return str(val) if val is not None else "N/A"
+
+        print(f"1. Primary Mechanism Agreement:   {_fmt_pct(metrics['primary_mechanism_agreement_pct'])}")
+        print(f"2. Secondary Mechanism Agreement: {_fmt_pct(metrics['secondary_mechanism_agreement_pct'])}")
+        print(f"3. Setup Agreement:               {_fmt_pct(metrics['setup_agreement_pct'])}")
+        print(f"4. Escalation Agreement:          {_fmt_pct(metrics['escalation_agreement_pct'])}")
+        print(f"5. Reversal Agreement:            {_fmt_pct(metrics['reversal_agreement_pct'])}")
+        print(f"6. Payoff Agreement:              {_fmt_pct(metrics['payoff_agreement_pct'])}")
+        print(f"7. Mean Literary Quality:         {_fmt_val(metrics['mean_literary_quality'])}")
+        print(f"8. Mean Training Value:           {_fmt_val(metrics['mean_training_value'])}")
+        print(f"9. Mean Mechanism Confidence:     {_fmt_val(metrics['mean_mechanism_confidence'])}")
+
+        disagreement_str = (
+            json.dumps(metrics["disagreement_category_distribution"], indent=2)
+            if metrics["disagreement_category_distribution"]
+            else "N/A"
+        )
+        print(f"10. Disagreement Distribution:    {disagreement_str}")
         print("\nFull metrics JSON:")
         print(json.dumps(metrics, indent=2))
         return
