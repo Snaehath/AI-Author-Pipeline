@@ -1,0 +1,87 @@
+{
+  "total_lines": 10619,
+  "valid_passages": 4217,
+  "too_short_passages": 6402,
+  "deduplication": {
+    "unique_passages": 3108,
+    "duplicates_detected": 1109,
+    "duplicate_rate_pct": 26.3
+  },
+  "comedy_gate": {
+    "yes_count": 303,
+    "yes_pct": 9.7,
+    "partial_count": 1057,
+    "partial_pct": 34.0,
+    "no_count": 1748,
+    "no_pct": 56.2
+  },
+  "eligibility_breakdown": {
+    "foundation_candidates": 15,
+    "composite_candidates": 288,
+    "human_review_candidates": 1057,
+    "rejected_count": 3914
+  },
+  "mechanisms": {
+    "MISUNDERSTANDING": 238,
+    "STATUS_REVERSAL": 8,
+    "ESCALATION": 38,
+    "DEADPAN_REACTION": 4,
+    "SOCIAL_EMBARRASSMENT": 9,
+    "VERBAL_WIT": 2,
+    "DRAMATIC_IRONY": 0,
+    "DIALOGUE_SUBTEXT": 2,
+    "CALLBACK": 0,
+    "PHYSICAL_COMPLICATION": 2
+  },
+  "mechanisms_foundation": {
+    "MISUNDERSTANDING": 0,
+    "STATUS_REVERSAL": 0,
+    "ESCALATION": 12,
+    "DEADPAN_REACTION": 1,
+    "SOCIAL_EMBARRASSMENT": 1,
+    "VERBAL_WIT": 0,
+    "DRAMATIC_IRONY": 0,
+    "DIALOGUE_SUBTEXT": 0,
+    "CALLBACK": 0,
+    "PHYSICAL_COMPLICATION": 1
+  },
+  "mechanisms_composite": {
+    "MISUNDERSTANDING": 238,
+    "STATUS_REVERSAL": 8,
+    "ESCALATION": 26,
+    "DEADPAN_REACTION": 3,
+    "SOCIAL_EMBARRASSMENT": 8,
+    "VERBAL_WIT": 2,
+    "DRAMATIC_IRONY": 0,
+    "DIALOGUE_SUBTEXT": 2,
+    "CALLBACK": 0,
+    "PHYSICAL_COMPLICATION": 1
+  },
+  "confidence_metrics": {
+    "mean_foundation_confidence": 0.793,
+    "mean_composite_confidence": 0.123
+  },
+  "source_book_counts": {
+    "My Man Jeeves": 663,
+    "The Man Upstairs": 863,
+    "Jill The Reckless": 188,
+    "Love Among The Chickens": 91,
+    "The Adventures Of Sally": 86,
+    "The Inimitable Jeeves": 432,
+    "Uneasy Money": 26,
+    "Three Men In A Boat": 193,
+    "The Diary Of A Nobody": 131,
+    "Right Ho": 669,
+    "A Damsel In Distress": 120,
+    "Their Mutual Child": 233,
+    "Three Men On The Bummel": 256,
+    "The Click Of Triangle": 19,
+    "Something Fresh": 101,
+    "Piccadilly Jim": 17,
+    "Idle Thoughts": 19,
+    "The Little Nugget": 51,
+    "The Prince And Betty": 32,
+    "Psmith In The City": 27
+  },
+  "execution_time_seconds": 29.39
+}
