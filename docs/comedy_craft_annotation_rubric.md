@@ -48,9 +48,24 @@ $$\text{Literary Quality} \neq \text{Craft Clarity} \neq \text{Training Value}$$
 
 ## 2. Six-Step Audit Decision Workflow
 
-Every passage in `comedy_craft_audit_batch_180.json` must be audited through this sequential protocol:
+### Unanchored (Blind) Annotation Protocol
+To prevent cognitive anchoring to heuristic machine outputs, auditors must **not inspect the automated detector prediction until Step 11**:
 
 ```text
+1. Read passage carefully in isolation.
+2. Is comedic craft present? (YES / NO / PARTIAL)
+3. What is the temporal horizon? (LOCAL / LONG_HORIZON)
+4. What actually generates the comedic effect?
+5. Determine primary mechanism and any secondary mechanisms.
+6. Determine craft stratum (PURE_MECHANISM / COMPOSITE_CRAFT / REJECT).
+7. Score literary quality (1-10).
+8. Score craft clarity (1-10).
+9. Score training value (1-10).
+10. Assign keep verdict (KEEP / REVISE / REJECT).
+11. THEN and ONLY THEN inspect the automated detector prediction.
+12. Assess detector_correct (true/false) and record confusion notes.
+```
+
                ┌───────────────────────────────┐
                │ Passage Excerpt + Context     │
                └───────────────┬───────────────┘
@@ -134,10 +149,10 @@ Every passage in `comedy_craft_audit_batch_180.json` must be audited through thi
 * **Positive Indicator:** The valet politely dictating terms to his aristocratic master; the magistrate being interrogated by the tramp.
 * **Negative Boundary:** Mere arguments or petulance between equals is **NOT** status reversal.
 
-### 6. `COMIC_IRONY`
-* **Core Definition:** Situational outcome directly inverts the character's stated intention, effort, or confident prediction in a way that humorously mocks their pretension.
-* **Positive Indicator:** The boastful expert failing catastrophically at the very skill he just lectured on.
-* **Negative Boundary:** General misfortune, tragic irony, or random bad luck is **NOT** comic irony.
+### 6. `SOCIAL_EMBARRASSMENT`
+* **Core Definition:** Acute, agonizing social mortification caused by violating decorum, being caught in an undignified deception/blunder, or public exposure of petty pretension.
+* **Positive Indicator:** The desperate, sweating struggle to save face in front of an austere social authority or hostess; awkward social faux pas compounding under polite scrutiny.
+* **Negative Boundary:** Dramatic accusations, criminal guilt, or horror/danger (e.g., believing murderers are in the closet) is **NOT** social embarrassment. Social embarrassment requires decorum-based mortification.
 
 ### 7. `DRAMATIC_IRONY`
 * **Core Definition:** The reader (and often one character) possesses vital knowledge that another character is oblivious to, causing the oblivious character's words/actions to carry humorous double meaning.
