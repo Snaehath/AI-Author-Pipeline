@@ -70,6 +70,7 @@ class TestPhase3DSamplingAndScopes:
             secondary_mechanisms=[ComicMechanism.DEADPAN_REACTION],
             mechanism_horizon=MechanismHorizon.LOCAL,
             literary_quality=9,
+            craft_clarity=8,
             training_value=10,
             keep_verdict="KEEP",
             detector_primary="MISUNDERSTANDING",
@@ -79,10 +80,12 @@ class TestPhase3DSamplingAndScopes:
         d = audit.to_dict()
         assert d["craft_presence"] == "YES"
         assert d["primary_mechanism"] == "ESCALATION"
+        assert d["craft_clarity"] == 8
         assert d["detector_correct"] is False
 
         restored = HumanCraftAudit.from_dict(d)
         assert restored.primary_mechanism == ComicMechanism.ESCALATION
+        assert restored.craft_clarity == 8
         assert restored.training_value == 10
 
     def test_audit_batch_file_integrity(self):

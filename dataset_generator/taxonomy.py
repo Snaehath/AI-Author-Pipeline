@@ -263,8 +263,9 @@ class HumanCraftAudit:
     escalation_accurate: bool = True
     reversal_accurate: bool = True
     payoff_accurate: bool = True
-    literary_quality: int = 5  # Scale 1-10
-    training_value: int = 5    # Scale 1-10
+    literary_quality: int = 5  # Scale 1-10 (prose elegance, voice, linguistic polish)
+    craft_clarity: int = 5     # Scale 1-10 (unmistakable execution of comic mechanics: setup, escalation, reversal, payoff)
+    training_value: int = 5    # Scale 1-10 (pedagogical utility for fine-tuning the 1.5B specialist model)
     keep_verdict: str = "KEEP"  # KEEP, REJECT, REVISE
     detector_primary: Optional[str] = None
     detector_correct: bool = False

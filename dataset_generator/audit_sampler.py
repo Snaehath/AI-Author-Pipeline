@@ -224,6 +224,7 @@ class AuditSampler:
                         "reversal_accurate": None,
                         "payoff_accurate": None,
                         "literary_quality": None,
+                        "craft_clarity": None,
                         "training_value": None,
                         "keep_verdict": "UNREVIEWED",
                         "detector_correct": None,
@@ -289,10 +290,13 @@ class AuditSampler:
                 "1. **`craft_presence`**: `YES`, `NO`, or `PARTIAL`\n"
                 "2. **`craft_stratum`**: `PURE_MECHANISM`, `COMPOSITE_CRAFT`, or `REJECT`\n"
                 "3. **`primary_mechanism`**: What is the dominant mechanism? (Independent of detector hypothesis)\n"
-                "4. **`mechanism_horizon`**: `LOCAL` (manifests within scene) vs `LONG_HORIZON` (requires context)\n"
-                "5. **`detector_correct`**: `true` if detector primary matches actual craft, `false` otherwise\n"
-                "6. **`training_value`**: 1 (worthless/unfunny) to 10 (flawless comedic exemplar)\n"
-                "7. **`keep_verdict`**: `KEEP` (enters Gold SFT/DPO), `REJECT`, or `REVISE`\n\n"
+                "4. **`secondary_mechanisms`**: List of co-occurring secondary mechanisms (e.g. [\"DEADPAN_REACTION\", \"VERBAL_WIT\"])\n"
+                "5. **`mechanism_horizon`**: `LOCAL` (manifests within scene) vs `LONG_HORIZON` (requires context)\n"
+                "6. **`detector_correct`**: `true` if detector primary matches actual craft, `false` otherwise\n"
+                "7. **`literary_quality`**: 1 to 10 (prose elegance, vocabulary, rhythm, stylistic polish)\n"
+                "8. **`craft_clarity`**: 1 to 10 (unmistakable structural execution of setup, escalation, reversal, payoff)\n"
+                "9. **`training_value`**: 1 to 10 (pedagogical teaching utility for 1.5B specialist SFT/DPO)\n"
+                "10. **`keep_verdict`**: `KEEP` (enters Gold SFT/DPO), `REJECT`, or `REVISE`\n\n"
                 "---\n\n"
             )
 
