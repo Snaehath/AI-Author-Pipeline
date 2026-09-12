@@ -44,11 +44,43 @@ class ComedicTone(str, Enum):
 
 
 class AnnotationSource(str, Enum):
-    """Provenance of the annotation."""
-    DETERMINISTIC = "DETERMINISTIC"
-    HEURISTIC = "HEURISTIC"
-    MODEL_ASSISTED = "MODEL_ASSISTED"
-    HUMAN_VERIFIED = "HUMAN_VERIFIED"
+    """Provenance and verification status of the annotation."""
+    AUTOMATED = "AUTOMATED"
+    HUMAN = "HUMAN"
+    HUMAN_REVIEWED = "HUMAN_REVIEWED"
+    # Legacy aliases
+    DETERMINISTIC = "AUTOMATED"
+    HEURISTIC = "AUTOMATED"
+    MODEL_ASSISTED = "AUTOMATED"
+    HUMAN_VERIFIED = "HUMAN_REVIEWED"
+
+
+class MechanismHorizon(str, Enum):
+    """Temporal scope required to establish and perceive the comedic mechanism."""
+    LOCAL = "LOCAL"                    # Single scene/passage can establish it
+    LONG_HORIZON = "LONG_HORIZON"      # Requires cross-scene / multi-chapter context
+
+
+LOCAL_MECHANISMS = {
+    ComicMechanism.MISUNDERSTANDING,
+    ComicMechanism.STATUS_REVERSAL,
+    ComicMechanism.ESCALATION,
+    ComicMechanism.DEADPAN_REACTION,
+    ComicMechanism.SOCIAL_EMBARRASSMENT,
+    ComicMechanism.VERBAL_WIT,
+    ComicMechanism.PHYSICAL_COMPLICATION,
+    ComicMechanism.DIALOGUE_SUBTEXT,
+}
+
+LONG_HORIZON_MECHANISMS = {
+    ComicMechanism.CALLBACK,
+    ComicMechanism.DRAMATIC_IRONY,
+}
+
+
+def get_mechanism_horizon(mechanism: ComicMechanism) -> MechanismHorizon:
+    """Returns whether a mechanism operates locally or over a long narrative horizon."""
+    return MechanismHorizon.LONG_HORIZON if mechanism in LONG_HORIZON_MECHANISMS else MechanismHorizon.LOCAL
 
 
 class ReviewStatus(str, Enum):
@@ -158,7 +190,7 @@ class CraftAnnotation:
     reversal_summary: str = ""
     payoff_summary: str = ""
     surface_style_features: List[str] = field(default_factory=list)  # Period slang decoupled from craft
-    source: AnnotationSource = AnnotationSource.HEURISTIC
+    source: AnnotationSource = AnnotationSource.AUTOMATED
     review_status: ReviewStatus = ReviewStatus.UNREVIEWED
     confidence: Optional[float] = None  # Alias kwarg support
     quality_score: Optional[float] = None  # Alias kwarg support
@@ -183,6 +215,7 @@ class CraftAnnotation:
         d["scene_function"] = self.scene_function.value
         d["tone"] = self.tone.value
         d["source"] = self.source.value
+        d["annotation_source"] = self.source.value
         d["review_status"] = self.review_status.value
         # Include aliases for backward-compatibility with existing code
         d["confidence"] = self.detector_confidence
@@ -198,7 +231,9 @@ class CraftAnnotation:
         data_copy["craft_stratum"] = CraftStratum(data_copy.get("craft_stratum", CraftStratum.PURE_MECHANISM.value))
         data_copy["scene_function"] = SceneFunction(data_copy.get("scene_function", SceneFunction.SOCIAL_CONFLICT.value))
         data_copy["tone"] = ComedicTone(data_copy.get("tone", ComedicTone.DRY_WIT.value))
-        data_copy["source"] = AnnotationSource(data_copy.get("source", AnnotationSource.HEURISTIC.value))
+        source_val = data_copy.get("annotation_source", data_copy.get("source", AnnotationSource.AUTOMATED.value))
+        data_copy["source"] = AnnotationSource(source_val)
+        data_copy.pop("annotation_source", None)
         data_copy["review_status"] = ReviewStatus(data_copy.get("review_status", ReviewStatus.UNREVIEWED.value))
         
         # Support both new and legacy field names
@@ -212,6 +247,49 @@ class CraftAnnotation:
         data_copy.pop("quality_score", None)
         return cls(**data_copy)
 
+
+@dataclass
+class HumanCraftAudit:
+    """
+    Independent human audit record capturing ground-truth comedic craft,
+    decoupled from automated detector hypotheses.
+    """
+    craft_presence: CraftPresence
+    craft_stratum: CraftStratum
+    primary_mechanism: Optional[ComicMechanism] = None
+    secondary_mechanisms: List[ComicMechanism] = field(default_factory=list)
+    mechanism_horizon: MechanismHorizon = MechanismHorizon.LOCAL
+    setup_accurate: bool = True
+    escalation_accurate: bool = True
+    reversal_accurate: bool = True
+    payoff_accurate: bool = True
+    literary_quality: int = 5  # Scale 1-10
+    training_value: int = 5    # Scale 1-10
+    keep_verdict: str = "KEEP"  # KEEP, REJECT, REVISE
+    detector_primary: Optional[str] = None
+    detector_correct: bool = False
+    notes: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = asdict(self)
+        d["craft_presence"] = self.craft_presence.value
+        d["craft_stratum"] = self.craft_stratum.value
+        d["primary_mechanism"] = self.primary_mechanism.value if self.primary_mechanism else None
+        d["secondary_mechanisms"] = [m.value for m in self.secondary_mechanisms]
+        d["mechanism_horizon"] = self.mechanism_horizon.value
+        return d
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "HumanCraftAudit":
+        c = dict(data)
+        c["craft_presence"] = CraftPresence(c["craft_presence"])
+        c["craft_stratum"] = CraftStratum(c["craft_stratum"])
+        if c.get("primary_mechanism"):
+            c["primary_mechanism"] = ComicMechanism(c["primary_mechanism"])
+        c["secondary_mechanisms"] = [ComicMechanism(m) for m in c.get("secondary_mechanisms", [])]
+        if "mechanism_horizon" in c:
+            c["mechanism_horizon"] = MechanismHorizon(c["mechanism_horizon"])
+        return cls(**c)
 
 
 @dataclass
@@ -313,6 +391,7 @@ class ComedyCraftRecord:
             "source": self.source.to_dict(),
             "facts": self.facts.to_dict(),
             "craft": self.craft.to_dict(),
+            "annotation_source": self.craft.source.value,
             "operations": [op.to_dict() for op in self.operations],
             "dpo_pair": self.dpo_pair.to_dict() if self.dpo_pair else None,
             "originality": self.originality.to_dict() if self.originality else None,
