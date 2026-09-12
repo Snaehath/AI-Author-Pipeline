@@ -1,0 +1,51 @@
+{
+  "source_examples_scanned": 10619,
+  "rejected_short_fragments": 6402,
+  "total_selected": 50,
+  "mechanism_distribution": {
+    "MISUNDERSTANDING": 5,
+    "STATUS_REVERSAL": 6,
+    "ESCALATION": 5,
+    "DEADPAN_REACTION": 5,
+    "SOCIAL_EMBARRASSMENT": 5,
+    "VERBAL_WIT": 5,
+    "DRAMATIC_IRONY": 4,
+    "DIALOGUE_SUBTEXT": 5,
+    "CALLBACK": 5,
+    "PHYSICAL_COMPLICATION": 5
+  },
+  "mechanism_distribution_pct": {
+    "STATUS_REVERSAL": "12.0%",
+    "MISUNDERSTANDING": "10.0%",
+    "ESCALATION": "10.0%",
+    "DEADPAN_REACTION": "10.0%",
+    "SOCIAL_EMBARRASSMENT": "10.0%",
+    "VERBAL_WIT": "10.0%",
+    "DIALOGUE_SUBTEXT": "10.0%",
+    "CALLBACK": "10.0%",
+    "PHYSICAL_COMPLICATION": "10.0%",
+    "DRAMATIC_IRONY": "8.0%"
+  },
+  "source_book_distribution": {
+    "The Man Upstairs": 9,
+    "Right Ho": 10,
+    "My Man Jeeves": 9,
+    "Jill The Reckless": 3,
+    "A Damsel In Distress": 5,
+    "The Inimitable Jeeves": 3,
+    "The Little Nugget": 3,
+    "The Diary Of A Nobody": 1,
+    "Their Mutual Child": 2,
+    "Three Men In A Boat": 1,
+    "Love Among The Chickens": 2,
+    "Something Fresh": 2
+  },
+  "dialogue_ratio_distribution": {
+    "low (<0.3)": 9,
+    "medium (0.3-0.6)": 20,
+    "high (>0.6)": 21
+  },
+  "low_confidence_count": 45,
+  "requires_review_count": 45,
+  "valid_dpo_pairs_generated": 0
+}
