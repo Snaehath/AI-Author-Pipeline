@@ -1,0 +1,73 @@
+{
+  "phase": "3F",
+  "source": {
+    "audit_file": "reports/comedy_craft_audit_batch_180.json",
+    "audited_records": 180,
+    "keep_records": 106
+  },
+  "reconciliation": {
+    "eval": 17,
+    "train": 43,
+    "eval_tier": 9,
+    "structural_excluded": 16,
+    "cap_excluded": 21,
+    "total": 106,
+    "conservation": true
+  },
+  "training": {
+    "count": 43,
+    "unique_ids": true,
+    "eval_leakage": false,
+    "quality_gates_pass": true,
+    "curriculum_order_valid": true
+  },
+  "protected_examples": {
+    "audit_050": {
+      "in_train": true,
+      "in_eval": false,
+      "curriculum": "SFT-4",
+      "sft_score": 10.0
+    }
+  },
+  "curricula": {
+    "SFT-1": 4,
+    "SFT-2": 0,
+    "SFT-3": 7,
+    "SFT-4": 32,
+    "SFT-5": 0
+  },
+  "mechanisms": {
+    "ESCALATION": 12,
+    "VERBAL_WIT": 6,
+    "MISUNDERSTANDING": 6,
+    "PHYSICAL_COMPLICATION": 5,
+    "STATUS_REVERSAL": 5,
+    "SOCIAL_EMBARRASSMENT": 5,
+    "DEADPAN_REACTION": 2,
+    "DIALOGUE_SUBTEXT": 2
+  },
+  "sources": {
+    "The Little Nugget": 9,
+    "My Man Jeeves": 5,
+    "The Man Upstairs": 4,
+    "Three Men In A Boat": 4,
+    "A Damsel In Distress": 4,
+    "Right Ho": 3,
+    "The Inimitable Jeeves": 2,
+    "Their Mutual Child": 2,
+    "Something Fresh": 2,
+    "Love Among The Chickens": 2,
+    "The Adventures Of Sally": 2,
+    "The Diary Of A Nobody": 1,
+    "Idle Thoughts": 1,
+    "The Prince And Betty": 1,
+    "Psmith In The City": 1
+  },
+  "hashes": {
+    "train_sha256": "63e6a602f4f54d2809b43f1c638edeef3df861750b39390c373b58361fe5a0d6",
+    "eval_sha256": "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470"
+  },
+  "verification": {
+    "passed": true
+  }
+}

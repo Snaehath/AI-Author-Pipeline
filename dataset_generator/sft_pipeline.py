@@ -22,14 +22,16 @@ from typing import Any
 from dataset_generator.sft_eval_splitter import build_eval_set, write_eval_set
 from dataset_generator.sft_partitioner import partition, write_balance_report, write_outputs
 from dataset_generator.sft_scorer import score_all_records, write_scored_records
+from dataset_generator.sft_train_builder import build_and_save_dataset
 
 
 def run_pipeline(
     audit_path: Path,
     out_dir: Path,
-) -> None:
+    report_manifest_path: Path | None = Path("reports/comedy_sft_train_manifest.json"),
+) -> dict[str, Any]:
     print("=" * 60)
-    print("Phase 3E: SFT Dataset Preparation Pipeline")
+    print("Phase 3F: SFT Dataset Preparation & Manifest Pipeline")
     print("=" * 60)
 
     # ------------------------------------------------------------------ #
@@ -68,12 +70,29 @@ def run_pipeline(
     write_balance_report(outputs, eval_records, out_dir / "sft_balance_report.json")
 
     # ------------------------------------------------------------------ #
+    # Step 4: Build canonical training stream and manifest               #
+    # ------------------------------------------------------------------ #
+    print("\n[Step 4] Building training stream and manifest (Phase 3F)...")
+    manifest = build_and_save_dataset(
+        scored_records=scored,
+        eval_records=eval_records,
+        eval_ids=eval_ids,
+        curriculum_outputs=outputs,
+        sft_dir=out_dir,
+        source_audit_path=audit_path,
+        report_manifest_path=report_manifest_path,
+    )
+
+    # ------------------------------------------------------------------ #
     # Summary                                                             #
     # ------------------------------------------------------------------ #
     print("\n" + "=" * 60)
     print("Pipeline complete.")
     print(f"  Audit KEEP:       {total_keep}")
     print(f"  Eval set:         {len(eval_records)}")
+    print(f"  Training stream:  {manifest['training']['count']}")
+    print(f"  Train SHA-256:    {manifest['hashes']['train_sha256']}")
+    print(f"  Eval SHA-256:     {manifest['hashes']['eval_sha256']}")
     print(f"  Gold tier:        {len(outputs['gold'])}")
     print(f"  Strong tier:      {len(outputs['strong'])}")
     print(f"  Curriculum 1:     {len(outputs['curriculum_1'])}")
@@ -82,25 +101,36 @@ def run_pipeline(
     print(f"  Curriculum 4:     {len(outputs['curriculum_4'])}")
     print(f"  Curriculum 5:     {len(outputs['curriculum_5'])}")
     print(f"  Pref candidates:  {len(outputs['preference_candidates'])}")
+    print(f"  Conservation:     {manifest['reconciliation']['conservation']}")
+    print(f"  Verification:     {manifest['verification']['passed']}")
     print(f"  Output dir:       {out_dir}")
     print("=" * 60)
 
-    # Sanity: audit_050 (Right Ho ch10 tent farce) must be in gold + curriculum_4
+    # Sanity: audit_050 (Right Ho ch10 tent farce) must be in gold + curriculum_4 + training
     audit_050_in_gold = any(r.get("audit_id") == "audit_050" for r in outputs["gold"])
     audit_050_in_c4 = any(
         r.get("audit_id") == "audit_050" for r in outputs["curriculum_4"]
     )
+    audit_050_in_train = manifest["protected_examples"]["audit_050"]["in_train"]
+    audit_050_in_eval = manifest["protected_examples"]["audit_050"]["in_eval"]
+
     if not audit_050_in_gold:
-        print("WARNING: audit_050 (Right Ho ch10 tent farce) not found in Gold tier!")
+        print("WARNING: audit_050 not found in Gold tier!")
     if not audit_050_in_c4:
-        print("WARNING: audit_050 (Right Ho ch10 tent farce) not found in Curriculum 4!")
-    if audit_050_in_gold and audit_050_in_c4:
-        print("audit_050 correctly present in Gold tier AND Curriculum 4. OK")
+        print("WARNING: audit_050 not found in Curriculum 4!")
+    if not audit_050_in_train:
+        print("WARNING: audit_050 not found in training stream!")
+    if audit_050_in_eval:
+        print("WARNING: audit_050 leaked into eval set!")
+    if audit_050_in_gold and audit_050_in_c4 and audit_050_in_train and not audit_050_in_eval:
+        print("audit_050 correctly present in Gold, Curriculum 4, and Training stream. OK")
+
+    return manifest
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Phase 3E: Full SFT dataset preparation pipeline."
+        description="Phase 3F: Full SFT dataset preparation and manifest pipeline."
     )
     parser.add_argument(
         "--audit-file",
@@ -112,9 +142,15 @@ def main() -> None:
         type=Path,
         default=Path("datasets/sft"),
     )
+    parser.add_argument(
+        "--report-manifest",
+        type=Path,
+        default=Path("reports/comedy_sft_train_manifest.json"),
+    )
     args = parser.parse_args()
-    run_pipeline(args.audit_file, args.out_dir)
+    run_pipeline(args.audit_file, args.out_dir, args.report_manifest)
 
 
 if __name__ == "__main__":
     main()
+
