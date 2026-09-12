@@ -66,7 +66,9 @@ class ComedyCraftAnnotator:
         ],
         ComicMechanism.VERBAL_WIT: [
             "epigram", "irony", "retorted", "parried", "sarcasm", "repartee",
-            "scathing", "barb", "quip", "banter", "witticism"
+            "scathing", "barb", "quip", "banter", "witticism", "venture to suggest",
+            "singularly unfortunate", "slight overstatement", "delightful catastrophe",
+            "scarcely accurate", "pardon the observation", "if i may be permitted"
         ],
         ComicMechanism.DRAMATIC_IRONY: [
             "unbeknownst", "little did he know", "unaware", "meanwhile",
@@ -130,8 +132,8 @@ class ComedyCraftAnnotator:
             primary_mechanism=primary_mech,
             secondary_mechanisms=secondary_mechs,
             confidence_scores={k: round(v, 2) for k, v in scores.items()},
-            confidence=round(primary_conf, 2),
-            quality_score=round(quality_score, 2),
+            detector_confidence=round(primary_conf, 2),
+            linguistic_craft_score=round(quality_score, 2),
             scene_function=scene_function,
             tone=tone,
             setup_summary=setup,

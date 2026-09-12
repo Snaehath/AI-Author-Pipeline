@@ -114,6 +114,28 @@ class CraftOperationBuilder:
             )
         )
 
+        # Task 5: Generate from Abstract Structure (Transferable Comedy Machinery)
+        tasks.append(
+            CraftOperationTask(
+                task_type=TaskType.GENERATE_FROM_STRUCTURE,
+                prompt=(
+                    f"Write an original comedic scene utilizing the following abstract craft structure, "
+                    f"inventing entirely new characters, setting, and props:\n\n"
+                    f"Mechanism: {craft.primary_mechanism.value}\n"
+                    f"Tonal Register: {craft.tone.value}\n"
+                    f"1. Setup: {craft.setup_summary}\n"
+                    f"2. Escalation: {craft.escalation_summary}\n"
+                    f"3. Reversal: {craft.reversal_summary}\n"
+                    f"4. Payoff: {craft.payoff_summary}\n\n"
+                    f"Constraint: Preserve deadpan British comic timing and dialogue subtext."
+                ),
+                expected_output=(
+                    self._synthesize_transferable_generation(craft)
+                ),
+                target_concept="TRANSFERABLE_CRAFT",
+            )
+        )
+
         return tasks
 
     def build_contrast_dpo_pair(
@@ -202,3 +224,17 @@ class CraftOperationBuilder:
                 f'{c2} replied bluntly. "My true motive is to judge your poor decisions because you have '
                 f'no dignity left."'
             )
+
+    def _synthesize_transferable_generation(self, craft: CraftAnnotation) -> str:
+        """Generates an original scene demonstrating the transferred comedic structure."""
+        return (
+            f'Percival smoothed the lapels of his immaculate morning coat, gazing out over the terrace '
+            f'with an air of precarious nobility.\n\n'
+            f'"Giles," he said cautiously, "would it surprise you to learn that the Bishop is under '
+            f'the impression that I am an expert in Mesopotamian pottery?"\n\n'
+            f'Giles remained motionless by the sideboard, a silver toast-rack balanced in one hand. '
+            f'"Having observed your conversation with his Grace after luncheon, sir, very little could surprise me."\n\n'
+            f'"He expects me to deliver a brief disquisition before the archdeacon arrives at four."\n\n'
+            f'"An invigorating prospect, sir," murmured Giles impassively. "I shall lay out your dark blue suit. '
+            f'It conveys a certain scholarly gravity when the facts are absent."'
+        )

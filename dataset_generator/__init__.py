@@ -39,6 +39,7 @@ from .craft_annotator import ComedyCraftAnnotator
 from .contrast_purity import ContrastPurityValidator
 from .operation_builder import CraftOperationBuilder
 from .comedy_craft_builder import ComedyCraftPipeline
+from .annotation_calibration_report import AnnotationCalibrationReport
 
 __all__ = [
     "PromptTemplates",
@@ -64,5 +65,6 @@ __all__ = [
     "ContrastPurityValidator",
     "CraftOperationBuilder",
     "ComedyCraftPipeline",
+    "AnnotationCalibrationReport",
 ]
 

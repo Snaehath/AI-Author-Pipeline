@@ -56,8 +56,8 @@ class TestTaxonomyAndSchema:
         craft = CraftAnnotation(
             primary_mechanism=ComicMechanism.STATUS_REVERSAL,
             secondary_mechanisms=[ComicMechanism.DEADPAN_REACTION],
-            confidence=0.92,
-            quality_score=0.85,
+            detector_confidence=0.92,
+            linguistic_craft_score=0.85,
             scene_function=SceneFunction.SOCIAL_CONFLICT,
             tone=ComedicTone.DRY_WIT,
             setup_summary="Bertie faces crisis",
@@ -202,7 +202,7 @@ class TestContrastPurityValidator:
 
 
 class TestCraftOperationBuilder:
-    def test_builds_all_four_operation_tasks(self):
+    def test_builds_all_five_operation_tasks(self):
         builder = CraftOperationBuilder()
         text = (
             'Bertie stared at the telegram. "Jeeves," he said, "disaster has arrived." '
@@ -212,8 +212,8 @@ class TestCraftOperationBuilder:
         craft = CraftAnnotation(
             primary_mechanism=ComicMechanism.STATUS_REVERSAL,
             secondary_mechanisms=[ComicMechanism.DEADPAN_REACTION],
-            confidence=0.88,
-            quality_score=0.82,
+            detector_confidence=0.88,
+            linguistic_craft_score=0.82,
             tone=ComedicTone.DRY_WIT,
             setup_summary="Bertie reads telegram",
             escalation_summary="Bertie appeals to valet",
@@ -222,12 +222,64 @@ class TestCraftOperationBuilder:
         )
 
         tasks = builder.build_operations(text, facts, craft)
-        assert len(tasks) == 4
+        assert len(tasks) == 5
         task_types = {t.task_type for t in tasks}
         assert TaskType.IDENTIFY_MECHANISM in task_types
         assert TaskType.EXTRACT_STRUCTURE in task_types
         assert TaskType.REWRITE_RESTRAINT in task_types
         assert TaskType.CONTINUE_TENSION in task_types
+        assert TaskType.GENERATE_FROM_STRUCTURE in task_types
+
+
+class TestAnnotationCalibrationReport:
+    def test_generate_review_sheet_and_calculate_agreement(self):
+        from dataset_generator.annotation_calibration_report import AnnotationCalibrationReport
+        dummy_records = [
+            {
+                "source": {
+                    "source_id": "jeeves_ch1_001",
+                    "source_book": "My Man Jeeves",
+                    "chapter_index": 1,
+                    "source_text": '"Indeed, sir?" observed Jeeves.',
+                },
+                "facts": {"characters": ["Jeeves"], "dialogue_ratio": 0.8},
+                "craft": {
+                    "primary_mechanism": "STATUS_REVERSAL",
+                    "secondary_mechanisms": ["DEADPAN_REACTION"],
+                    "detector_confidence": 0.95,
+                    "linguistic_craft_score": 0.85,
+                    "tone": "DRY_WIT",
+                    "setup_summary": "Initial setup",
+                    "escalation_summary": "Tension rises",
+                    "reversal_summary": "Reversal occurs",
+                    "payoff_summary": "Payoff beat lands",
+                },
+            }
+        ]
+
+        calibrator = AnnotationCalibrationReport(dummy_records)
+        md = calibrator.generate_review_sheet_md()
+        assert "Comedy Craft Annotation Calibration Sheet" in md
+        assert "jeeves_ch1_001" in md
+        assert "HUMAN PRIMARY MECHANISM" in md
+
+        json_sheet = calibrator.generate_review_sheet_json()
+        assert len(json_sheet) == 1
+        assert json_sheet[0]["source_id"] == "jeeves_ch1_001"
+        assert json_sheet[0]["human_audit"]["verdict"] is None
+
+        # Simulate human completed audit
+        json_sheet[0]["human_audit"]["verdict"] = "AGREE"
+        json_sheet[0]["human_audit"]["human_primary_mechanism"] = "STATUS_REVERSAL"
+        json_sheet[0]["human_audit"]["setup_accurate"] = True
+        json_sheet[0]["human_audit"]["escalation_accurate"] = True
+        json_sheet[0]["human_audit"]["reversal_accurate"] = True
+        json_sheet[0]["human_audit"]["payoff_accurate"] = True
+
+        metrics = AnnotationCalibrationReport.calculate_agreement_metrics(json_sheet)
+        assert metrics["total_audited"] == 1
+        assert metrics["mechanism_agreement_pct"] == 100.0
+        assert metrics["setup_agreement_pct"] == 100.0
 
 
 class TestComedyCraftPipeline:

@@ -73,6 +73,7 @@ class TaskType(str, Enum):
     EXTRACT_STRUCTURE = "EXTRACT_STRUCTURE"
     REWRITE_RESTRAINT = "REWRITE_RESTRAINT"
     CONTINUE_TENSION = "CONTINUE_TENSION"
+    GENERATE_FROM_STRUCTURE = "GENERATE_FROM_STRUCTURE"
 
 
 @dataclass
@@ -115,17 +116,32 @@ class CraftAnnotation:
     primary_mechanism: ComicMechanism
     secondary_mechanisms: List[ComicMechanism] = field(default_factory=list)
     confidence_scores: Dict[str, float] = field(default_factory=dict)
-    confidence: float = 0.0  # Certainty that primary mechanism is active
-    quality_score: float = 0.0  # Independent literary craft execution score [0.0, 1.0]
+    detector_confidence: float = 0.0  # Heuristic / automated pattern match certainty [0.0, 1.0]
+    human_confidence: Optional[float] = None  # Expert human confidence after review [0.0, 1.0]
+    linguistic_craft_score: float = 0.0  # Automated syntactic, rhythm, and dialogue balance metric [0.0, 1.0]
+    human_literary_quality: Optional[float] = None  # Expert human assessment of literary execution
     scene_function: SceneFunction = SceneFunction.SOCIAL_CONFLICT
     tone: ComedicTone = ComedicTone.DRY_WIT
     setup_summary: str = ""
     escalation_summary: str = ""
     reversal_summary: str = ""
     payoff_summary: str = ""
-    surface_style_features: List[str] = field(default_factory=list)  # Slang/idioms decoupled from craft
+    surface_style_features: List[str] = field(default_factory=list)  # Period slang decoupled from craft
     source: AnnotationSource = AnnotationSource.HEURISTIC
     review_status: ReviewStatus = ReviewStatus.UNREVIEWED
+    confidence: Optional[float] = None  # Alias kwarg support
+    quality_score: Optional[float] = None  # Alias kwarg support
+
+    def __post_init__(self):
+        if self.confidence is not None and self.detector_confidence == 0.0:
+            self.detector_confidence = self.confidence
+        elif self.confidence is None:
+            self.confidence = self.detector_confidence
+
+        if self.quality_score is not None and self.linguistic_craft_score == 0.0:
+            self.linguistic_craft_score = self.quality_score
+        elif self.quality_score is None:
+            self.quality_score = self.linguistic_craft_score
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
@@ -135,6 +151,9 @@ class CraftAnnotation:
         d["tone"] = self.tone.value
         d["source"] = self.source.value
         d["review_status"] = self.review_status.value
+        # Include aliases for backward-compatibility with existing code
+        d["confidence"] = self.detector_confidence
+        d["quality_score"] = self.linguistic_craft_score
         return d
 
     @classmethod
@@ -146,6 +165,16 @@ class CraftAnnotation:
         data_copy["tone"] = ComedicTone(data_copy.get("tone", ComedicTone.DRY_WIT.value))
         data_copy["source"] = AnnotationSource(data_copy.get("source", AnnotationSource.HEURISTIC.value))
         data_copy["review_status"] = ReviewStatus(data_copy.get("review_status", ReviewStatus.UNREVIEWED.value))
+        
+        # Support both new and legacy field names
+        if "detector_confidence" not in data_copy and "confidence" in data_copy:
+            data_copy["detector_confidence"] = data_copy["confidence"]
+        if "linguistic_craft_score" not in data_copy and "quality_score" in data_copy:
+            data_copy["linguistic_craft_score"] = data_copy["quality_score"]
+        
+        # Clean temporary aliases before instantiation
+        data_copy.pop("confidence", None)
+        data_copy.pop("quality_score", None)
         return cls(**data_copy)
 
 
@@ -190,12 +219,14 @@ class ContrastPurityReport:
 
 @dataclass
 class ControlledDPOPair:
-    """Level 4 Controlled DPO Pair with audited contrast purity."""
+    """Level 4 Controlled DPO Pair with audited contrast purity and preference strength."""
     prompt: str
     chosen: str
     rejected: str
     target_dimension: ContrastDimension
     purity_report: ContrastPurityReport
+    preference_strength: float = 0.85  # Qualitative contrast magnitude [0.0, 1.0]
+    human_verified: bool = False
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
