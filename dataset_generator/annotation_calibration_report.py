@@ -152,29 +152,52 @@ class AnnotationCalibrationReport:
 
     @staticmethod
     def calculate_agreement_metrics(audited_records: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Calculates inter-annotator agreement between AI extraction and human audits."""
+        """Calculates inter-annotator agreement between AI extraction and human audits across 10 metrics."""
         total = len(audited_records)
         if total == 0:
             return {"total_audited": 0}
 
         mech_agreed = 0
+        secondary_agreed = 0
+        secondary_evaluated = 0
         setup_agreed = 0
         escalation_agreed = 0
         reversal_agreed = 0
         payoff_agreed = 0
         training_values = []
         quality_scores = []
+        confidence_scores = []
         verdict_counts = {"AGREE": 0, "PARTIAL": 0, "DISAGREE": 0, "UNREVIEWED": 0}
         disagreement_counts: Dict[str, int] = {}
 
+        reviewed_count = 0
         for rec in audited_records:
             human = rec.get("human_audit", {})
             ai = rec.get("ai_annotation", {})
             v = human.get("verdict") or "UNREVIEWED"
             verdict_counts[v] = verdict_counts.get(v, 0) + 1
 
+            if v == "UNREVIEWED":
+                continue
+
+            reviewed_count += 1
+
+            # 1. Primary mechanism agreement
             if human.get("human_primary_mechanism") == ai.get("primary_mechanism"):
                 mech_agreed += 1
+
+            # 2. Secondary mechanism agreement
+            human_secs = set(human.get("human_secondary_mechanisms") or [])
+            ai_secs = set(ai.get("secondary_mechanisms") or [])
+            if human_secs or ai_secs:
+                secondary_evaluated += 1
+                if (human_secs & ai_secs) or (human_secs == ai_secs):
+                    secondary_agreed += 1
+            else:
+                secondary_evaluated += 1
+                secondary_agreed += 1
+
+            # 3-6. Structural beat agreements
             if human.get("setup_accurate") is True:
                 setup_agreed += 1
             if human.get("escalation_accurate") is True:
@@ -184,34 +207,49 @@ class AnnotationCalibrationReport:
             if human.get("payoff_accurate") is True:
                 payoff_agreed += 1
 
-            if human.get("human_training_value") is not None:
-                training_values.append(float(human["human_training_value"]))
+            # 7-9. Quantitative human scores
             if human.get("human_literary_quality") is not None:
                 quality_scores.append(float(human["human_literary_quality"]))
+            if human.get("human_training_value") is not None:
+                training_values.append(float(human["human_training_value"]))
+            if human.get("human_mechanism_confidence") is not None:
+                confidence_scores.append(float(human["human_mechanism_confidence"]))
 
+            # 10. Disagreement category breakdown
             cat = human.get("disagreement_category")
             if cat:
                 disagreement_counts[cat] = disagreement_counts.get(cat, 0) + 1
 
         avg_training_val = round(sum(training_values) / len(training_values), 2) if training_values else None
         avg_quality = round(sum(quality_scores) / len(quality_scores), 2) if quality_scores else None
+        avg_conf = round(sum(confidence_scores) / len(confidence_scores), 2) if confidence_scores else None
+
+        base_denom = reviewed_count if reviewed_count > 0 else total
+        sec_pct = round((secondary_agreed / secondary_evaluated) * 100, 1) if secondary_evaluated else 0.0
 
         return {
-            "total_audited": total,
-            "mechanism_agreement_pct": round((mech_agreed / total) * 100, 1),
-            "setup_agreement_pct": round((setup_agreed / total) * 100, 1),
-            "escalation_agreement_pct": round((escalation_agreed / total) * 100, 1),
-            "reversal_agreement_pct": round((reversal_agreed / total) * 100, 1),
-            "payoff_agreement_pct": round((payoff_agreed / total) * 100, 1),
-            "average_human_training_value": avg_training_val,
+            "total_records": total,
+            "total_audited": reviewed_count,
+            "primary_mechanism_agreement_pct": round((mech_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "mechanism_agreement_pct": round((mech_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "secondary_mechanism_agreement_pct": sec_pct if reviewed_count else 0.0,
+            "setup_agreement_pct": round((setup_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "escalation_agreement_pct": round((escalation_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "reversal_agreement_pct": round((reversal_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "payoff_agreement_pct": round((payoff_agreed / base_denom) * 100, 1) if reviewed_count else 0.0,
+            "mean_literary_quality": avg_quality,
             "average_human_literary_quality": avg_quality,
+            "mean_training_value": avg_training_val,
+            "average_human_training_value": avg_training_val,
+            "mean_mechanism_confidence": avg_conf,
+            "disagreement_category_distribution": disagreement_counts,
             "verdict_distribution": verdict_counts,
             "disagreement_breakdown": disagreement_counts,
         }
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Generate Annotation Calibration Review Sheet.")
+    parser = argparse.ArgumentParser(description="Generate Annotation Calibration Review Sheet or Evaluate Audit.")
     parser.add_argument(
         "--sample-path",
         type=str,
@@ -230,11 +268,42 @@ def parse_args():
         default=str(AI_AUTHOR_DIR / "reports" / "comedy_craft_calibration_sheet.json"),
         help="Path to save JSON audit template.",
     )
+    parser.add_argument(
+        "--audit-file",
+        type=str,
+        default=None,
+        help="Path to completed JSON audit file to calculate agreement metrics.",
+    )
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+
+    if args.audit_file:
+        audit_path = Path(args.audit_file)
+        if not audit_path.exists():
+            print(f"Error: Audit file not found: {audit_path}")
+            sys.exit(1)
+        with open(audit_path, "r", encoding="utf-8") as f:
+            audited_records = json.load(f)
+
+        print(f"=== Calculating Human Calibration Agreement ({len(audited_records)} records) ===")
+        metrics = AnnotationCalibrationReport.calculate_agreement_metrics(audited_records)
+        print(f"1. Primary Mechanism Agreement:   {metrics['primary_mechanism_agreement_pct']}%")
+        print(f"2. Secondary Mechanism Agreement: {metrics['secondary_mechanism_agreement_pct']}%")
+        print(f"3. Setup Agreement:              {metrics['setup_agreement_pct']}%")
+        print(f"4. Escalation Agreement:         {metrics['escalation_agreement_pct']}%")
+        print(f"5. Reversal Agreement:           {metrics['reversal_agreement_pct']}%")
+        print(f"6. Payoff Agreement:             {metrics['payoff_agreement_pct']}%")
+        print(f"7. Mean Literary Quality:        {metrics['mean_literary_quality']}")
+        print(f"8. Mean Training Value:          {metrics['mean_training_value']}")
+        print(f"9. Mean Mechanism Confidence:    {metrics['mean_mechanism_confidence']}")
+        print(f"10. Disagreement Distribution:   {json.dumps(metrics['disagreement_category_distribution'], indent=2)}")
+        print("\nFull metrics JSON:")
+        print(json.dumps(metrics, indent=2))
+        return
+
     sample_path = Path(args.sample_path)
     output_md_path = Path(args.output_md)
     output_json_path = Path(args.output_json)

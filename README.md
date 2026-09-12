@@ -1,76 +1,272 @@
 # AI-Author-Pipeline
 
-An end-to-end framework for fine-tuning LLMs on creative fiction and orchestrating multi-chapter story generation with pre-prose blueprints, story state databases, and preference-aligned editing crews.
+An end-to-end framework for training small language models (1.5B) into **creative comedy specialists** and orchestrating multi-chapter story generation with deterministic state continuity compilers, pre-prose contracts, and compiler-guided Best-of-N search.
 
 ---
 
-## Overview
+## Overview: The Three Pillars
 
-Generating long-form creative fiction with small language models (e.g., 1.5B parameters) often leads to semantic drift, character name confusion, and ungrounded scene transitions. 
+Generating long-form creative fiction with small language models (e.g. 1.5B parameters) frequently suffers from two competing failure modes: **continuity collapse** (hallucinated locations, epistemic leaks, object teleportation) and **prose superficiality** (imitating period vocabulary rather than understanding comedic craft).
 
-This repository implements a modular pipeline that combines:
-1. **Dataset Synthesis & Anonymization:** Ingests public domain comedy books (Wodehouse, Jerome, Grossmith) into 11,799 SFT instruction pairs and anonymizes character names (`Bertie` -> `[PROTAGONIST]`, `Jeeves` -> `[COMPANION]`) to mitigate direct memorization risks.
-2. **4-Bit QLoRA & DPO Alignment:** Fine-tunes `Qwen2.5-1.5B-Instruct` on GPU with 4-bit NormalFloat (`NF4`) quantization and Direct Preference Optimization (DPO) to enforce comedic timing and dialogue brevity.
-3. **Structured Orchestration:** Plans pre-prose chapter blueprints (Goal, Conflict, Emotional Arc, Reversal) before generating prose.
-4. **Selective Memory (Fiction RAG):** Tracks character states, inventories, and trust scores scene-by-scene.
-5. **Reward-Guided Selection:** Evaluates candidate scenes against a multi-signal reward model scoring story coherence, character voice, comedic timing, and reader curiosity.
+This repository solves both through three cleanly decoupled architectural pillars:
 
----
-
-## System Architecture
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        RAW REFERENCE BOOKS (20 Books)                  │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 1: NLP INGESTION & ANONYMIZER                                   │
-│  • Scene/Chapter Splitter & Dialogue Turn Parser                       │
-│  • Character Role Anonymizer (Bertie -> [PROTAGONIST])                │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 2: 4-BIT QLoRA & DPO ALIGNMENT                                  │
-│  • Qwen2.5-1.5B-Instruct in 4-bit NormalFloat (NF4)                    │
-│  • DPO Comedic Timing Alignment (1,000 preference pairs)               │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│  STAGE 3: INFERENCE ORCHESTRATION ENGINE                               │
-│  • Pre-Prose Blueprint Planner + Story Bible DB + Fiction RAG Memory   │
-│  • Multi-Agent Revision Crew + Best-of-N Composite Reward Selector     │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│  EXPORTER & EVALUATION SUITE                                           │
-│  • Formatted .docx, .pdf, and .md manuscripts                          │
-│  • Stylometric Cosine Similarity & Reader Experience Metrics           │
-└────────────────────────────────────────────────────────────────────────┘
+```text
+                    ┌─────────────────────────┐
+                    │  1.5B BASE LANGUAGE LM  │
+                    └────────────┬────────────┘
+                                 │
+                     Learns comedic machinery
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 1. COMEDY CRAFT SPECIALIST (SFT + DPO)                          │
+│    • Learns how to CREATE COMEDY (Mechanisms & Structural Beats)│
+│    • 10 Comedic Mechanisms decoupled from surface slang         │
+│    • Contrast-purity validated DPO for comedic restraint/subtext│
+│    • GENERATE_FROM_STRUCTURE for transferable original comedy   │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. STATE ENGINE & CONTINUITY COMPILER                           │
+│    • Enforces that the model CANNOT BREAK THE STORY             │
+│    • Pure state transition: State_n + Contract + CandidateDiff  │
+│    • Spatial, possession, vitality, and epistemic invariants    │
+│    • Atomic checkpoint manifests with rollback/replay           │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. COMPILER-GUIDED BEST-OF-N SEARCH                             │
+│    • Finds the STRONGEST VALID ATTEMPT                          │
+│    • 3-Stage Gating Hierarchy: World -> Contract -> Quality/E(c)│
+│    • Contract-Relevance State Efficiency Metric E(c)            │
+│    • Dominant-pattern targeted repair                           │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+                          CANONICAL STORY
 ```
 
+1. **Training** makes the model better at **creating comedy**.
+2. **The Compiler** makes the model better at **not breaking the story**.
+3. **Best-of-N Search** makes the system better at **finding the strongest valid attempt**.
+
 ---
 
-## Technical Pipeline Breakdown
+## Empirical Verification: Experiment 001
 
-### 1. Ingestion & Feature Extraction
-Raw books are parsed into scenes (~700–900 words) and analyzed for speaker turn frequency, character role relationships, and 8-point narrative arcs. Character names are anonymized during SFT to prevent memorization of copyrighted names while learning general genre voice.
+In a controlled ablation across 20 multi-constraint benchmark scenes testing movement, inventory transfer, and character interaction:
 
-### 2. 2-Stage Training
-- **Supervised Fine-Tuning (SFT):** Fine-tunes LoRA adapters ($r=32, \alpha=64$) over 11,799 anonymized instruction pairs.
-- **Direct Preference Optimization (DPO):** Aligns the model on preference pairs (`chosen`: sharp deadpan punchlines vs `rejected`: long monologues).
+| Metric | System A (Baseline 1.5B) | System B (Stateful Compiler) | System C (Compiler BoN) | Delta (C vs A) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Valid Scene Rate (VSR)** | **20.0%** (4/20) | **75.0%** (15/20) | **80.0%** (16/20) | **+60.0%** |
+| **Cumulative Anomaly Violations (CAV)** | **10.15** | **6.69** | **2.02** | **-80.1%** |
+| **Contract Fulfillment Rate** | 63.3% | 76.7% | **83.3%** | **+20.0%** |
+| **Epistemic Leaks** | 1 detected | 0 | **0** | **100% eliminated** |
 
-### 3. Generation & Revision Workflow
-1. **Pre-Prose Blueprint & Scene Contract:** Outlines scene goals, spatial locations, required props, and strict prohibitions (forbidden secrets, thread lockouts).
-2. **Epistemic Context Budgeting:** Packs strictly isolated context (only facts legitimately known to the active POV character) within token budgets.
-3. **Drafting & Multi-Agent Polish:** Expands the contract into prose and applies specialized revision passes (voice contrast, comedy timing).
-4. **State Extraction & Continuity Compilation:** Extracts candidate symbolic events (`MOVE`, `PICK_UP`, `REVEAL_FACT`) and compiles them against the Narrative Type System (`INV_LOCATION`, `INV_POSSESSION`, `INV_EPISTEMIC`, `INV_VITALITY`, `INV_CONTRACT`).
-5. **Best-of-N & Ledger Commit:** Candidates with invariant violations receive heavy reward penalties or fatal rejection. Valid state diffs are committed to the append-only `EventLedger`.
-6. **Token Substitution & Export:** Replaces abstract tokens (`[COMPANION]` -> `Barnaby`) via `text_sanitizer.py` and exports `.docx` and `.pdf` files via `manuscript_exporter.py`.
+---
+
+## Phase 3 — Comedy Craft Framework & Human Calibration
+
+Rather than training the 1.5B model to mimic surface slang (*"By Jove!"*, *"old chap"*), Phase 3 extracts transferable **comedic principles** from classic British comic fiction / social farce (Wodehouse, Jerome, Grossmith).
+
+### 1. Four-Tier Unified Record Schema
+Every annotation is irrevocably bound to its original unabridged source passage:
+$$\text{SOURCE} \longrightarrow \text{FACTS} \longrightarrow \text{CRAFT} \longrightarrow \text{OPERATIONS / DPO}$$
+
+- **Source:** Source book, chapter index, unique source ID, and raw text.
+- **Objective Facts:** Speaking characters, honorifics, vocatives, locations, physical objects, dialogue ratio, and turn counts.
+- **Craft Annotation:** Primary and secondary mechanisms, 4-stage structural arc (Setup $\to$ Escalation $\to$ Reversal $\to$ Payoff), tone, and isolated surface slang features.
+- **Craft Operations & DPO:**
+  - `IDENTIFY_MECHANISM`: Identifies dominant comic mechanism and supporting dynamics.
+  - `EXTRACT_STRUCTURE`: Deconstructs 4-beat comedic structure.
+  - `REWRITE_RESTRAINT`: Rewrites scene with deadpan restraint, stripping over-explanation.
+  - `CONTINUE_TENSION`: Continues scene while preserving unresolved comedic tension.
+  - `GENERATE_FROM_STRUCTURE`: **Transferable comedy generator** — takes an abstract structure and produces a brand new original scene with new characters and setting.
+  - **Controlled Contrast DPO Pairs:** Audited by `ContrastPurityValidator` (requiring $\ge 0.85$ purity and verified preference strength).
+
+### 2. Comedic Mechanism Taxonomy
+1. `MISUNDERSTANDING`: Two characters operate under incompatible premises.
+2. `STATUS_REVERSAL`: Sudden shift in social superiority or competence (e.g. valet over master).
+3. `ESCALATION`: Compounding complications from a simple initial issue.
+4. `DEADPAN_REACTION`: Emotional under-reaction or stoic understatement during catastrophe.
+5. `SOCIAL_EMBARRASSMENT`: Desperate attempts to maintain decorum or hide awkward truths.
+6. `VERBAL_WIT`: Subtextual barbs, irony, register collision, and semantic incongruity.
+7. `DRAMATIC_IRONY`: The reader possesses critical knowledge concealed from characters.
+8. `DIALOGUE_SUBTEXT`: Saying polite trivialities while intensely negotiating conflict.
+9. `CALLBACK`: Reintroducing an earlier throwaway detail with compounded payoff.
+10. `PHYSICAL_COMPLICATION`: Farce elements, timing obstacles, and physical entanglements.
+
+---
+
+## Phase 3B Freeze & Development Roadmap
+
+The architecture is currently frozen at **Phase 3B** to validate the data layer with human calibration before any model training:
+
+```text
+                         COMPLETE
+                            │
+                            ▼
+┌──────────────────────────────────────────────┐
+│ Phase 3A — Comedy Craft Dataset Generation   │
+│ ✓ taxonomy & schemas                         │
+│ ✓ factual & craft detectors                  │
+│ ✓ structural extraction (4 beats)            │
+│ ✓ contrast purity validator                  │
+│ ✓ GENERATE_FROM_STRUCTURE operation          │
+│ ✓ 50-example stratified sample               │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│ Phase 3B — Human Calibration                 │
+│ ✓ multidimensional rubric                    │
+│ ✓ literary quality vs training value         │
+│ ✓ mechanism confidence scoring               │
+│ ✓ disagreement taxonomy                      │
+│ ✓ secondary mechanisms                       │
+│ ✓ calibration sheet & audit tooling          │
+│                                              │
+│             ← CURRENT STATE                  │
+└──────────────────────┬───────────────────────┘
+                       │
+                 HUMAN AUDIT
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│ Phase 3C — Calibration Analysis              │
+│ detector fixes / taxonomy fixes / rejection  │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│ Phase 3D — Dataset Expansion                 │
+│ ~1,000–2,000 high-quality craft records      │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│ Phase 4 — Comedy Specialist Training         │
+│ SFT → structure benchmark → DPO              │
+└──────────────────────────────────────────────┘
+```
+
+> **Important Constraint:** Do **NOT** start SFT or DPO training yet. The 50 passages are a calibration experiment, not training data yet. The resulting audit data provides the empirical foundation for designing the Phase 4 mixture, weighting, SFT curriculum, LoRA hyperparameters, DPO pairs, and held-out benchmark.
+
+---
+
+## Human Calibration Gate (Recommended Gate Before Phase 4)
+
+The 50 stratified inspection examples in `datasets/comedy_craft_sample_50.json` are audited using [`reports/comedy_craft_calibration_sheet.md`](reports/comedy_craft_calibration_sheet.md) or [`reports/comedy_craft_calibration_sheet.json`](reports/comedy_craft_calibration_sheet.json).
+
+### 1. Ten Post-Annotation Calibration Metrics
+Following human annotation of the 50 calibration examples, calculate:
+1. **Primary mechanism agreement**
+2. **Secondary mechanism agreement**
+3. **Setup agreement**
+4. **Escalation agreement**
+5. **Reversal agreement**
+6. **Payoff agreement**
+7. **Mean literary quality**
+8. **Mean training value**
+9. **Mean mechanism confidence**
+10. **Disagreement-category distribution**
+
+### 2. Calibration Decision Tree
+A data-driven decision tree guides post-audit actions:
+
+```text
+                 50 human audits
+                       │
+                       ▼
+             Is mechanism agreement
+                  sufficiently high?
+                 /                  \
+               YES                  NO
+                │                    │
+                │              inspect disagreements
+                │                    │
+                │          ┌─────────┴─────────┐
+                │          ▼                   ▼
+                │    detector problem     taxonomy problem
+                │          │                   │
+                │       fix detector       revise taxonomy
+                │
+                ▼
+       Is training value high?
+             /          \
+           YES          NO
+            │            │
+            ▼            ▼
+       retain example   reject/downweight
+            │
+            ▼
+     Expand dataset (~1,000–2,000)
+```
+
+### 3. Multi-Field Human Audit Record Schema
+The human audit does not collapse into a simplistic boolean `approved: true/false`. It captures structured multidimensional judgment:
+
+```json
+{
+  "human_verdict": "AGREE",
+  "human_primary_mechanism": "MISUNDERSTANDING",
+  "human_secondary_mechanisms": [
+    "ESCALATION",
+    "DEADPAN_REACTION"
+  ],
+  "human_literary_quality": 9,
+  "human_training_value": 10,
+  "human_mechanism_confidence": 9,
+  "disagreement_category": null
+}
+```
+
+### 4. Weighted Training Example Policy
+This schema enables **weighted training examples** rather than treating every passage identically:
+
+- **Training value 9–10 + confidence 9–10:** Strongest SFT examples (high sample weight).
+- **Training value 7–8:** Normal SFT examples (standard weight).
+- **Training value 5–6:** Potentially downweighted in SFT curriculum.
+- **Training value < 5:** Excluded from training set.
+- **Mechanism confidence < 5:** Excluded from comedic mechanism supervision.
+
+*(These thresholds represent initial calibration policy and will be calibrated by the 50-example audit).*
+
+---
+
+## Held-Out Evaluation Benchmark (`GENERATE_FROM_STRUCTURE`)
+
+The `GENERATE_FROM_STRUCTURE` operation is designed as a **held-out evaluation set**, not merely another training task:
+
+```text
+TRAIN
+─────────────────────────────
+Source passage
+      ↓
+Facts
+      ↓
+Comic mechanism
+      ↓
+Structural beats
+      ↓
+SFT / DPO
+
+
+TEST (Held-Out Benchmark)
+─────────────────────────────
+Abstract structure
+      ↓
+      1.5B
+      ↓
+NEW characters
+NEW setting
+NEW situation
+      ↓
+Original comedy
+```
+
+> **Critical Evaluation Invariant:** Never expose the test structures verbatim during SFT. Holding out evaluation structures ensures we verify whether the 1.5B model has acquired transferable comedic machinery rather than memorized structural templates.
 
 ---
 
@@ -92,53 +288,62 @@ Download Project Gutenberg reference books and base model weights (`Qwen2.5-1.5B
 python setup_project.py
 ```
 
-### Run Alignment & Novel Generation
+### Run Tests
+
+Run the full automated test suite (106 tests covering state engine, invariants, compiler, search, and comedy craft pipeline):
 
 ```powershell
-# 1. Run DPO Preference Alignment Trainer
-python trainer/dpo_trainer.py
-
-# 2. Run Story Continuity Compiler & Invariant Verification Suite
-python -m story_engine.test
-
-# 3. Generate Novel (5 Chapters) with Stateful Engine
-python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"
-
-# 4. Export Word & PDF Manuscripts
-python utils/manuscript_exporter.py outputs/generated_novel
-
-# 5. Evaluate Stylometric Consistency
-python evaluator/eval_pipeline.py outputs/generated_novel --reference_dir outputs/right_ho
+python -m pytest tests/
 ```
 
----
+### Build Stratified Comedy Craft Sample
 
-## Evaluation Metrics
+```powershell
+# Extract 50 stratified inspection examples across all 10 mechanisms
+python -m dataset_generator.build_comedy_dataset --sample-size 50
 
-- **Dialogue Match Ratio:** **48.27%** (75.1% match against reference P. G. Wodehouse dialogue frequency).
-- **Style Consistency Score:** **0.3177 – 0.565** (Weighted stylometric cosine similarity across sentence length, dialogue ratio, and vocabulary richness).
-- **Standardized Scene Depth:** **650 – 800 words** per chapter.
-- **Narrative Invariant Compliance:** 100% enforcement of spatial, possession, epistemic, vitality, and contract invariants via the Continuity Compiler.
+# Generate human calibration review sheet and JSON audit template
+python -m dataset_generator.annotation_calibration_report
+
+# Calculate 10 agreement & quality metrics from completed human audit
+python -m dataset_generator.annotation_calibration_report --audit-file reports/comedy_craft_calibration_sheet.json
+```
+
+### Run Novel Generation with Stateful Engine
+
+```powershell
+python inference/novel_builder_v2.py --chapters 5 --title "The Mischief at Blackwood Manor"
+```
+
+### Run Experiment 001 Ablation
+
+```powershell
+python -m experiments.run_experiment_001
+```
 
 ---
 
 ## Repository Structure
 
 ```
-├── story_engine/       # Stateful narrative engine (world state, epistemic model, event ledger, contracts)
-│   ├── state/          # Characters, physical objects, spatial graph, relationships, timeline
-│   ├── epistemic/      # World truth, character knowledge isolation, reader knowledge
+├── story_engine/       # Stateful narrative engine & Narrative Type System
+│   ├── state/          # Pure WorldState snapshots, characters, objects, spatial graph, checkpoints
+│   ├── epistemic/      # Ground truth, character knowledge isolation, reader knowledge
 │   ├── events/         # Atomic StoryEvents, StateDelta, immutable EventLedger
-│   ├── contracts/      # SceneContract schemas & Narrative Invariants (Type System)
-│   ├── context/        # Knapsack ContextBudgeter enforcing epistemic boundaries
-│   └── test.py         # Story Continuity Compiler test runner
-├── compiler/           # Continuity compiler, symbolic invariant checker, state extractor, repair engine
-├── dataset_generator/  # SFT & DPO preference dataset synthesis
+│   ├── contracts/      # SceneContract schemas & Narrative Invariant predicates
+│   ├── context/        # Knapsack ContextBudgeter enforcing epistemic isolation
+│   └── scene_runner.py # Stateful scene execution orchestrator
+├── compiler/           # Continuity compiler, symbolic invariant checker, event extractor, repair engine
+├── dataset_generator/  # Comedy craft pipeline, factual analyzer, craft annotator, contrast purity, calibration
+├── experiments/        # Controlled ablation harness (Experiment 001: Baseline vs Stateful vs BoN)
 ├── trainer/            # QLoRA fine-tuning & DPO alignment scripts
 ├── inference/          # Blueprint planner, Story Bible DB, Fiction RAG, Best-of-N selector
 ├── evaluator/          # Stylometric evaluation suite & composite reward model
 ├── utils/              # Token sanitizer & manuscript exporter (.docx, .pdf)
-├── tests/              # Pytest test suite for state engine, invariants, contracts, and compiler
+├── docs/               # Technical documentation (comedy_craft_taxonomy.md)
+├── reports/            # Audit reports & human calibration sheets
+├── tests/              # Pytest test suite (106 passing tests)
 ├── setup_project.py    # Automated book downloader & workspace setup
 └── requirements.txt    # Python dependencies
 ```
+
