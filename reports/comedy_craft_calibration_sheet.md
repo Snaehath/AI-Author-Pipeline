@@ -29,15 +29,18 @@
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -65,15 +68,18 @@
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -101,15 +107,18 @@
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -137,15 +146,18 @@ The man had his mouth open and his hand raised to give an order which would cert
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -281,15 +293,18 @@ forth an uproa...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -317,15 +332,18 @@ forth an uproa...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -353,15 +371,18 @@ forth an uproa...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -389,15 +410,18 @@ forth an uproa...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1433,15 +1457,18 @@ Book I, fo. 103b. In 1417 the mayor and aldermen ordained that the
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1469,15 +1496,18 @@ PIGS IS PIGS *** Produced by An Anonymous Volunteer "PIGS IS PIGS" By Ellis Park
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1505,15 +1535,18 @@ PIGS IS PIGS *** Produced by An Anonymous Volunteer "PIGS IS PIGS" By Ellis Park
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1541,15 +1574,18 @@ PIGS IS PIGS *** Produced by An Anonymous Volunteer "PIGS IS PIGS" By Ellis Park
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1577,15 +1613,18 @@ PIGS IS PIGS *** Produced by An Anonymous Volunteer "PIGS IS PIGS" By Ellis Park
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1693,15 +1732,18 @@ quarrel is an abso...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1729,15 +1771,18 @@ quarrel is an abso...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1765,15 +1810,18 @@ quarrel is an abso...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1801,15 +1849,18 @@ quarrel is an abso...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1837,15 +1888,18 @@ quarrel is an abso...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -1973,15 +2027,18 @@ turns out that I'm ...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -2380,15 +2437,18 @@ ecclesiastic at the far...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -2416,15 +2476,18 @@ ecclesiastic at the far...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -2452,15 +2515,18 @@ ecclesiastic at the far...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -2488,15 +2554,18 @@ ecclesiastic at the far...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -2884,15 +2953,18 @@ raising the scaffold....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -3515,15 +3587,18 @@ would have solv...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -3551,15 +3626,18 @@ would have solv...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -3970,15 +4048,18 @@ was fifty years in advance of his time....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4012,15 +4093,18 @@ asleep half the time.
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4048,15 +4132,18 @@ He looked askance at the floor and said gruffly:  "Look! How dirty he has made i
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4084,15 +4171,18 @@ By the strange irony of fortune, it fell to the lot of Thomas Offley to perform 
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4120,15 +4210,18 @@ By the strange irony of fortune, it fell to the lot of Thomas Offley to perform 
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4156,15 +4249,18 @@ By the strange irony of fortune, it fell to the lot of Thomas Offley to perform 
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4195,15 +4291,18 @@ had been brought to trial at the Guildhall (13 Nov).
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4237,15 +4336,18 @@ the title of He was equally ignorant of Auguste Comte.
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4273,15 +4375,18 @@ the title of He was equally ignorant of Auguste Comte.
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4418,15 +4523,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4454,15 +4562,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4490,15 +4601,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4526,15 +4640,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4562,15 +4679,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4598,15 +4718,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4634,15 +4757,18 @@ downstairs....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4670,15 +4796,18 @@ they filled them with guinea-pigs and expressed them to Franklin. Day after day 
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4850,15 +4979,18 @@ pretends to an intimate acquaintance with Skinner....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4886,15 +5018,18 @@ pretends to an intimate acquaintance with Skinner....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4922,15 +5057,18 @@ pretends to an intimate acquaintance with Skinner....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -4958,15 +5096,18 @@ pretends to an intimate acquaintance with Skinner....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -5141,15 +5282,18 @@ exercise, Müller, but it can't be helped, - we have to do it." H...'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -5284,15 +5428,18 @@ the city held no fascinations for him....'
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---
@@ -5320,15 +5467,18 @@ and I was back in the old flat, lying in the old arm-chair, with my feet upon th
 
 ### Human Verification Form
 ```text
-[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]
+[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]
 [ ] HUMAN PRIMARY MECHANISM : _________________________
-[ ] HUMAN SECONDARY         : _________________________
+[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]
 [ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]
 [ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]
 [ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]
 [ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]
-[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]
-[ ] HUMAN NOTES             : _________________________
+[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)
+[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)
+[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]
+[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]
+[ ] HUMAN AUDIT NOTES       : _________________________
 ```
 
 ---

@@ -25,7 +25,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -55,7 +57,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -85,7 +89,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -115,7 +121,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -145,7 +153,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -175,7 +185,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -205,7 +217,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -235,7 +249,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -268,7 +284,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -298,7 +316,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -328,7 +348,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -358,7 +380,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -388,7 +412,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -418,7 +444,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -448,7 +476,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -478,7 +508,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -508,7 +540,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -538,7 +572,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -570,7 +606,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -603,7 +641,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -633,7 +673,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -663,7 +705,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -693,7 +737,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -726,7 +772,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -759,7 +807,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -789,7 +839,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -821,7 +873,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -851,7 +905,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -881,7 +937,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -911,7 +969,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -941,7 +1001,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -971,7 +1033,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1001,7 +1065,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1031,7 +1097,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1061,7 +1129,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1091,7 +1161,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1121,7 +1193,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1151,7 +1225,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1181,7 +1257,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1211,7 +1289,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1241,7 +1321,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1271,7 +1353,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1301,7 +1385,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1333,7 +1419,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1363,7 +1451,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1393,7 +1483,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1423,7 +1515,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1455,7 +1549,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1485,7 +1581,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   },
@@ -1515,7 +1613,9 @@
       "reversal_accurate": null,
       "payoff_accurate": null,
       "human_literary_quality": null,
-      "human_confidence": null,
+      "human_training_value": null,
+      "human_mechanism_confidence": null,
+      "disagreement_category": null,
       "notes": ""
     }
   }

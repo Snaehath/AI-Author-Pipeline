@@ -110,6 +110,16 @@ class StoryFacts:
         return cls(**data)
 
 
+class DisagreementCategory(str, Enum):
+    """Categorization of audit disagreements to guide detector/taxonomy refinement."""
+    A_DETECTOR_FAILURE = "A_DETECTOR_FAILURE"
+    B_TAXONOMY_AMBIGUITY = "B_TAXONOMY_AMBIGUITY"
+    C_HUMAN_DISAGREEMENT = "C_HUMAN_DISAGREEMENT"
+    D_SOURCE_AMBIGUITY = "D_SOURCE_AMBIGUITY"
+    E_COMPETING_MECHANISMS = "E_COMPETING_MECHANISMS"
+    F_REJECT_EXAMPLE = "F_REJECT_EXAMPLE"
+
+
 @dataclass
 class CraftAnnotation:
     """Level 2 Craft Annotation: Why does the scene work structurally and comedically."""
@@ -119,7 +129,9 @@ class CraftAnnotation:
     detector_confidence: float = 0.0  # Heuristic / automated pattern match certainty [0.0, 1.0]
     human_confidence: Optional[float] = None  # Expert human confidence after review [0.0, 1.0]
     linguistic_craft_score: float = 0.0  # Automated syntactic, rhythm, and dialogue balance metric [0.0, 1.0]
-    human_literary_quality: Optional[float] = None  # Expert human assessment of literary execution
+    human_literary_quality: Optional[float] = None  # Literary execution quality [1 - 10]
+    human_training_value: Optional[float] = None  # Transferable comedic training value [1 - 10]
+    human_disagreement_category: Optional[DisagreementCategory] = None
     scene_function: SceneFunction = SceneFunction.SOCIAL_CONFLICT
     tone: ComedicTone = ComedicTone.DRY_WIT
     setup_summary: str = ""

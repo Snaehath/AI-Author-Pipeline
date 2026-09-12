@@ -88,15 +88,18 @@ class AnnotationCalibrationReport:
                 "",
                 "### Human Verification Form",
                 "```text",
-                "[ ] AGREEMENT VERDICT: [ AGREE | PARTIAL | DISAGREE ]",
+                "[ ] AGREEMENT VERDICT       : [ AGREE | PARTIAL | DISAGREE ]",
                 "[ ] HUMAN PRIMARY MECHANISM : _________________________",
-                "[ ] HUMAN SECONDARY         : _________________________",
+                "[ ] HUMAN SECONDARY MECHS   : [ List comma-separated secondary mechanisms ]",
                 "[ ] HUMAN SETUP ACCURATE    : [ YES | NO | PARTIAL ]",
                 "[ ] HUMAN ESCALATION ACCURATE: [ YES | NO | PARTIAL ]",
                 "[ ] HUMAN REVERSAL ACCURATE : [ YES | NO | PARTIAL ]",
                 "[ ] HUMAN PAYOFF ACCURATE   : [ YES | NO | PARTIAL ]",
-                "[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ]",
-                "[ ] HUMAN NOTES             : _________________________",
+                "[ ] HUMAN LITERARY QUALITY  : [ 1 - 10 ] (How good is the prose as comedy)",
+                "[ ] HUMAN TRAINING VALUE    : [ 1 - 10 ] (How transferable is the comic construction)",
+                "[ ] HUMAN MECHANISM CERTAINTY: [ 1 - 10 ]",
+                "[ ] DISAGREEMENT CATEGORY   : [ A_DETECTOR_FAILURE | B_TAXONOMY_AMBIGUITY | C_HUMAN_DISAGREEMENT | D_SOURCE_AMBIGUITY | E_COMPETING_MECHANISMS | F_REJECT_EXAMPLE ]",
+                "[ ] HUMAN AUDIT NOTES       : _________________________",
                 "```",
                 "",
                 "---",
@@ -139,7 +142,9 @@ class AnnotationCalibrationReport:
                     "reversal_accurate": None,  # bool
                     "payoff_accurate": None,  # bool
                     "human_literary_quality": None,  # float [1-10]
-                    "human_confidence": None,  # float [0.0 - 1.0]
+                    "human_training_value": None,  # float [1-10] (Transferability to original scenes)
+                    "human_mechanism_confidence": None,  # float [1-10]
+                    "disagreement_category": None,  # e.g. "A_DETECTOR_FAILURE", "B_TAXONOMY_AMBIGUITY"
                     "notes": "",
                 },
             })
@@ -157,7 +162,10 @@ class AnnotationCalibrationReport:
         escalation_agreed = 0
         reversal_agreed = 0
         payoff_agreed = 0
+        training_values = []
+        quality_scores = []
         verdict_counts = {"AGREE": 0, "PARTIAL": 0, "DISAGREE": 0, "UNREVIEWED": 0}
+        disagreement_counts: Dict[str, int] = {}
 
         for rec in audited_records:
             human = rec.get("human_audit", {})
@@ -176,6 +184,18 @@ class AnnotationCalibrationReport:
             if human.get("payoff_accurate") is True:
                 payoff_agreed += 1
 
+            if human.get("human_training_value") is not None:
+                training_values.append(float(human["human_training_value"]))
+            if human.get("human_literary_quality") is not None:
+                quality_scores.append(float(human["human_literary_quality"]))
+
+            cat = human.get("disagreement_category")
+            if cat:
+                disagreement_counts[cat] = disagreement_counts.get(cat, 0) + 1
+
+        avg_training_val = round(sum(training_values) / len(training_values), 2) if training_values else None
+        avg_quality = round(sum(quality_scores) / len(quality_scores), 2) if quality_scores else None
+
         return {
             "total_audited": total,
             "mechanism_agreement_pct": round((mech_agreed / total) * 100, 1),
@@ -183,7 +203,10 @@ class AnnotationCalibrationReport:
             "escalation_agreement_pct": round((escalation_agreed / total) * 100, 1),
             "reversal_agreement_pct": round((reversal_agreed / total) * 100, 1),
             "payoff_agreement_pct": round((payoff_agreed / total) * 100, 1),
+            "average_human_training_value": avg_training_val,
+            "average_human_literary_quality": avg_quality,
             "verdict_distribution": verdict_counts,
+            "disagreement_breakdown": disagreement_counts,
         }
 
 
