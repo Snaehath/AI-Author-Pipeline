@@ -1,0 +1,62 @@
+{
+  "benchmark_name": "comedy_generalization_test",
+  "phase": "4C-1",
+  "objective": "Fresh Generalization Benchmark for Inference-Time Contrastive Scaffolding",
+  "n_records": 25,
+  "target_count": 25,
+  "selection_seed": 42,
+  "selection_rule": "Deterministic round-robin stratification across all available mechanisms in eligible unseen pool (craft_presence in {'YES', 'PARTIAL'})",
+  "created_before_scaffold_design": true,
+  "output_file": "datasets/sft/comedy_generalization_test.jsonl",
+  "sha256": "a133d670bb6684a0879b7bd4d16a4ae7cdb62455f7aa2915d0ff5297e5f1c418",
+  "source_corpus": "reports/comedy_craft_audit_batch_180.json",
+  "mechanism_distribution": {
+    "ESCALATION": 4,
+    "CALLBACK": 4,
+    "MISUNDERSTANDING": 3,
+    "VERBAL_WIT": 3,
+    "DIALOGUE_SUBTEXT": 3,
+    "SOCIAL_EMBARRASSMENT": 3,
+    "DEADPAN_REACTION": 2,
+    "STATUS_REVERSAL": 2,
+    "PHYSICAL_COMPLICATION": 1
+  },
+  "craft_presence_distribution": {
+    "PARTIAL": 17,
+    "YES": 8
+  },
+  "leakage_verification": {
+    "contrastive_train_48_overlap": 0,
+    "sft_train_43_overlap": 0,
+    "dev_20_overlap": 0,
+    "original_test_17_overlap": 0,
+    "status": "ZERO_LEAKAGE_VERIFIED"
+  },
+  "selected_audit_ids": [
+    "audit_011",
+    "audit_018",
+    "audit_028",
+    "audit_032",
+    "audit_038",
+    "audit_039",
+    "audit_057",
+    "audit_061",
+    "audit_078",
+    "audit_084",
+    "audit_090",
+    "audit_101",
+    "audit_107",
+    "audit_108",
+    "audit_113",
+    "audit_117",
+    "audit_123",
+    "audit_136",
+    "audit_140",
+    "audit_145",
+    "audit_146",
+    "audit_157",
+    "audit_159",
+    "audit_169",
+    "audit_175"
+  ]
+}
