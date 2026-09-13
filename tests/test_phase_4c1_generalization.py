@@ -80,3 +80,82 @@ def test_manifest_metadata_and_reproducibility():
     assert manifest["selection_seed"] == 42
     assert len(manifest["mechanism_distribution"]) == 9
     assert manifest["leakage_verification"]["status"] == "ZERO_LEAKAGE_VERIFIED"
+
+
+def test_regime_a_and_b_prompt_formatters():
+    from pipeline.evaluator.contrastive_scaffold_evaluator import (
+        format_regime_a_prompt,
+        format_regime_b_prompt,
+    )
+
+    sample = "Test comedic text snippet."
+    prompt_a = format_regime_a_prompt(sample)
+    prompt_b = format_regime_b_prompt(sample)
+
+    assert len(prompt_a) == 2
+    assert len(prompt_b) == 2
+
+    # Regime A asks for primary_mechanism without contrastive_analysis
+    assert "primary_mechanism" in prompt_a[0]["content"]
+    assert "contrastive_analysis" not in prompt_a[0]["content"]
+
+    # Regime B explicitly requires contrastive_analysis
+    assert "contrastive_analysis" in prompt_b[0]["content"]
+    assert "causal_mechanism" in prompt_b[0]["content"]
+    assert "counterfactual_test" in prompt_b[0]["content"]
+
+
+def test_parse_prediction_and_scr_calculation():
+    from pipeline.evaluator.contrastive_scaffold_evaluator import (
+        parse_prediction,
+        evaluate_records,
+    )
+
+    # Regime A response parsing
+    raw_a = '{"primary_mechanism": "ESCALATION", "secondary_mechanisms": ["VERBAL_WIT"], "mechanism_horizon": "LOCAL", "craft_analysis": "test"}'
+    parsed_a = parse_prediction(raw_a, is_regime_b=False)
+    assert parsed_a["parsed"] is True
+    assert parsed_a["prediction"]["primary_mechanism"] == "ESCALATION"
+
+    # Regime B response parsing with contrastive analysis
+    raw_b = '''{
+      "contrastive_analysis": {
+        "causal_mechanism": "ESCALATION",
+        "surface_cue": "witty dialogue",
+        "tempting_alternative": "VERBAL_WIT",
+        "why_alternative_is_tempting": "dialogue",
+        "counterfactual_test": "test",
+        "why_primary_wins": "test"
+      },
+      "primary_mechanism": "ESCALATION",
+      "secondary_mechanisms": [],
+      "mechanism_horizon": "LOCAL",
+      "craft_analysis": "test"
+    }'''
+    parsed_b = parse_prediction(raw_b, is_regime_b=True)
+    assert parsed_b["parsed"] is True
+    assert parsed_b["prediction"]["primary_mechanism"] == "ESCALATION"
+    assert parsed_b["prediction"]["causal_mechanism"] == "ESCALATION"
+
+    # Evaluate mock records for SCR
+    mock_records = [{
+        "audit_id": "audit_test",
+        "human_audit": {
+            "primary_mechanism": "ESCALATION",
+            "secondary_mechanisms": [],
+            "mechanism_horizon": "LOCAL",
+        }
+    }]
+    mock_preds = [{
+        "audit_id": "audit_test",
+        "parsed_prediction": parsed_b,
+        "truncated": False,
+        "generated_tokens": 120,
+    }]
+    eval_res = evaluate_records(mock_records, mock_preds, is_regime_b=True)
+    sc = eval_res["scorecard"]
+    assert sc["primary_accuracy"] == 1.0
+    assert sc["causal_mechanism_accuracy"] == 1.0
+    assert sc["scaffold_consistency_rate"] == 1.0
+    assert sc["disconnection_matrix"]["correct_causal_correct_primary"] == 1
+

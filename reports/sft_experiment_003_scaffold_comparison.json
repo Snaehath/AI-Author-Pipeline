@@ -1,0 +1,582 @@
+{
+  "experiment_id": "sft_experiment_003",
+  "phase": "4C-1",
+  "objective": "Inference-Time Contrastive Scaffolding on Fresh Generalization Benchmark",
+  "model": {
+    "base_model": "models/Qwen2.5-1.5B-Instruct",
+    "adapter": "models/comedy_contrastive_adapter/checkpoint-epoch-2"
+  },
+  "benchmark": {
+    "path": "datasets/sft/comedy_generalization_test.jsonl",
+    "n_records": 25,
+    "sha256": "a133d670bb6684a0879b7bd4d16a4ae7cdb62455f7aa2915d0ff5297e5f1c418"
+  },
+  "regime_a_control": {
+    "n": 25,
+    "primary_accuracy": 0.08,
+    "primary_correct": 2,
+    "exact_record_accuracy": 0.0,
+    "exact_record_correct": 0,
+    "horizon_accuracy": 0.68,
+    "secondary_micro_f1": 0.1463,
+    "mean_jaccard": 0.14,
+    "raw_json_validity": 0.84,
+    "schema_validity": 0.84,
+    "taxonomy_violation_rate": 0.0,
+    "truncation_rate": 0.16,
+    "truncation_count": 4,
+    "mean_generated_tokens": 227.4,
+    "median_generated_tokens": 230,
+    "verbal_wit_rate": 0.44,
+    "deadpan_rate": 0.32,
+    "predicted_distribution": {
+      "UNKNOWN": 4,
+      "VERBAL_WIT": 11,
+      "ESCALATION": 2,
+      "DEADPAN_REACTION": 8
+    }
+  },
+  "regime_b_scaffolded": {
+    "n": 25,
+    "primary_accuracy": 0.08,
+    "primary_correct": 2,
+    "exact_record_accuracy": 0.0,
+    "exact_record_correct": 0,
+    "horizon_accuracy": 0.84,
+    "secondary_micro_f1": 0.1951,
+    "mean_jaccard": 0.1733,
+    "raw_json_validity": 1.0,
+    "schema_validity": 1.0,
+    "taxonomy_violation_rate": 0.0,
+    "truncation_rate": 0.0,
+    "truncation_count": 0,
+    "mean_generated_tokens": 217.2,
+    "median_generated_tokens": 221,
+    "verbal_wit_rate": 0.0,
+    "deadpan_rate": 1.0,
+    "predicted_distribution": {
+      "DEADPAN_REACTION": 25
+    },
+    "causal_mechanism_accuracy": 0.08,
+    "causal_mechanism_correct": 2,
+    "scaffold_consistency_rate": 1.0,
+    "scaffold_consistent_count": 25,
+    "disconnection_matrix": {
+      "correct_causal_correct_primary": 2,
+      "correct_causal_wrong_primary": 0,
+      "wrong_causal_correct_primary": 0,
+      "wrong_causal_wrong_primary": 23
+    }
+  },
+  "deltas_b_minus_a": {
+    "primary_accuracy_delta": 0.0,
+    "exact_record_delta": 0.0,
+    "secondary_micro_f1_delta": 0.0488,
+    "verbal_wit_rate_delta": -0.44,
+    "mean_token_overhead": -10.2
+  },
+  "confusion_regime_a": [
+    {
+      "audit_id": "audit_011",
+      "gold": "ESCALATION",
+      "predicted": "UNKNOWN",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "JSON_PARSE_ERROR",
+      "truncated": true,
+      "generated_tokens": 256
+    },
+    {
+      "audit_id": "audit_018",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 205
+    },
+    {
+      "audit_id": "audit_028",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "ESCALATION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 209
+    },
+    {
+      "audit_id": "audit_032",
+      "gold": "VERBAL_WIT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 230
+    },
+    {
+      "audit_id": "audit_038",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": true,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 230
+    },
+    {
+      "audit_id": "audit_039",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 232
+    },
+    {
+      "audit_id": "audit_057",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 218
+    },
+    {
+      "audit_id": "audit_061",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 249
+    },
+    {
+      "audit_id": "audit_078",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 217
+    },
+    {
+      "audit_id": "audit_084",
+      "gold": "CALLBACK",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 205
+    },
+    {
+      "audit_id": "audit_090",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 228
+    },
+    {
+      "audit_id": "audit_101",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 173
+    },
+    {
+      "audit_id": "audit_107",
+      "gold": "CALLBACK",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 232
+    },
+    {
+      "audit_id": "audit_108",
+      "gold": "VERBAL_WIT",
+      "predicted": "UNKNOWN",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "JSON_PARSE_ERROR",
+      "truncated": true,
+      "generated_tokens": 256
+    },
+    {
+      "audit_id": "audit_113",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 233
+    },
+    {
+      "audit_id": "audit_117",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": true,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 228
+    },
+    {
+      "audit_id": "audit_123",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 241
+    },
+    {
+      "audit_id": "audit_136",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 214
+    },
+    {
+      "audit_id": "audit_140",
+      "gold": "CALLBACK",
+      "predicted": "ESCALATION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 220
+    },
+    {
+      "audit_id": "audit_145",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 234
+    },
+    {
+      "audit_id": "audit_146",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 223
+    },
+    {
+      "audit_id": "audit_157",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 232
+    },
+    {
+      "audit_id": "audit_159",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "UNKNOWN",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "JSON_PARSE_ERROR",
+      "truncated": true,
+      "generated_tokens": 256
+    },
+    {
+      "audit_id": "audit_169",
+      "gold": "CALLBACK",
+      "predicted": "VERBAL_WIT",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 207
+    },
+    {
+      "audit_id": "audit_175",
+      "gold": "ESCALATION",
+      "predicted": "UNKNOWN",
+      "causal_predicted": null,
+      "correct": false,
+      "parse_status": "JSON_PARSE_ERROR",
+      "truncated": true,
+      "generated_tokens": 256
+    }
+  ],
+  "confusion_regime_b": [
+    {
+      "audit_id": "audit_011",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 214
+    },
+    {
+      "audit_id": "audit_018",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": true,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 221
+    },
+    {
+      "audit_id": "audit_028",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 227
+    },
+    {
+      "audit_id": "audit_032",
+      "gold": "VERBAL_WIT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 228
+    },
+    {
+      "audit_id": "audit_038",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": true,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 226
+    },
+    {
+      "audit_id": "audit_039",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 237
+    },
+    {
+      "audit_id": "audit_057",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 246
+    },
+    {
+      "audit_id": "audit_061",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 229
+    },
+    {
+      "audit_id": "audit_078",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 194
+    },
+    {
+      "audit_id": "audit_084",
+      "gold": "CALLBACK",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 195
+    },
+    {
+      "audit_id": "audit_090",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 213
+    },
+    {
+      "audit_id": "audit_101",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 206
+    },
+    {
+      "audit_id": "audit_107",
+      "gold": "CALLBACK",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 224
+    },
+    {
+      "audit_id": "audit_108",
+      "gold": "VERBAL_WIT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 202
+    },
+    {
+      "audit_id": "audit_113",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 222
+    },
+    {
+      "audit_id": "audit_117",
+      "gold": "VERBAL_WIT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 216
+    },
+    {
+      "audit_id": "audit_123",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 214
+    },
+    {
+      "audit_id": "audit_136",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 193
+    },
+    {
+      "audit_id": "audit_140",
+      "gold": "CALLBACK",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 212
+    },
+    {
+      "audit_id": "audit_145",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 223
+    },
+    {
+      "audit_id": "audit_146",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 201
+    },
+    {
+      "audit_id": "audit_157",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 227
+    },
+    {
+      "audit_id": "audit_159",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 232
+    },
+    {
+      "audit_id": "audit_169",
+      "gold": "CALLBACK",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 221
+    },
+    {
+      "audit_id": "audit_175",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "causal_predicted": "DEADPAN_REACTION",
+      "correct": false,
+      "parse_status": "VALID",
+      "truncated": false,
+      "generated_tokens": 208
+    }
+  ]
+}
