@@ -98,25 +98,52 @@ Following checkpoint selection, the sealed 17-record TEST benchmark (`datasets/s
 
 ## 4. Key Scientific Findings & Attractor Dynamics
 
-### 1. The Discrepancy Between DEV and TEST
+### 1. The Discrepancy Between DEV and TEST (The Generalization Gap)
 * **On DEV (High-Craft Curated Set, $\text{sft\_score} \ge 8.0$)**: Contrastive supervision produced a **+20.0% primary accuracy increase** (15.0% ➔ 35.0%), an **Attractor Escape Rate of 69.2%**, and a **True Causal Success Rate of 38.5%** (5/13 cases escaping directly to gold `ESCALATION`, `DEADPAN_REACTION`, and `MISUNDERSTANDING`).
-* **On TEST (Uncurated Baseline Benchmark)**: Contrastive supervision suppressed the false `DEADPAN_REACTION` substitute attractor (dropping from 10 predictions in 4B-1 down to 1 in 4B-2), but the model defaulted back to `VERBAL_WIT` (12/17) or branched to `MISUNDERSTANDING` (3/17), resulting in **0/9 true causal successes** on the baseline false attractor cases.
+* **On TEST (Uncurated Baseline Benchmark)**: The learned behavior failed to generalize. Contrastive supervision reduced primary mechanism accuracy (17.6% ➔ 11.8%). While it suppressed the false `DEADPAN_REACTION` substitute attractor (dropping from 10 predictions in 4B-1 down to 1 in 4B-2), the model defaulted back to `VERBAL_WIT` (12/17) or branched to `MISUNDERSTANDING` (3/17), resulting in **0/9 true causal successes** on baseline false attractor cases.
+* **Interpretation**: Training distribution $\rightarrow$ learned contrastive behavior $\rightarrow$ works on similar curated examples; but training distribution $\rightarrow$ unseen/subtler test examples $\rightarrow$ base prior returns.
 
-### 2. Substitute Attractor Dynamics
-In Phase 4B-1, standard SFT broke the `VERBAL_WIT` attractor by creating a new substitute attractor hub on `DEADPAN_REACTION` (10/17 predictions). Phase 4B-2's counterfactual supervision successfully penalized this substitute attractor (`DEADPAN_REACTION` fell from 58.8% to 5.9%), confirming that contrastive pairs actively disincentivize superficial deadpan shortcuts. However, without sufficient mechanism support for harder classes on uncurated passages, the model fell back to the base model's default prior (`VERBAL_WIT`).
+### 2. Substitute Attractor Dynamics (Intervention Package Effects)
+In Phase 4B-1, standard SFT broke the `VERBAL_WIT` attractor by creating a substitute attractor hub on `DEADPAN_REACTION` (10/17 predictions). Phase 4B-2's intervention package reduced this substitute attractor (`DEADPAN_REACTION` fell from 58.8% to 5.9%), **providing evidence that counterfactual supervision can reduce the `DEADPAN_REACTION` attractor under the evaluated conditions**. However, because the intervention package combined multiple elements (new curated data, contrastive schema, causal rationales, counterfactual tests, and `why_primary_wins`), the reduction is attributable to the intervention package as a whole rather than isolated counterfactual pairs.
 
-### 3. Emergent Contrastive Reasoning vs. Inference Prompting
-During test evaluation, the model autonomously generated detailed `contrastive_analysis` blocks (including `causal_mechanism`, `surface_cue`, `tempting_alternative`, and `counterfactual_test`) despite the evaluation prompt *not requesting them*. The model adopted the internal reasoning chain. On 1 long passage (`audit_042`), the extensive contrastive chain caused output token exhaustion at the 256-token limit.
+### 3. Structured Contrastive Reasoning Output vs. Inference Scaffolding
+During evaluation, the model exhibited **structured contrastive reasoning behavior** (generating detailed `contrastive_analysis` blocks including `causal_mechanism`, `surface_cue`, `tempting_alternative`, and `counterfactual_test`) despite the evaluation prompt *not explicitly requesting them*. This demonstrates learned structured output generation rather than direct access to internal reasoning. Furthermore, because the evaluation prompt asked for standard classification without explicitly scaffolding the contrastive fields, the model lacked prompt-time encouragement to systematically execute the contrastive sequence before arriving at its final decision on out-of-distribution passages.
 
-### 4. Hypothesis Status: H4
-> **H4: Explicit causal/contrastive supervision reduces surface attractor collapse and increases transitions toward gold causal mechanisms.**
-* **Verdict**: **SUPPORTED ON DEV / RESTRICTED GENERALIZATION ON UNCURATED TEST**
-  * **On DEV**: Fully supported ($15.0\% \rightarrow 35.0\%$, $38.5\%$ true causal success).
-  * **On TEST**: Attractor escape achieved for the secondary hub (`DEADPAN_REACTION` suppressed), but primary mechanism generalization failed to transfer to uncurated test passages ($11.8\%$ primary accuracy, $0/9$ true causal success).
+### 4. Generation Length Tradeoff & Truncation
+On one long passage (`audit_042`), the extensive contrastive generation exhausted the `max_new_tokens=256` budget before completing the JSON object, resulting in an unparsed `UNKNOWN` prediction. This highlights a key engineering tradeoff:
+$$\text{More Reasoning Supervision} \longrightarrow \text{Longer Output} \longrightarrow \text{Higher Truncation Risk}$$
+For future evaluations with structured contrastive output, output token budgets must be budgeted and monitored explicitly.
+
+### 5. Hypothesis Status: H4
+> **H4: Explicit causal/contrastive supervision should reduce the model's tendency to classify prominent witty/deadpan surface cues as the primary mechanism, increasing movement toward the human-labeled causal mechanism.**
+
+* **Verdict**: **PARTIALLY SUPPORTED / DISTRIBUTION-LIMITED (NOT CONFIRMED ON TEST)**
+  * **DEV Causal Discrimination**: 🟢 **Supported** (15.0% ➔ 35.0%, +20.0% gain)
+  * **DEV Attractor Escape**: 🟢 **Strong Evidence** (69.2% escape, 38.5% true causal success)
+  * **TEST Generalization**: 🔴 **Not Supported** (17.6% ➔ 11.8%)
+  * **Overall Causal Mechanism Generalization**: 🔴 **Not Demonstrated**
 
 ---
 
-## 5. Architectural Implications for Phase 4C
+## 5. Executive Synthesis & Next Phase
 
-1. **Inference-Time Prompt Alignment**: In Phase 4B-2, the training prompt and evaluation prompt were deliberately asymmetric (training included `contrastive_analysis` schema, while frozen evaluator used the original Phase 4A schema). In Phase 4C, the evaluation harness should explicitly scaffold the contrastive schema at inference time.
-2. **Dataset Scale & Mechanistic Diversity**: 48 records were sufficient to teach the model to reason contrastively on high-clarity passages, but not sufficient to disambiguate subtle craft variations on unseen out-of-distribution passages. Phase 4C will expand the curriculum with the complete audited KEEP pool ($\approx 120$ records) across all 10 taxonomy classes.
+### Scientific Summary
+> **Phase 4B-2 demonstrated that a QLoRA-trained Qwen2.5-1.5B model can learn structured contrastive distinctions between comedic mechanisms on a curated development distribution. The model substantially reduced the dominant `VERBAL_WIT` attractor on DEV and converted 5/13 baseline false-attractor cases directly to their human-labeled mechanism at the selected checkpoint. However, this improvement did not generalize to the sealed TEST benchmark, where primary mechanism accuracy declined from 17.6% to 11.8%. The result therefore supports the feasibility of contrastive supervision but indicates a substantial distribution/generalization gap.**
+
+### Project Status Dashboard
+* **Phase 4B-2 Execution**: 🟢 Complete & Methodologically Valid
+* **DEV Improvement**: 🟢 Demonstrated & Replicated
+* **Attractor Shift**: 🟢 Substantially Altered (Substitute attractor suppressed)
+* **Causal Reasoning Generalization**: 🟡 Unresolved
+* **Primary TEST Accuracy Improvement**: 🔴 Not Achieved (11.8%)
+* **Hypothesis H4**: 🔴 Not Confirmed (Distribution-Limited)
+
+### Methodological Discipline: 🔒 Freezing TEST
+The 17-record benchmark (`comedy_eval.jsonl`) is now **permanently frozen and sealed** with its recorded Phase 4B-2 result (11.8%). It will not be re-evaluated with modified prompts or parameters to avoid converting a sealed benchmark into a development set.
+
+### Next Phase: Phase 4C-1 (Inference-Time Contrastive Scaffolding + Fresh Generalization Benchmark)
+1. **Fresh Benchmark**: Construct a new held-out evaluation set (20–30 passages of mixed/unseen craft quality, stratified across mechanisms) prior to designing new prompts.
+2. **Controlled Evaluation**: Compare:
+   - **Regime A (Standard Inference)**: `passage ➔ classification`
+   - **Regime B (Contrastive Scaffolding)**: `passage ➔ causal mechanism ➔ surface cue ➔ tempting alternative ➔ counterfactual test ➔ why primary wins ➔ classification`
+3. **Hypothesis Under Test**: Test whether the model already acquired the contrastive discrimination procedure during Phase 4B-2, but requires explicit inference-time scaffolding to reliably activate it on out-of-distribution passages.

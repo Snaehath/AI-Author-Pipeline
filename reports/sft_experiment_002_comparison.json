@@ -131,5 +131,13 @@
       "schema_validity": 0.9412,
       "taxonomy_violation_rate": 0.0
     }
-  }
+  },
+  "hypothesis_status": {
+    "h4_verdict": "PARTIALLY_SUPPORTED_DISTRIBUTION_LIMITED",
+    "dev_causal_discrimination": "SUPPORTED",
+    "dev_attractor_escape": "STRONG_EVIDENCE",
+    "test_generalization": "NOT_SUPPORTED",
+    "overall_causal_generalization": "NOT_DEMONSTRATED"
+  },
+  "executive_summary": "Phase 4B-2 demonstrated that a QLoRA-trained Qwen2.5-1.5B model can learn structured contrastive distinctions between comedic mechanisms on a curated development distribution (15.0% -> 35.0% DEV primary accuracy, 69.2% attractor escape, 38.5% true causal success). However, this improvement did not generalize to the sealed TEST benchmark (17.6% -> 11.8%), supporting the feasibility of contrastive supervision but indicating a substantial distribution/generalization gap."
 }
