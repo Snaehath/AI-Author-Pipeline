@@ -138,6 +138,9 @@ For future evaluations with structured contrastive output, output token budgets 
 * **Primary TEST Accuracy Improvement**: 🔴 Not Achieved (11.8%)
 * **Hypothesis H4**: 🔴 Not Confirmed (Distribution-Limited)
 
+### Preservation of Epoch-2 Artifact
+The Epoch-2 adapter (`models/comedy_contrastive_adapter/checkpoint-epoch-2`) is preserved as the core experimental artifact. It demonstrated a contrastive behavior that the base model did not reliably exhibit on the curated DEV distribution, providing evidence of a gap between learned contrastive behavior and inference-time generalization.
+
 ### Methodological Discipline: 🔒 Freezing TEST
 The 17-record benchmark (`comedy_eval.jsonl`) is now **permanently frozen and sealed** with its recorded Phase 4B-2 result (11.8%). It will not be re-evaluated with modified prompts or parameters to avoid converting a sealed benchmark into a development set.
 
