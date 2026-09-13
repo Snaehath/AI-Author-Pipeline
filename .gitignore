@@ -71,6 +71,7 @@ outputs/
 
 # Experiment generated runs & checkpoints
 experiments/**/baseline/
+!experiments/baseline/
 experiments/**/stateful/
 experiments/**/bon/
 experiments/**/checkpoints/

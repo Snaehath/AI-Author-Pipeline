@@ -8,7 +8,7 @@ ready for causal language modeling fine-tuning.
 import sys
 try:
     import pyarrow
-except OSError:
+except (OSError, ModuleNotFoundError, ImportError):
     sys.modules["pyarrow"] = None
 
 import json

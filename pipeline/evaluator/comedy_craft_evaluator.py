@@ -34,6 +34,11 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+try:
+    import pyarrow
+except (OSError, ModuleNotFoundError, ImportError):
+    sys.modules["pyarrow"] = None
+
 EXPECTED_EVAL_SHA256 = "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470"
 EXPECTED_EVAL_COUNT = 17
 
@@ -560,6 +565,7 @@ def run_model_inference(
     eval_records: list[dict[str, Any]],
     raw_out_path: Path,
     max_new_tokens: int = 256,
+    adapter_path: Path | None = None,
 ) -> list[dict[str, Any]]:
     """
     Run greedy decoding inference using local Hugging Face model and tokenizer.
@@ -585,6 +591,12 @@ def run_model_inference(
         device_map="auto" if device == "cuda" else None,
         trust_remote_code=True,
     )
+
+    if adapter_path is not None:
+        from peft import PeftModel
+        print(f"Attaching LoRA adapter from: {adapter_path}...")
+        model = PeftModel.from_pretrained(model, str(adapter_path))
+
     model.eval()
 
     raw_out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -648,6 +660,12 @@ def main() -> None:
         help="Path to model directory or Hugging Face ID.",
     )
     parser.add_argument(
+        "--adapter-path",
+        type=Path,
+        default=None,
+        help="Optional path to PEFT LoRA adapter directory to evaluate.",
+    )
+    parser.add_argument(
         "--eval-file",
         type=Path,
         default=Path("datasets/sft/comedy_eval.jsonl"),
@@ -697,6 +715,7 @@ def main() -> None:
             model_path=args.model_path,
             eval_records=eval_records,
             raw_out_path=args.raw_out,
+            adapter_path=args.adapter_path,
         )
 
     # 3. Score predictions

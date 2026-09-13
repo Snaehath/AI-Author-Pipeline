@@ -1,0 +1,73 @@
+{
+  "experiment": "001",
+  "phase": "4B",
+  "base_model": "models/Qwen2.5-1.5B-Instruct",
+  "train_sha256": "63e6a602f4f54d2809b43f1c638edeef3df861750b39390c373b58361fe5a0d6",
+  "eval_sha256": "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470",
+  "train_count": 43,
+  "eval_count": 17,
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "epochs": 3,
+    "effective_batch_size": 4,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "seed": 42,
+    "optimizer": "AdamW",
+    "scheduler": "cosine",
+    "warmup_steps": 1
+  },
+  "model_parameters": {
+    "trainable_parameters": 18464768,
+    "total_parameters": 907081216,
+    "trainable_percent": 2.0356
+  },
+  "training_curve": {
+    "epoch_1_loss": 1.1469,
+    "epoch_2_loss": 0.8063,
+    "epoch_3_loss": 0.7205
+  },
+  "memorization_diagnostic": {
+    "sample_size": 5,
+    "correct": 2,
+    "accuracy": 0.4,
+    "details": [
+      {
+        "audit_id": "audit_005",
+        "gold_primary": "ESCALATION",
+        "pred_primary": "ESCALATION",
+        "correct": true,
+        "parse_status": "VALID"
+      },
+      {
+        "audit_id": "audit_013",
+        "gold_primary": "ESCALATION",
+        "pred_primary": "ESCALATION",
+        "correct": true,
+        "parse_status": "VALID"
+      },
+      {
+        "audit_id": "audit_050",
+        "gold_primary": "PHYSICAL_COMPLICATION",
+        "pred_primary": "ESCALATION",
+        "correct": false,
+        "parse_status": "VALID"
+      },
+      {
+        "audit_id": "audit_100",
+        "gold_primary": "VERBAL_WIT",
+        "pred_primary": "ESCALATION",
+        "correct": false,
+        "parse_status": "VALID"
+      },
+      {
+        "audit_id": "audit_044",
+        "gold_primary": "STATUS_REVERSAL",
+        "pred_primary": "ESCALATION",
+        "correct": false,
+        "parse_status": "VALID"
+      }
+    ]
+  }
+}

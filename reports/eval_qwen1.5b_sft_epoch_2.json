@@ -1,0 +1,651 @@
+{
+  "evaluation": {
+    "n": 17,
+    "human_gold": true,
+    "eval_sha256": "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470"
+  },
+  "scorecard": {
+    "primary_accuracy": 0.1765,
+    "primary_correct": 3,
+    "exact_record_accuracy": 0.0588,
+    "exact_record_correct": 1,
+    "horizon_accuracy": 0.9412,
+    "secondary_micro_precision": 0.4211,
+    "secondary_micro_recall": 0.2963,
+    "secondary_micro_f1": 0.3478,
+    "secondary_macro_f1": 0.1776,
+    "mean_jaccard": 0.2667,
+    "combined_coverage_accuracy": 0.3529,
+    "raw_json_validity": 1.0,
+    "repairable_json_validity": 1.0,
+    "schema_validity": 1.0,
+    "taxonomy_violation_rate": 0.0
+  },
+  "failure_breakdown": {
+    "json_failures": 0,
+    "schema_failures": 0,
+    "wrong_primary": 14,
+    "wrong_horizon": 1,
+    "exact_failures": 16,
+    "parse_statuses": {
+      "VALID": 17
+    }
+  },
+  "confusion_matrix": [
+    {
+      "audit_id": "audit_143",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_010",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_135",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_164",
+      "gold": "DIALOGUE_SUBTEXT",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_083",
+      "gold": "DRAMATIC_IRONY",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_016",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_001",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_020",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_004",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_042",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_051",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_173",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_076",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_174",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "STATUS_REVERSAL",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_103",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_167",
+      "gold": "VERBAL_WIT",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_027",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    }
+  ],
+  "per_example": [
+    {
+      "audit_id": "audit_143",
+      "source_book": "Jill The Reckless",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "ESCALATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The verbal wit is delivered by the narrator's deadpan reaction."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The verbal wit is delivered by the narrator's deadpan reaction.\"\n}"
+    },
+    {
+      "audit_id": "audit_010",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the protagonist's emotional state."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the protagonist's emotional state.\"\n}"
+    },
+    {
+      "audit_id": "audit_135",
+      "source_book": "The Diary Of A Nobody",
+      "gold": {
+        "primary": "DIALOGUE_SUBTEXT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the absurdity of the statement."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the absurdity of the statement.\"\n}"
+    },
+    {
+      "audit_id": "audit_164",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "DIALOGUE_SUBTEXT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the absurdity of the situation."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the absurdity of the situation.\"\n}"
+    },
+    {
+      "audit_id": "audit_083",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "DRAMATIC_IRONY",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LONG_HORIZON"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the absurdity of the situation."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": false,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the absurdity of the situation.\"\n}"
+    },
+    {
+      "audit_id": "audit_016",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "PHYSICAL_COMPLICATION",
+          "SOCIAL_EMBARRASSMENT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "Jerry's deadpan reaction to Ogden's arrival serves as a central comedic device."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"Jerry's deadpan reaction to Ogden's arrival serves as a central comedic device.\"\n}"
+    },
+    {
+      "audit_id": "audit_001",
+      "source_book": "The Little Nugget",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The verbal wit is delivered by the deadpan reaction."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The verbal wit is delivered by the deadpan reaction.\"\n}"
+    },
+    {
+      "audit_id": "audit_020",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "ESCALATION",
+          "STATUS_REVERSAL",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "Deadpan reaction combined with verbal wit."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.333,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"Deadpan reaction combined with verbal wit.\"\n}"
+    },
+    {
+      "audit_id": "audit_004",
+      "source_book": "The Little Nugget",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction to the absurdity of the statement creates a humorous contrast."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction to the absurdity of the statement creates a humorous contrast.\"\n}"
+    },
+    {
+      "audit_id": "audit_042",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "ESCALATION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "ESCALATION",
+          "PHYSICAL_COMPLICATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "Deadpan reaction amplifies escalating tension."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.2,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"ESCALATION\",\n    \"VERBAL_WIT\",\n    \"PHYSICAL_COMPLICATION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"Deadpan reaction amplifies escalating tension.\"\n}"
+    },
+    {
+      "audit_id": "audit_051",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The verbal wit is delivered by the narrator who then deadpans his reaction."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The verbal wit is delivered by the narrator who then deadpans his reaction.\"\n}"
+    },
+    {
+      "audit_id": "audit_173",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "SOCIAL_EMBARRASSMENT",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the protagonist's isolation and lack of empathy."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the protagonist's isolation and lack of empathy.\"\n}"
+    },
+    {
+      "audit_id": "audit_076",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "SOCIAL_EMBARRASSMENT",
+        "secondary": [
+          "STATUS_REVERSAL"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The speaker's deadpan reaction contrasts with her casual statement about London traffic rules."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The speaker's deadpan reaction contrasts with her casual statement about London traffic rules.\"\n}"
+    },
+    {
+      "audit_id": "audit_174",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The status reversal is achieved through the contrast between the gardener's dignified behavior and the beetle's shame."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"STATUS_REVERSAL\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The status reversal is achieved through the contrast between the gardener's dignified behavior and the beetle's shame.\"\n}"
+    },
+    {
+      "audit_id": "audit_103",
+      "source_book": "The Diary Of A Nobody",
+      "gold": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction is used to emphasize the absurdity of Gladstone's statement."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction is used to emphasize the absurdity of Gladstone's statement.\"\n}"
+    },
+    {
+      "audit_id": "audit_167",
+      "source_book": "The Diary Of A Nobody",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "STATUS_REVERSAL"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The deadpan reaction serves as a comic device to highlight the absurdity of Gladstone's statement."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The deadpan reaction serves as a comic device to highlight the absurdity of Gladstone's statement.\"\n}"
+    },
+    {
+      "audit_id": "audit_027",
+      "source_book": "Their Mutual Child",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "Mr. Gladstone's witty observation about politicians' difficulty in being comprehended serves as the central joke."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"Mr. Gladstone's witty observation about politicians' difficulty in being comprehended serves as the central joke.\"\n}"
+    }
+  ],
+  "model": {
+    "path": "models/Qwen2.5-1.5B-Instruct",
+    "generation": {
+      "do_sample": false,
+      "temperature": null,
+      "max_new_tokens": 256
+    }
+  }
+}

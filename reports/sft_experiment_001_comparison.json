@@ -1,0 +1,537 @@
+{
+  "evaluation_n": 17,
+  "eval_sha256": "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470",
+  "checkpoints": {
+    "eval_qwen1.5b_sft_epoch_1": {
+      "name": "eval_qwen1.5b_sft_epoch_1",
+      "primary_accuracy": 0.1176,
+      "primary_correct": 2,
+      "delta_primary": -0.0589,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.375,
+      "delta_secondary_micro_f1": 0.2394,
+      "secondary_macro_f1": 0.2657,
+      "mean_jaccard": 0.2892,
+      "combined_coverage": 0.2941,
+      "verbal_wit_prediction_count": 7,
+      "verbal_wit_prediction_rate": 0.4118,
+      "verbal_wit_delta": -0.2353,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 3,
+        "remained_verbal_wit_count": 6,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    },
+    "eval_qwen1.5b_sft_epoch_2": {
+      "name": "eval_qwen1.5b_sft_epoch_2",
+      "primary_accuracy": 0.1765,
+      "primary_correct": 3,
+      "delta_primary": 0.0,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.3478,
+      "delta_secondary_micro_f1": 0.2122,
+      "secondary_macro_f1": 0.1776,
+      "mean_jaccard": 0.2667,
+      "combined_coverage": 0.3529,
+      "verbal_wit_prediction_count": 6,
+      "verbal_wit_prediction_rate": 0.3529,
+      "verbal_wit_delta": -0.2941,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 4,
+        "remained_verbal_wit_count": 5,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    },
+    "eval_qwen1.5b_sft_epoch_3": {
+      "name": "eval_qwen1.5b_sft_epoch_3",
+      "primary_accuracy": 0.1765,
+      "primary_correct": 3,
+      "delta_primary": 0.0,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.3478,
+      "delta_secondary_micro_f1": 0.2122,
+      "secondary_macro_f1": 0.1776,
+      "mean_jaccard": 0.2667,
+      "combined_coverage": 0.3529,
+      "verbal_wit_prediction_count": 6,
+      "verbal_wit_prediction_rate": 0.3529,
+      "verbal_wit_delta": -0.2941,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 4,
+        "remained_verbal_wit_count": 5,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    }
+  },
+  "learning_curve": [
+    {
+      "name": "eval_qwen1.5b_sft_epoch_1",
+      "primary_accuracy": 0.1176,
+      "primary_correct": 2,
+      "delta_primary": -0.0589,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.375,
+      "delta_secondary_micro_f1": 0.2394,
+      "secondary_macro_f1": 0.2657,
+      "mean_jaccard": 0.2892,
+      "combined_coverage": 0.2941,
+      "verbal_wit_prediction_count": 7,
+      "verbal_wit_prediction_rate": 0.4118,
+      "verbal_wit_delta": -0.2353,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 3,
+        "remained_verbal_wit_count": 6,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    },
+    {
+      "name": "eval_qwen1.5b_sft_epoch_2",
+      "primary_accuracy": 0.1765,
+      "primary_correct": 3,
+      "delta_primary": 0.0,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.3478,
+      "delta_secondary_micro_f1": 0.2122,
+      "secondary_macro_f1": 0.1776,
+      "mean_jaccard": 0.2667,
+      "combined_coverage": 0.3529,
+      "verbal_wit_prediction_count": 6,
+      "verbal_wit_prediction_rate": 0.3529,
+      "verbal_wit_delta": -0.2941,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 4,
+        "remained_verbal_wit_count": 5,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    },
+    {
+      "name": "eval_qwen1.5b_sft_epoch_3",
+      "primary_accuracy": 0.1765,
+      "primary_correct": 3,
+      "delta_primary": 0.0,
+      "exact_record_accuracy": 0.0588,
+      "exact_record_correct": 1,
+      "delta_exact": 0.0588,
+      "horizon_accuracy": 0.9412,
+      "secondary_micro_f1": 0.3478,
+      "delta_secondary_micro_f1": 0.2122,
+      "secondary_macro_f1": 0.1776,
+      "mean_jaccard": 0.2667,
+      "combined_coverage": 0.3529,
+      "verbal_wit_prediction_count": 6,
+      "verbal_wit_prediction_rate": 0.3529,
+      "verbal_wit_delta": -0.2941,
+      "verbal_wit_escape_analysis": {
+        "baseline_verbal_wit_false_attractor_count": 9,
+        "corrected_to_gold_count": 0,
+        "corrected_to_gold_rate": 0.0,
+        "changed_to_other_wrong_count": 4,
+        "remained_verbal_wit_count": 5,
+        "corrected_examples": [],
+        "changed_wrong_examples": [
+          {
+            "audit_id": "audit_135",
+            "gold": "DIALOGUE_SUBTEXT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_083",
+            "gold": "DRAMATIC_IRONY",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_016",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          },
+          {
+            "audit_id": "audit_103",
+            "gold": "STATUS_REVERSAL",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "DEADPAN_REACTION"
+          }
+        ],
+        "remained_examples": [
+          {
+            "audit_id": "audit_143",
+            "gold": "DEADPAN_REACTION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_001",
+            "gold": "ESCALATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_004",
+            "gold": "MISUNDERSTANDING",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_051",
+            "gold": "PHYSICAL_COMPLICATION",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          },
+          {
+            "audit_id": "audit_076",
+            "gold": "SOCIAL_EMBARRASSMENT",
+            "base_pred": "VERBAL_WIT",
+            "sft_pred": "VERBAL_WIT"
+          }
+        ]
+      },
+      "raw_json_validity": 1.0,
+      "schema_validity": 1.0,
+      "taxonomy_violation_rate": 0.0
+    }
+  ],
+  "best_checkpoint": "eval_qwen1.5b_sft_epoch_2",
+  "hypotheses": {
+    "H1_mechanism_discrimination": false,
+    "H2_composite_craft_identification": true,
+    "H3_instruction_preservation": true
+  },
+  "verdict": "RED_FAILURE"
+}

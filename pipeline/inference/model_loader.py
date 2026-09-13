@@ -7,7 +7,7 @@ Loads local base model (Qwen 2.5 1.5B Instruct) and attaches fine-tuned LoRA ada
 import sys
 try:
     import pyarrow
-except OSError:
+except (OSError, ModuleNotFoundError, ImportError):
     sys.modules["pyarrow"] = None
 
 from pathlib import Path
