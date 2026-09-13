@@ -1,0 +1,760 @@
+{
+  "evaluation": {
+    "n": 20,
+    "dataset_name": "comedy_dev.jsonl",
+    "human_gold": true,
+    "eval_sha256": "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e"
+  },
+  "scorecard": {
+    "primary_accuracy": 0.15,
+    "primary_correct": 3,
+    "exact_record_accuracy": 0.1,
+    "exact_record_correct": 2,
+    "horizon_accuracy": 1.0,
+    "secondary_micro_precision": 0.3,
+    "secondary_micro_recall": 0.1818,
+    "secondary_micro_f1": 0.2264,
+    "secondary_macro_f1": 0.075,
+    "mean_jaccard": 0.2,
+    "combined_coverage_accuracy": 0.3,
+    "raw_json_validity": 1.0,
+    "repairable_json_validity": 1.0,
+    "schema_validity": 1.0,
+    "taxonomy_violation_rate": 0.0
+  },
+  "failure_breakdown": {
+    "json_failures": 0,
+    "schema_failures": 0,
+    "wrong_primary": 17,
+    "wrong_horizon": 0,
+    "exact_failures": 18,
+    "parse_statuses": {
+      "VALID": 20
+    }
+  },
+  "confusion_matrix": [
+    {
+      "audit_id": "audit_003",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_015",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_041",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_054",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_062",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_064",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_068",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_070",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_073",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_094",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_095",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_097",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_102",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_116",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_118",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_125",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_126",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_133",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_165",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_170",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    }
+  ],
+  "per_example": [
+    {
+      "audit_id": "audit_003",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understated deadpan humor."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understated deadpan humor.\"\n}"
+    },
+    {
+      "audit_id": "audit_015",
+      "source_book": "The Little Nugget",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit as its primary comedic device, characterized by clever wordplay and puns that highlight the absurdity of bureaucratic communication and human foibles."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit as its primary comedic device, characterized by clever wordplay and puns that highlight the absurdity of bureaucratic communication and human foibles.\"\n}"
+    },
+    {
+      "audit_id": "audit_041",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "ESCALATION",
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit as the primary comedic mechanism. The narrator uses clever puns and wordplay to create humorous situations."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit as the primary comedic mechanism. The narrator uses clever puns and wordplay to create humorous situations.\"\n}"
+    },
+    {
+      "audit_id": "audit_054",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit as its primary comedic device, characterized by the unexpected juxtaposition of deadpan reaction and clever wordplay."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit as its primary comedic device, characterized by the unexpected juxtaposition of deadpan reaction and clever wordplay.\"\n}"
+    },
+    {
+      "audit_id": "audit_062",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through Lord Wisbeach's sarcastic response to Mrs. Pett's compliment, which contrasts sharply with his deadpan reaction."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through Lord Wisbeach's sarcastic response to Mrs. Pett's compliment, which contrasts sharply with his deadpan reaction.\"\n}"
+    },
+    {
+      "audit_id": "audit_064",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit as its primary comedic device, characterized by the speaker's clever wordplay and understated delivery."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit as its primary comedic device, characterized by the speaker's clever wordplay and understated delivery.\"\n}"
+    },
+    {
+      "audit_id": "audit_068",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs a Deadpan_Reaction mechanism, characterized by understated humor and detached narration. Despite the humorous content, the narrator maintains a neutral expression throughout, focusing on mundane details rather than delivering punchlines."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs a Deadpan_Reaction mechanism, characterized by understated humor and detached narration. Despite the humorous content, the narrator maintains a neutral expression throughout, focusing on mundane details rather than delivering punchlines.\"\n}"
+    },
+    {
+      "audit_id": "audit_070",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "Jimmy's deadpan reaction serves as the primary comedic device throughout the passage. Despite the absurdity of the situation, Jimmy maintains a neutral demeanor, allowing the reader to focus solely on the verbal wit and clever dialogue."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"Jimmy's deadpan reaction serves as the primary comedic device throughout the passage. Despite the absurdity of the situation, Jimmy maintains a neutral demeanor, allowing the reader to focus solely on the verbal wit and clever dialogue.\"\n}"
+    },
+    {
+      "audit_id": "audit_073",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through deadpan reaction."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through deadpan reaction.\"\n}"
+    },
+    {
+      "audit_id": "audit_094",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The humor arises from the contrast between the deadpan reaction of the narrator and the verbal wit displayed by the characters."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The humor arises from the contrast between the deadpan reaction of the narrator and the verbal wit displayed by the characters.\"\n}"
+    },
+    {
+      "audit_id": "audit_095",
+      "source_book": "Jill The Reckless",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay ('faith' vs 'true faith') and deadpan reaction without physical complications."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay ('faith' vs 'true faith') and deadpan reaction without physical complications.\"\n}"
+    },
+    {
+      "audit_id": "audit_097",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understated deadpan reactions."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understated deadpan reactions.\"\n}"
+    },
+    {
+      "audit_id": "audit_102",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit to create humor through understated deadpan reactions."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit to create humor through understated deadpan reactions.\"\n}"
+    },
+    {
+      "audit_id": "audit_116",
+      "source_book": "Psmith In The City",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit to create humor through clever wordplay and understated deadpan reactions."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit to create humor through clever wordplay and understated deadpan reactions.\"\n}"
+    },
+    {
+      "audit_id": "audit_118",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit as its primary comedic device, characterized by the Earl's sarcastic tone and clever wordplay."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit as its primary comedic device, characterized by the Earl's sarcastic tone and clever wordplay.\"\n}"
+    },
+    {
+      "audit_id": "audit_125",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit to create humor through deadpan reactions."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit to create humor through deadpan reactions.\"\n}"
+    },
+    {
+      "audit_id": "audit_126",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "SOCIAL_EMBARRASSMENT",
+        "secondary": [
+          "STATUS_REVERSAL",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understated deadpan reactions."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understated deadpan reactions.\"\n}"
+    },
+    {
+      "audit_id": "audit_133",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through subtle deadpan reactions to create humor."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through subtle deadpan reactions to create humor.\"\n}"
+    },
+    {
+      "audit_id": "audit_165",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understated humor."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understated humor.\"\n}"
+    },
+    {
+      "audit_id": "audit_170",
+      "source_book": "The Man Upstairs",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through deadpan reaction to create humor."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through deadpan reaction to create humor.\"\n}"
+    }
+  ],
+  "model": {
+    "path": "models/Qwen2.5-1.5B-Instruct",
+    "generation": {
+      "do_sample": false,
+      "temperature": null,
+      "max_new_tokens": 256
+    }
+  }
+}

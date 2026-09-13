@@ -34,6 +34,12 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+WORKSPACE_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(WORKSPACE_ROOT) not in sys.path:
+    sys.path.insert(0, str(WORKSPACE_ROOT))
+if str(WORKSPACE_ROOT.parent) not in sys.path:
+    sys.path.insert(0, str(WORKSPACE_ROOT.parent))
+
 try:
     import pyarrow
 except (OSError, ModuleNotFoundError, ImportError):

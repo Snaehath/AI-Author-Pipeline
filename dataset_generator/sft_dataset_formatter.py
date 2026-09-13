@@ -75,12 +75,29 @@ def format_training_example(
 
     craft_analysis = clean_craft_analysis(raw_notes)
 
-    target_dict = {
-        "primary_mechanism": primary,
-        "secondary_mechanisms": secondary,
-        "mechanism_horizon": horizon,
-        "craft_analysis": craft_analysis,
-    }
+    if "contrastive_analysis" in record:
+        ca = record["contrastive_analysis"]
+        target_dict = {
+            "contrastive_analysis": {
+                "causal_mechanism": ca["causal_mechanism"],
+                "surface_cue": ca["surface_cue"],
+                "tempting_alternative": ca["tempting_alternative"],
+                "why_alternative_is_tempting": ca["why_alternative_is_tempting"],
+                "counterfactual_test": ca["counterfactual_test"],
+                "why_primary_wins": ca["why_primary_wins"],
+            },
+            "primary_mechanism": ca["primary_mechanism"],
+            "secondary_mechanisms": record.get("secondary_mechanisms", []),
+            "mechanism_horizon": record.get("setup_payoff_horizon", "LOCAL"),
+            "craft_analysis": clean_craft_analysis(ca["causal_mechanism"]),
+        }
+    else:
+        target_dict = {
+            "primary_mechanism": primary,
+            "secondary_mechanisms": secondary,
+            "mechanism_horizon": horizon,
+            "craft_analysis": craft_analysis,
+        }
 
     messages = format_eval_prompt(src_text)
     return messages, target_dict
@@ -89,7 +106,7 @@ def format_training_example(
 def tokenize_sft_example(
     record: dict[str, Any],
     tokenizer: Any,
-    max_seq_length: int = 768,
+    max_seq_length: int = 1024,
 ) -> dict[str, list[int]]:
     """
     Tokenizes a single training record with prompt token masking.

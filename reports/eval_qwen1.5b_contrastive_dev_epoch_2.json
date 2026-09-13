@@ -1,0 +1,758 @@
+{
+  "evaluation": {
+    "n": 20,
+    "dataset_name": "comedy_dev.jsonl",
+    "human_gold": true,
+    "eval_sha256": "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e"
+  },
+  "scorecard": {
+    "primary_accuracy": 0.35,
+    "primary_correct": 7,
+    "exact_record_accuracy": 0.15,
+    "exact_record_correct": 3,
+    "horizon_accuracy": 0.85,
+    "secondary_micro_precision": 0.45,
+    "secondary_micro_recall": 0.2727,
+    "secondary_micro_f1": 0.3396,
+    "secondary_macro_f1": 0.1531,
+    "mean_jaccard": 0.2875,
+    "combined_coverage_accuracy": 0.45,
+    "raw_json_validity": 0.85,
+    "repairable_json_validity": 0.85,
+    "schema_validity": 0.85,
+    "taxonomy_violation_rate": 0.0
+  },
+  "failure_breakdown": {
+    "json_failures": 3,
+    "schema_failures": 3,
+    "wrong_primary": 13,
+    "wrong_horizon": 3,
+    "exact_failures": 17,
+    "parse_statuses": {
+      "VALID": 17,
+      "JSON_PARSE_ERROR": 3
+    }
+  },
+  "confusion_matrix": [
+    {
+      "audit_id": "audit_003",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_015",
+      "gold": "ESCALATION",
+      "predicted": "PHYSICAL_COMPLICATION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_041",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "UNKNOWN",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_054",
+      "gold": "VERBAL_WIT",
+      "predicted": "UNKNOWN",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_062",
+      "gold": "ESCALATION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_064",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "UNKNOWN",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_068",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_070",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "DEADPAN_REACTION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_073",
+      "gold": "ESCALATION",
+      "predicted": "ESCALATION",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_094",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_095",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "ESCALATION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_097",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_102",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_116",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_118",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "DEADPAN_REACTION",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_125",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_126",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "ESCALATION",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_133",
+      "gold": "ESCALATION",
+      "predicted": "ESCALATION",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_165",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_170",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "MISUNDERSTANDING",
+      "correct": true
+    }
+  ],
+  "per_example": [
+    {
+      "audit_id": "audit_003",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through understated dialogue."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit through understated dialogue.\",\n    \"surface_cue\": \"The language is witty but delivered in a deadpan tone.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance suggests superficial verbal humor.\",\n    \"counterfactual_test\": \"If the narrator were sarcastic instead of deadpan, the joke would still be funny; if the narrator were emotional, the punchline wouldn't work.\",\n    \"why_primary_wins\": \"The core comedic force is the understated delivery rather than overt verbal cleverness.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through understated dialogue.\"\n}"
+    },
+    {
+      "audit_id": "audit_015",
+      "source_book": "The Little Nugget",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs vivid physical complications that escalate over multiple paragraphs."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs vivid physical complications that escalate over multiple paragraphs.\",\n    \"surface_cue\": \"The narrative is filled with exaggerated physical details and absurd situations.\",\n    \"tempting_alternative\": \"PHYSICAL_COMPLICATION\",\n    \"why_alternative_is_tempting\": \"The surface appearance of physical complications makes the passage seem like it primarily relies on physical humor.\",\n    \"counterfactual_test\": \"If the passage were stripped of its physical descriptions while retaining the core structure of escalating events, the resulting humorous effect would still be present.\",\n    \"why_primary_wins\": \"The underlying causal mechanism driving the comic progression is the relentless escalation of physical complications rather than their superficial manifestation.\"\n  },\n  \"primary_mechanism\": \"PHYSICAL_COMPLICATION\",\n  \"secondary_mechanisms\": [\n    \"ESCALATION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs vivid physical complications that escalate over multiple paragraphs.\"\n}"
+    },
+    {
+      "audit_id": "audit_041",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "ESCALATION",
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "UNKNOWN",
+        "secondary": [],
+        "horizon": "UNKNOWN",
+        "craft_analysis": ""
+      },
+      "checks": {
+        "parse_status": "JSON_PARSE_ERROR",
+        "raw_json_valid": false,
+        "schema_valid": false,
+        "primary_correct": false,
+        "horizon_correct": false,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_agent\": \"VERBAL_WIT\",\n    \"surface_cue\": \"The passage contains witty puns and linguistic turns of phrase.\",\n    \"surface_cue_weight\": 0.95,\n    \"surface_cue_alternative\": null,\n    \"surface_cue_subtype\": null,\n    \"surface_cue_depth\": 2,\n    \"surface_cue_origin\": \"The language is filled with clever metaphors, puns, and wordplay.\",\n    \"surface_cue_surface\": \"The passage contains witty puns and linguistic turns of phrase.\",\n    \"surface_cue_deep_cue\": \"The humor arises from the verbal complexity and linguistic sophistication of the dialogue.\",\n    \"surface_cue_deep_cue_weight\": 0.85,\n    \"surface_cue_deep_cue_alternative\": null,\n    \"surface_cue_deep_cue_depth\": 3,\n    \"surface_cue_deep_cue_origin\": \"The humor stems from the intricate construction of the sentences and the playfulness of the vocabulary.\",\n    \"surface_cue_subsurface_cue\": \"The characters use highly crafted, layered language that creates multiple layers of meaning.\",\n    \"surface_cue_subsurface_cue_weight"
+    },
+    {
+      "audit_id": "audit_054",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "UNKNOWN",
+        "secondary": [],
+        "horizon": "UNKNOWN",
+        "craft_analysis": ""
+      },
+      "checks": {
+        "parse_status": "JSON_PARSE_ERROR",
+        "raw_json_valid": false,
+        "schema_valid": false,
+        "primary_correct": false,
+        "horizon_correct": false,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator recounts a humorous anecdote about how they convinced their friend’s aunt to stop calling them names by suggesting she talk to a clergyman instead.\",\n    \"surface_cue\": \"The passage is written in first-person narration and contains witty dialogue.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The language is richly layered with puns and wordplay typical of verbal wit.\",\n    \"counterfactual_test\": \"If the passage were rewritten without any humor but kept the surface structure intact, it would still be entertaining; whereas removing the witty dialogue alone would make the scene dull.\",\n    \"why_primary_wins\": \"The core comedic force is the narrative structure and character interaction rather than isolated verbal turns.\"\n  },\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"MISUNDERSTANDING\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator recounts a humorous anecdote about how they convinced their friend’s aunt to stop calling them names by suggesting she talk to a clergyman instead"
+    },
+    {
+      "audit_id": "audit_062",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The narrator's deadpan reaction masks the underlying absurdity."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator's deadpan reaction masks the underlying absurdity.\",\n    \"surface_cue\": \"The dialogue appears straightforwardly humorous due to its witty phrasing.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface appearance of deadpan humor makes it tempting to label as DEADPAN_REACTION.\",\n    \"counterfactual_test\": \"If the narrator were not deadpan but genuinely amused by the situation, the joke would still be funny; if they were sarcastic instead of deadpan, the punchline wouldn't work.\",\n    \"why_primary_wins\": \"The core comedic effect is the contrast between the deadpan delivery and the absurd premise.\"\n  },\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator's deadpan reaction masks the underlying absurdity.\"\n}"
+    },
+    {
+      "audit_id": "audit_064",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "UNKNOWN",
+        "secondary": [],
+        "horizon": "UNKNOWN",
+        "craft_analysis": ""
+      },
+      "checks": {
+        "parse_status": "JSON_PARSE_ERROR",
+        "raw_json_valid": false,
+        "schema_valid": false,
+        "primary_correct": false,
+        "horizon_correct": false,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The speaker's fearfully accusatory tone contrasts sharply with their calm, matter-of-fact response.\",\n    \"surface_cue\": \"The passage contains a character speaking in a fearful manner while maintaining a neutral or even sarcastic demeanor.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface appearance of deadpan reaction makes it tempting to categorize this as DEADPAN_REACTION.\",\n    \"counterfactual_test\": \"If the speaker were genuinely deadpan but still spoke in a fearful manner, the humor would be lost; however, when they maintain neutrality while expressing fear, the contrast remains sharp.\",\n    \"why_primary_wins\": \"The core source of humor lies in the dramatic tension between the exaggerated fearfulness and the understated deadpan delivery rather than the flat emotional state.\"\n  },\n  \"primary_mechanism\": \"MISUNDERSTANDING\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The speaker's fearfully accusatory tone contrasts sharply with their"
+    },
+    {
+      "audit_id": "audit_068",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "ESCALATION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": ""
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.25,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit to create humorous juxtapositions between characters' expectations and reality.\",\n    \"surface_cue\": \"The narrative alternates between vivid descriptions of mundane events and exaggerated reactions, interspersed with witty exchanges.\",\n    \"surface_cue_weight\": \"5\"\n  },\n  \"surface_cue_weight\": 5,\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\",\n    \"ESCALATION\",\n    \"MISUNDERSTANDING\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\"\n}"
+    },
+    {
+      "audit_id": "audit_070",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The protagonist's deadpan reaction masks the comic tension generated by the sudden revelation of his father's deception."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"surface_cue\": \"Jimmy's reaction to discovering his father's deception is exaggerated and theatrical.\",\n    \"semantic_cue\": \"The protagonist's emotional response is heightened through dramatic language and physical gestures.\"\n  },\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The protagonist's deadpan reaction masks the comic tension generated by the sudden revelation of his father's deception.\"\n}"
+    },
+    {
+      "audit_id": "audit_073",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The understated delivery masks escalating tension."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The understated delivery masks escalating tension.\",\n    \"surface_cue\": \"The speaker maintains a neutral tone while building up dramatic conflict.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The character's deadpan demeanor initially suggests DEADPAN_REACTION.\",\n    \"counterfactual_test\": \"If the character suddenly exploded into laughter instead of maintaining their calm facade, it would still be clear that the humor comes from the buildup rather than the immediate reaction.\",\n    \"why_primary_wins\": \"The core comedic effect is the gradual escalation of tension, not just the initial emotional state.\"\n  },\n  \"primary_mechanism\": \"ESCALATION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The understated delivery masks escalating tension.\"\n}"
+    },
+    {
+      "audit_id": "audit_094",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "ESCALATION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The narrator's deadpan reaction masks the humorous absurdity."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator's deadpan reaction masks the humorous absurdity.\",\n    \"surface_cue\": \"The narrator delivers a seemingly matter-of-fact description of the scene.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface tone appears flat and understated.\",\n    \"counterfactual_test\": \"If the narrator were sarcastic instead of deadpan, the joke would still be funny; if they were enthusiastic, the humor would evaporate.\",\n    \"why_primary_wins\": \"The core source of humor lies in the contrast between the narrator's deadpan delivery and the absurd situation.\"\n  },\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"ESCALATION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator's deadpan reaction masks the humorous absurdity.\"\n}"
+    },
+    {
+      "audit_id": "audit_095",
+      "source_book": "Jill The Reckless",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The narrator's dry tone contrasts sharply with the character's earnestness; the understated dialogue creates tension."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator's dry tone contrasts sharply with the character's earnestness; the understated dialogue creates tension.\",\n    \"surface_cue\": \"The passage features a deadpan narrator delivering witty lines while the character speaks seriously.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface appearance of deadpan narration makes it tempting to categorize as DEADPAN_REACTION.\",\n    \"counterfactual_test\": \"If the narrator were sarcastic instead of neutral, the humor would still be present but wouldn't be primarily driven by DEADPAN_REACTION.\",\n    \"why_primary_wins\": \"The core comedic effect is the contrast between the narrator's deadpan delivery and the character's earnest speech, which defines ESCALATION.\"\n  },\n  \"primary_mechanism\": \"ESCALATION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator's dry tone contrasts sharply with the character's earnestness; the understated dialogue creates tension.\"\n}"
+    },
+    {
+      "audit_id": "audit_097",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through understated dialogue."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit through understated dialogue.\",\n    \"surface_cue\": \"The language is witty but delivered in a deadpan tone.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance of the writing resembles VERBAL_WIT.\",\n    \"counterfactual_test\": \"If the writer were to deliver the same words in a sarcastic or mocking tone instead of a flat one, the humor would still be present; however, it wouldn't be as overtly humorous.\",\n    \"why_primary_wins\": \"The core comedic force is the understated delivery rather than the specific wording.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through understated dialogue.\"\n}"
+    },
+    {
+      "audit_id": "audit_102",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit to create humorous tension through understated language."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit to create humorous tension through understated language.\",\n    \"surface_cue\": \"The dialogue is delivered in a deadpan tone without overt physical complications.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface appearance of the writing being deadpan can be misleading.\",\n    \"counterfactual_test\": \"If the writer were to inject exaggerated physical complications into the scene while maintaining the same tone, it would still feel absurdly witty rather than merely funny.\",\n    \"why_primary_wins\": \"The core humor comes from the subtle play on words and understatement rather than the literal exaggeration.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit to create humorous tension through understated language.\"\n}"
+    },
+    {
+      "audit_id": "audit_116",
+      "source_book": "Psmith In The City",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit to create humorous tension through understated language."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit to create humorous tension through understated language.\",\n    \"surface_cue\": \"The dialogue is written in formal, polished English with witty turns of phrase.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance of the writing resembles typical examples of verbal wit.\",\n    \"counterfactual_test\": \"If the passage were rewritten without any overt verbal wit but maintained its structure and tone, it would still generate strong comic effects; however, if the verbal humor were removed entirely, the overall comedic impact diminishes significantly.\",\n    \"why_primary_wins\": \"The core comedic effect is driven by the subtle manipulation of language rather than the explicit presence of verbal puns or metaphors.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit to create humorous tension through understated language.\"\n}"
+    },
+    {
+      "audit_id": "audit_118",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "ESCALATION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The narrator's deadpan reaction creates tension through understated sarcasm."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator's exaggerated tone and hyperbolic language create tension and suspense.\",\n    \"surface_cue\": \"The passage uses colloquial language and dramatic phrasing.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance of witty dialogue makes it tempting to categorize as VERBAL_WIT.\",\n    \"counterfactual_test\": \"If the humorous effect were removed by changing the wording to flat, matter-of-fact statements while maintaining the same structure, the humor would still be present; however, if the sarcastic undertones were toned down significantly, the humor would diminish substantially.\",\n    \"why_primary_wins\": \"The core source of humor lies in the exaggerated emotional state induced by the narrator's words rather than the verbal content itself.\"\n  },\n  \"primary_mechanism\": \"DEADPAN_REACTION\",\n  \"secondary_mechanisms\": [\n    \"ESCALATION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator's deadpan reaction creates tension through understated sarcasm.\"\n}"
+    },
+    {
+      "audit_id": "audit_125",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The dialogue presents verbal wit without escalating tension."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The dialogue presents verbal wit without escalating tension.\",\n    \"surface_cue\": \"The passage consists entirely of witty exchanges between characters.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance suggests that VERBAL_WIT is dominant.\",\n    \"counterfactual_test\": \"If the conversation were stripped down to just the words, it would still be humorous; however, if the tone became deadpan or indifferent, the humor dissipates.\",\n    \"why_primary_wins\": \"The core comedic effect is derived from the conversational dynamics rather than the specific wording.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The dialogue presents verbal wit without escalating tension.\"\n}"
+    },
+    {
+      "audit_id": "audit_126",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "SOCIAL_EMBARRASSMENT",
+        "secondary": [
+          "STATUS_REVERSAL",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The narrator's exaggerated language creates tension through hyperbole."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The narrator's exaggerated language creates tension through hyperbole.\",\n    \"surface_cue\": \"The passage contains verbose, florid prose that suggests deliberate exaggeration.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance resembles verbal wit.\",\n    \"counterfactual_test\": \"Removing the overtly descriptive language preserves the comic effect; removing the witty phrasing destroys it.\",\n    \"why_primary_wins\": \"The core humor arises from the linguistic excess rather than the clever wordplay.\"\n  },\n  \"primary_mechanism\": \"ESCALATION\",\n  \"secondary_mechanisms\": [\n    \"MISUNDERSTANDING\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The narrator's exaggerated language creates tension through hyperbole.\"\n}"
+    },
+    {
+      "audit_id": "audit_133",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The understated delivery masks escalating tension."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 1.0,
+        "exact_record_match": true
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The understated delivery masks escalating tension.\",\n    \"surface_cue\": \"The dialogue appears casual and conversational.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The tone seems deadpan, but the underlying buildup creates dramatic irony.\",\n    \"counterfactual_test\": \"If the characters' emotions were exaggerated while maintaining their words as subtle, it would still feel like escalation; however, if they remained calm while the words became increasingly sarcastic, it wouldn't be clear whether the humor was coming from verbal wit or physical complications.\",\n    \"why_primary_wins\": \"The core comedic effect is the gradual intensification of conflict without overt emotional display.\"\n  },\n  \"primary_mechanism\": \"ESCALATION\",\n  \"secondary_mechanisms\": [\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The understated delivery masks escalating tension.\"\n}"
+    },
+    {
+      "audit_id": "audit_165",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The passage employs verbal wit through clever wordplay.\",\n    \"surface_cue\": \"The language is witty and playful.\",\n    \"tempting_alternative\": \"VERBAL_WIT\",\n    \"why_alternative_is_tempting\": \"The surface appearance suggests that VERBAL_WIT is dominant.\",\n    \"counterfactual_test\": \"If the passage were stripped of its surface humor but retained its underlying structure, it would still be humorous; whereas if the witty phrasing were removed, the joke fails entirely.\",\n    \"why_primary_wins\": \"The core comedic effect is derived from the linguistic construction rather than the literal meaning.\"\n  },\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\n    \"DEADPAN_REACTION\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay.\"\n}"
+    },
+    {
+      "audit_id": "audit_170",
+      "source_book": "The Man Upstairs",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "ESCALATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The speaker's exaggerated urgency masks their nervousness."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": true,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "{\n  \"contrastive_analysis\": {\n    \"causal_mechanism\": \"The speaker's exaggerated urgency masks their nervousness.\",\n    \"surface_cue\": \"The character speaks quickly and emphatically, mimicking genuine anxiety.\",\n    \"tempting_alternative\": \"DEADPAN_REACTION\",\n    \"why_alternative_is_tempting\": \"The surface appearance is deadpan, but the underlying emotional tension is palpable.\",\n    \"counterfactual_test\": \"If the character were genuinely panicked, the humor would still be present; however, if they acted calmly while feeling anxious, it wouldn't generate the same comedic effect.\",\n    \"why_primary_wins\": \"The core source of humor lies in the contrast between the exaggerated emotionality and the character's deadpan delivery.\"\n  },\n  \"primary_mechanism\": \"MISUNDERSTANDING\",\n  \"secondary_mechanisms\": [\n    \"ESCALATION\",\n    \"VERBAL_WIT\"\n  ],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The speaker's exaggerated urgency masks their nervousness.\"\n}"
+    }
+  ],
+  "model": {
+    "path": "models/Qwen2.5-1.5B-Instruct",
+    "generation": {
+      "do_sample": false,
+      "temperature": null,
+      "max_new_tokens": 256
+    }
+  }
+}

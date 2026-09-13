@@ -1,0 +1,55 @@
+{
+  "experiment_id": "sft_experiment_002",
+  "phase": "4B-2",
+  "objective": "Contrastive & Counterfactual Supervision for Comedy Mechanism Discrimination",
+  "base_model": "models/Qwen2.5-1.5B-Instruct",
+  "training_data": {
+    "path": "datasets/sft/comedy_contrastive_train.jsonl",
+    "records": 48,
+    "sha256": "65f6ec332b10c375b60d8bd57427c770eac5fd91406b40de01777eb7b5353da3"
+  },
+  "dev_data": {
+    "path": "datasets/sft/comedy_dev.jsonl",
+    "records": 20,
+    "sha256": "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e"
+  },
+  "test_data": {
+    "path": "datasets/sft/comedy_eval.jsonl",
+    "records": 17,
+    "sha256": "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470",
+    "status": "SEALED"
+  },
+  "hyperparameters": {
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "effective_batch_size": 4,
+    "max_seq_length": 768,
+    "seed": 42
+  },
+  "epoch_losses": [
+    {
+      "epoch": 1,
+      "average_loss": 1.8734,
+      "checkpoint": "models\\comedy_contrastive_adapter\\checkpoint-epoch-1"
+    },
+    {
+      "epoch": 2,
+      "average_loss": 1.0537,
+      "checkpoint": "models\\comedy_contrastive_adapter\\checkpoint-epoch-2"
+    },
+    {
+      "epoch": 3,
+      "average_loss": 0.8063,
+      "checkpoint": "models\\comedy_contrastive_adapter\\checkpoint-epoch-3"
+    }
+  ],
+  "adapter_dir": "models/comedy_contrastive_adapter",
+  "checkpoints": [
+    "models/comedy_contrastive_adapter/checkpoint-epoch-1",
+    "models/comedy_contrastive_adapter/checkpoint-epoch-2",
+    "models/comedy_contrastive_adapter/checkpoint-epoch-3"
+  ]
+}
