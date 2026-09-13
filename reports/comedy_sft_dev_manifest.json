@@ -1,0 +1,79 @@
+{
+  "phase": "4B-2",
+  "dataset": "comedy_dev.jsonl",
+  "role": "Development Set (Model & Checkpoint Selection)",
+  "count": 20,
+  "sha256": "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e",
+  "source": {
+    "audit_file": "reports\\comedy_craft_audit_batch_180.json",
+    "audited_records": 180,
+    "total_keep_records": 106,
+    "unallocated_pool": 46,
+    "eligible_pool_score_gte_8": 37,
+    "eval_tier_score_lt_8": 9
+  },
+  "invariants": {
+    "test_overlap_count": 0,
+    "train_overlap_count": 0,
+    "zero_leakage_verified": true,
+    "all_scores_gte_8": true
+  },
+  "mechanism_distribution": {
+    "ESCALATION": 7,
+    "VERBAL_WIT": 3,
+    "MISUNDERSTANDING": 3,
+    "DEADPAN_REACTION": 3,
+    "PHYSICAL_COMPLICATION": 2,
+    "STATUS_REVERSAL": 1,
+    "SOCIAL_EMBARRASSMENT": 1
+  },
+  "source_book_distribution": {
+    "My Man Jeeves": 2,
+    "The Little Nugget": 1,
+    "Three Men On The Bummel": 2,
+    "Right Ho": 2,
+    "A Damsel In Distress": 3,
+    "Three Men In A Boat": 2,
+    "Something Fresh": 3,
+    "Jill The Reckless": 1,
+    "The Adventures Of Sally": 2,
+    "Psmith In The City": 1,
+    "The Man Upstairs": 1
+  },
+  "remaining_pool_after_dev": {
+    "high_quality_count": 17,
+    "mechanisms": {
+      "VERBAL_WIT": 3,
+      "MISUNDERSTANDING": 2,
+      "ESCALATION": 7,
+      "DEADPAN_REACTION": 2,
+      "SOCIAL_EMBARRASSMENT": 1,
+      "PHYSICAL_COMPLICATION": 1,
+      "STATUS_REVERSAL": 1
+    },
+    "eval_tier_count": 9,
+    "total_available_for_contrastive": 26
+  },
+  "dev_audit_ids": [
+    "audit_003",
+    "audit_015",
+    "audit_041",
+    "audit_054",
+    "audit_062",
+    "audit_064",
+    "audit_068",
+    "audit_070",
+    "audit_073",
+    "audit_094",
+    "audit_095",
+    "audit_097",
+    "audit_102",
+    "audit_116",
+    "audit_118",
+    "audit_125",
+    "audit_126",
+    "audit_133",
+    "audit_165",
+    "audit_170"
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "evaluation": {
+    "n": 20,
+    "dataset_name": "comedy_dev.jsonl",
+    "human_gold": true,
+    "eval_sha256": "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e"
+  },
+  "scorecard": {
+    "primary_accuracy": 0.15,
+    "primary_correct": 3,
+    "exact_record_accuracy": 0.0,
+    "exact_record_correct": 0,
+    "horizon_accuracy": 1.0,
+    "secondary_micro_precision": 0.1481,
+    "secondary_micro_recall": 0.1212,
+    "secondary_micro_f1": 0.1333,
+    "secondary_macro_f1": 0.0421,
+    "mean_jaccard": 0.0833,
+    "combined_coverage_accuracy": 0.2,
+    "raw_json_validity": 0.0,
+    "repairable_json_validity": 1.0,
+    "schema_validity": 1.0,
+    "taxonomy_violation_rate": 0.0
+  },
+  "failure_breakdown": {
+    "json_failures": 20,
+    "schema_failures": 0,
+    "wrong_primary": 17,
+    "wrong_horizon": 0,
+    "exact_failures": 20,
+    "parse_statuses": {
+      "VALID": 20
+    }
+  },
+  "confusion_matrix": [
+    {
+      "audit_id": "audit_003",
+      "gold": "VERBAL_WIT",
+      "predicted": "DIALOGUE_SUBTEXT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_015",
+      "gold": "ESCALATION",
+      "predicted": "DIALOGUE_SUBTEXT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_041",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_054",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_062",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_064",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "MISUNDERSTANDING",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_068",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_070",
+      "gold": "STATUS_REVERSAL",
+      "predicted": "STATUS_REVERSAL",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_073",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_094",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_095",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_097",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_102",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_116",
+      "gold": "PHYSICAL_COMPLICATION",
+      "predicted": "DIALOGUE_SUBTEXT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_118",
+      "gold": "DEADPAN_REACTION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_125",
+      "gold": "VERBAL_WIT",
+      "predicted": "VERBAL_WIT",
+      "correct": true
+    },
+    {
+      "audit_id": "audit_126",
+      "gold": "SOCIAL_EMBARRASSMENT",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_133",
+      "gold": "ESCALATION",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_165",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    },
+    {
+      "audit_id": "audit_170",
+      "gold": "MISUNDERSTANDING",
+      "predicted": "VERBAL_WIT",
+      "correct": false
+    }
+  ],
+  "per_example": [
+    {
+      "audit_id": "audit_003",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DIALOGUE_SUBTEXT",
+        "secondary": [
+          "DRAMATIC_IRONY",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs dialogue subtext to subtly critique the stock exchange's behavior towards ordinary investors. Through the character's observations and reflections, the author highlights the irony of the market opening without attracting much interest, using verbal wit to comment on the absurdity of such practices."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"DIALOGUE_SUBTEXT\",\n  \"secondary_mechanisms\": [\"VERBAL_WIT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs dialogue subtext to subtly critique the stock exchange's behavior towards ordinary investors. Through the character's observations and reflections, the author highlights the irony of the market opening without attracting much interest, using verbal wit to comment on the absurdity of such practices.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_015",
+      "source_book": "The Little Nugget",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DIALOGUE_SUBTEXT",
+        "secondary": [
+          "DRAMATIC_IRONY",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "This passage employs dialogue subtext to reveal the protagonist's obsession with the guinea-pigs while simultaneously creating dramatic irony through the contrast between the president's apparent indifference and Flannery's dedication to the animals. The use of 'dago pigs' adds humor and highlights the absurdity of the situation."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"DIALOGUE_SUBTEXT\",\n  \"secondary_mechanisms\": [\"VERBAL_WIT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"This passage employs dialogue subtext to reveal the protagonist's obsession with the guinea-pigs while simultaneously creating dramatic irony through the contrast between the president's apparent indifference and Flannery's dedication to the animals. The use of 'dago pigs' adds humor and highlights the absurdity of the situation.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_041",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "ESCALATION",
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "CALLBACK",
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through puns and clever wordplay. The author uses humorous juxtapositions and plays on words to create comedic effects. For instance, comparing the German love of order to the chaotic behavior of the birds, and using the term 'kuss' instead of 'kissen' to describe a kiss, which is confusing because it sounds similar to a cushion. Additionally, the callback structure where the narrator mentions a previous incident involving COMPANION_A highlights the recurring theme of misunderstandings and social embarrassment."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"DEADPAN_REACTION\", \"CALLBACK\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through puns and clever wordplay. The author uses humorous juxtapositions and plays on words to create comedic effects. For instance, comparing the German love of order to the chaotic behavior of the birds, and using the term 'kuss' instead of 'kissen' to describe a kiss, which is confusing because it sounds similar to a cushion. Additionally, the callback structure where the narrator mentions a previous incident involving COMPANION_A highlights the recurring theme of misunderstandings and social embarrassment.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_054",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "STATUS_REVERSAL"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and situational irony. The protagonist is shocked by the suggestion that his aunt could be treated like a patient, which creates a humorous status reversal. Additionally, the dialogue subtext reveals the unexpected nature of the suggestion, adding depth to the comedic effect."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"STATUS_REVERSAL\", \"DIALOGUE_SUBTEXT\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and situational irony. The protagonist is shocked by the suggestion that his aunt could be treated like a patient, which creates a humorous status reversal. Additionally, the dialogue subtext reveals the unexpected nature of the suggestion, adding depth to the comedic effect.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_062",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through Lord Wisbeach's self-deprecating statement about his kindness towards Mrs. Pett, which sets up a potential for humor as he attempts to reciprocate."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through Lord Wisbeach's self-deprecating statement about his kindness towards Mrs. Pett, which sets up a potential for humor as he attempts to reciprocate.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_064",
+      "source_book": "Right Ho",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through the use of double entendres and plays on words to create confusion and amusement between characters. The miscommunication about the Duke's relationship to the speaker adds to the comedic effect by highlighting the absurdity of such misunderstandings."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.5,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"MISUNDERSTANDING\",\n  \"secondary_mechanisms\": [\"VERBAL_WIT\", \"DIALOGUE_SUBTEXT\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through the use of double entendres and plays on words to create confusion and amusement between characters. The miscommunication about the Duke's relationship to the speaker adds to the comedic effect by highlighting the absurdity of such misunderstandings.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_068",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "DRAMATIC_IRONY"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever dialogue exchanges between characters, creating humorous situations and subtext. The dramatic irony arises from the contrast between the characters' expectations and reality, leading to unexpected outcomes."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"DIALOGUE_SUBTEXT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever dialogue exchanges between characters, creating humorous situations and subtext. The dramatic irony arises from the contrast between the characters' expectations and reality, leading to unexpected outcomes.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_070",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "STATUS_REVERSAL",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs status reversal as the primary mechanism, where Jimmy's father unexpectedly arrives at the scene, causing a dramatic shift in power dynamics. The dialogue subtext reveals Jimmy's uncertainty and fear, while verbal wit is evident in his interactions with his father and other characters."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.333,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"STATUS_REVERSAL\",\n  \"secondary_mechanisms\": [\"DIALOGUE_SUBTEXT\", \"VERBAL_WIT\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs status reversal as the primary mechanism, where Jimmy's father unexpectedly arrives at the scene, causing a dramatic shift in power dynamics. The dialogue subtext reveals Jimmy's uncertainty and fear, while verbal wit is evident in his interactions with his father and other characters.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_073",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through the efficient and direct response of 'Efficient Baxter' to the speaker's request, showcasing his quick thinking and assertiveness."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through the efficient and direct response of 'Efficient Baxter' to the speaker's request, showcasing his quick thinking and assertiveness.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_094",
+      "source_book": "A Damsel In Distress",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "DRAMATIC_IRONY"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understatement. The contrast between 'immaculate' and 'stony' eyes creates a humorous effect, while the dramatic irony arises from the reader knowing the truth about doubles before the character does."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"DIALOGUE_SUBTEXT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understatement. The contrast between 'immaculate' and 'stony' eyes creates a humorous effect, while the dramatic irony arises from the reader knowing the truth about doubles before the character does.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_095",
+      "source_book": "Jill The Reckless",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "MISUNDERSTANDING"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through the character's self-referential statement about his servants being his faith, which creates a humorous contrast between what he says and what he means."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through the character's self-referential statement about his servants being his faith, which creates a humorous contrast between what he says and what he means.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_097",
+      "source_book": "My Man Jeeves",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "DEADPAN_REACTION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "DRAMATIC_IRONY"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understated dramatic irony, highlighting the absurdity of the situation while subtly revealing the protagonist's character traits."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"DIALOGUE_SUBTEXT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understated dramatic irony, highlighting the absurdity of the situation while subtly revealing the protagonist's character traits.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_102",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "MISUNDERSTANDING",
+          "PHYSICAL_COMPLICATION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "DRAMATIC_IRONY"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and dramatic irony to create humor by juxtaposing the speaker's current ignorance about their journey with the future realization that it will be a challenging one. The use of quotation marks also adds to the humorous effect by highlighting the contrast between the present state of knowledge and the anticipated difficulties."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"DIALOGUE_SUBTEXT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and dramatic irony to create humor by juxtaposing the speaker's current ignorance about their journey with the future realization that it will be a challenging one. The use of quotation marks also adds to the humorous effect by highlighting the contrast between the present state of knowledge and the anticipated difficulties.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_116",
+      "source_book": "Psmith In The City",
+      "gold": {
+        "primary": "PHYSICAL_COMPLICATION",
+        "secondary": [
+          "ESCALATION",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "DIALOGUE_SUBTEXT",
+        "secondary": [
+          "DRAMATIC_IRONY",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs dialogue subtext to reveal the protagonist's deep-seated feelings towards his fiancée, using subtle hints and irony to convey their unspoken connection. The dramatic irony created by the revelation of the fiancé's identity adds emotional weight to the scene."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.333,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"DIALOGUE_SUBTEXT\",\n  \"secondary_mechanisms\": [\"VERBAL_WIT\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs dialogue subtext to reveal the protagonist's deep-seated feelings towards his fiancée, using subtle hints and irony to convey their unspoken connection. The dramatic irony created by the revelation of the fiancé's identity adds emotional weight to the scene.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_118",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "DEADPAN_REACTION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DIALOGUE_SUBTEXT",
+          "ESCALATION"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through sarcastic questioning and escalating frustration, creating tension and humor as the speaker demands further destruction of furniture."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"ESCALATION\", \"DIALOGUE_SUBTEXT\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through sarcastic questioning and escalating frustration, creating tension and humor as the speaker demands further destruction of furniture.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_125",
+      "source_book": "Three Men In A Boat",
+      "gold": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DEADPAN_REACTION"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through the use of direct speech to create a humorous interaction between characters. The dialogue showcases clever wordplay and misdirection, leading to a light-hearted exchange that highlights the banter typical of early 20th-century comedies."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": true,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through the use of direct speech to create a humorous interaction between characters. The dialogue showcases clever wordplay and misdirection, leading to a light-hearted exchange that highlights the banter typical of early 20th-century comedies.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_126",
+      "source_book": "Three Men On The Bummel",
+      "gold": {
+        "primary": "SOCIAL_EMBARRASSMENT",
+        "secondary": [
+          "STATUS_REVERSAL",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through clever wordplay and understatement to create humor by suggesting that if the crew consumes half their food on board within a week, it implies a significant portion of their diet would be wasted over a longer period."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through clever wordplay and understatement to create humor by suggesting that if the crew consumes half their food on board within a week, it implies a significant portion of their diet would be wasted over a longer period.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_133",
+      "source_book": "Something Fresh",
+      "gold": {
+        "primary": "ESCALATION",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "STATUS_REVERSAL"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through Miss Willoughby's subtle compliment to Mr. Judson, which reverses the status dynamic between them by making Mr. Marson seem less intelligent than his counterpart."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"STATUS_REVERSAL\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through Miss Willoughby's subtle compliment to Mr. Judson, which reverses the status dynamic between them by making Mr. Marson seem less intelligent than his counterpart.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_165",
+      "source_book": "The Adventures Of Sally",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "SOCIAL_EMBARRASSMENT",
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit through its use of poetic language and allusions to religious concepts, creating a sense of profundity and emotional resonance."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit through its use of poetic language and allusions to religious concepts, creating a sense of profundity and emotional resonance.\"\n}\n```"
+    },
+    {
+      "audit_id": "audit_170",
+      "source_book": "The Man Upstairs",
+      "gold": {
+        "primary": "MISUNDERSTANDING",
+        "secondary": [
+          "VERBAL_WIT"
+        ],
+        "horizon": "LOCAL"
+      },
+      "predicted": {
+        "primary": "VERBAL_WIT",
+        "secondary": [
+          "DRAMATIC_IRONY",
+          "STATUS_REVERSAL"
+        ],
+        "horizon": "LOCAL",
+        "craft_analysis": "The passage employs verbal wit by using the phrase 'said that gentleman' to create a humorous contrast between the urgency implied by the speaker's actions and the casual tone of their speech. The status reversal is evident as the audience perceives the directorial session as urgent when it seems less so due to the speaker's casual demeanor. Dramatic irony is created through the juxtaposition of the seriousness of the situation with the light-hearted manner of speaking."
+      },
+      "checks": {
+        "parse_status": "VALID",
+        "raw_json_valid": false,
+        "schema_valid": true,
+        "primary_correct": false,
+        "horizon_correct": true,
+        "secondary_jaccard": 0.0,
+        "exact_record_match": false
+      },
+      "raw_response": "```json\n{\n  \"primary_mechanism\": \"VERBAL_WIT\",\n  \"secondary_mechanisms\": [\"STATUS_REVERSAL\", \"DRAMATIC_IRONY\"],\n  \"mechanism_horizon\": \"LOCAL\",\n  \"craft_analysis\": \"The passage employs verbal wit by using the phrase 'said that gentleman' to create a humorous contrast between the urgency implied by the speaker's actions and the casual tone of their speech. The status reversal is evident as the audience perceives the directorial session as urgent when it seems less so due to the speaker's casual demeanor. Dramatic irony is created through the juxtaposition of the seriousness of the situation with the light-hearted manner of speaking.\"\n}\n```"
+    }
+  ],
+  "model": {
+    "path": "models/Qwen2.5-1.5B-Instruct",
+    "generation": {
+      "do_sample": false,
+      "temperature": null,
+      "max_new_tokens": 256
+    }
+  }
+}

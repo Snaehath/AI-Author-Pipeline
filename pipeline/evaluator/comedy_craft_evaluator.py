@@ -42,6 +42,9 @@ except (OSError, ModuleNotFoundError, ImportError):
 EXPECTED_EVAL_SHA256 = "685ad4369fd731b952801e83ed23f0e3bb7c320876052710abd01c8bd3cb3470"
 EXPECTED_EVAL_COUNT = 17
 
+EXPECTED_DEV_SHA256 = "18838c6ddd9bcd89d80df6e223b41bfd68cb25a1ae18976f4dd6ecd2c476829e"
+EXPECTED_DEV_COUNT = 20
+
 CANONICAL_MECHANISMS = [
     "ESCALATION",
     "MISUNDERSTANDING",
@@ -68,17 +71,24 @@ def compute_file_sha256(path: Path) -> str:
 
 
 def verify_eval_dataset(eval_path: Path) -> list[dict[str, Any]]:
-    """Assert count and SHA-256 hash match the frozen Phase 3F evaluation set."""
+    """Assert count and SHA-256 hash match the designated evaluation set."""
     if not eval_path.exists():
         raise FileNotFoundError(f"Evaluation file not found at: {eval_path}")
 
     actual_hash = compute_file_sha256(eval_path)
-    if actual_hash != EXPECTED_EVAL_SHA256:
+    if eval_path.name == "comedy_dev.jsonl":
+        expected_hash = EXPECTED_DEV_SHA256
+        expected_count = EXPECTED_DEV_COUNT
+    else:
+        expected_hash = EXPECTED_EVAL_SHA256
+        expected_count = EXPECTED_EVAL_COUNT
+
+    if actual_hash != expected_hash:
         raise ValueError(
             f"Eval dataset hash mismatch!\n"
-            f"  Expected: {EXPECTED_EVAL_SHA256}\n"
+            f"  Expected: {expected_hash}\n"
             f"  Actual:   {actual_hash}\n"
-            f"Evaluation aborted to protect baseline integrity."
+            f"Evaluation aborted to protect evaluation integrity."
         )
 
     records: list[dict[str, Any]] = []
@@ -88,9 +98,9 @@ def verify_eval_dataset(eval_path: Path) -> list[dict[str, Any]]:
             if line_str:
                 records.append(json.loads(line_str))
 
-    if len(records) != EXPECTED_EVAL_COUNT:
+    if expected_count and len(records) != expected_count:
         raise ValueError(
-            f"Eval record count mismatch! Expected {EXPECTED_EVAL_COUNT}, found {len(records)}."
+            f"Eval record count mismatch for {eval_path.name}! Expected {expected_count}, found {len(records)}."
         )
 
     return records
@@ -281,6 +291,8 @@ def parse_prediction(raw_text: str) -> dict[str, Any]:
 def compute_evaluation_metrics(
     eval_records: list[dict[str, Any]],
     raw_predictions: list[dict[str, Any]],
+    eval_sha256: str | None = None,
+    dataset_name: str | None = None,
 ) -> dict[str, Any]:
     """
     Score model predictions against frozen human ground truth.
@@ -469,8 +481,9 @@ def compute_evaluation_metrics(
     return {
         "evaluation": {
             "n": total,
+            "dataset_name": dataset_name or "comedy_eval.jsonl",
             "human_gold": True,
-            "eval_sha256": EXPECTED_EVAL_SHA256,
+            "eval_sha256": eval_sha256 or EXPECTED_EVAL_SHA256,
         },
         "scorecard": {
             "primary_accuracy": round(primary_accuracy, 4),
@@ -511,7 +524,7 @@ def generate_markdown_report(report_data: dict[str, Any], model_name: str) -> st
     md = []
     md.append(f"# Comedy Craft Baseline Evaluation Report: {model_name}\n")
     md.append(f"- **Model**: `{model_name}`")
-    md.append(f"- **Dataset**: `comedy_eval.jsonl` (Human Gold Truth, n = {eval_meta['n']})")
+    md.append(f"- **Dataset**: `{eval_meta.get('dataset_name', 'comedy_eval.jsonl')}` (Human Gold Truth, n = {eval_meta['n']})")
     md.append(f"- **Eval SHA-256**: `{eval_meta['eval_sha256']}`\n")
 
     md.append("## 1. Core Scorecard\n")
@@ -696,9 +709,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    # 1. Verify frozen evaluation set integrity
+    # 1. Verify evaluation set integrity
     eval_records = verify_eval_dataset(args.eval_file)
-    print(f"Frozen evaluation dataset verified: 17 records, SHA-256 = {EXPECTED_EVAL_SHA256}")
+    actual_hash = compute_file_sha256(args.eval_file)
+    print(f"Evaluation dataset verified: {args.eval_file.name} ({len(eval_records)} records, SHA-256 = {actual_hash})")
 
     # 2. Obtain raw predictions (via generation or existing file)
     if args.eval_only:
@@ -719,7 +733,12 @@ def main() -> None:
         )
 
     # 3. Score predictions
-    report_data = compute_evaluation_metrics(eval_records, raw_predictions)
+    report_data = compute_evaluation_metrics(
+        eval_records=eval_records,
+        raw_predictions=raw_predictions,
+        eval_sha256=actual_hash,
+        dataset_name=args.eval_file.name,
+    )
     report_data["model"] = {
         "path": str(args.model_path).replace("\\", "/"),
         "generation": {
@@ -742,9 +761,9 @@ def main() -> None:
     sc = report_data["scorecard"]
     print("\n" + "=" * 60)
     print(f"Baseline Evaluation Complete: {args.model_path.name}")
-    print("=" * 60)
-    print(f"  Primary Mechanism Accuracy:  {sc['primary_accuracy'] * 100:.1f}% ({sc['primary_correct']}/17)")
-    print(f"  Exact Record Accuracy:       {sc['exact_record_accuracy'] * 100:.1f}% ({sc['exact_record_correct']}/17)")
+    total_n = len(eval_records)
+    print(f"  Primary Mechanism Accuracy:  {sc['primary_accuracy'] * 100:.1f}% ({sc['primary_correct']}/{total_n})")
+    print(f"  Exact Record Accuracy:       {sc['exact_record_accuracy'] * 100:.1f}% ({sc['exact_record_correct']}/{total_n})")
     print(f"  Horizon Accuracy:            {sc['horizon_accuracy'] * 100:.1f}%")
     print(f"  Secondary Micro F1:          {sc['secondary_micro_f1'] * 100:.1f}%")
     print(f"  Secondary Macro F1:          {sc['secondary_macro_f1'] * 100:.1f}%")
